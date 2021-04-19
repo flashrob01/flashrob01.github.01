@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+h1 {
+  color: black;
+  font-family: courier;
+  font-size: 100%;
+}
+p {
+  color: black;
+  font-family: courier;
+  font-size: 100%;
+}
+
+<p2 style="color:black;
+
+</style>
+<title>Using Artificial Intelligence to Assist and Improve Financial Forecasting: An Application to Oil Prices</title>
+</head>
+<body>
+
+<h1>Introduction</h1>
+
+<p>Accurate financial forecasting is one of the most difficult aspects of finance to get right. Finance is littered with forecast models that do not succeed. Though some current day models have moved on from simply assuming exponential growth based on prior year numbers, even when attempting to account for broader industry dynamics, these newer models still fail to account for industry downturns, or significant cyclical events stemming from external locations. </p>
+<p>Oil prices are one of the most important leading indicators of the world economy, playing an important role in many industrial forecasts. As the price of most energy sources are linked to the price of oil, governments (especially net energy exporters), energy companies, commodity companies, and refineries all rely on oil prices for their sales and cost forecasts. However, the volatile and unpredictable nature of oil prices makes it difficult for entities to plan ahead. As the world gets larger and more complex, oil price financial models must adapt to the added size and complexity of the inputs they are attempting to model by becoming more complex themselves. Though the model size can be overwhelming, artificial intelligence programming and other tools (such as Python) can help, to a degree.<p1>
+<b>What does an advanced forecast model look at?</b>
+<p>A simple financial forecast looks at factors that ultimately influence the forecast figure in question. An advanced model looks at the factors that influence the factors- a step-up in complexity. Consider a model that predicts company bankruptcy – would simply looking at a company’s historical internal financial data be sufficient? No- one would need to look at the external factors as well that may impact the company’s internal figures-  industry dynamics, government, central bank policy, etc. and understand how these factors ultimately interact with each other!</p1>
+
+<h2> Examples of wrong predictions </h2>
+<p>Despite the importance of oil prices, many of the best-known oil price forecasters consistently seem to get them wrong. </p1>
+
+<p>The forecast below was made in October 2014 by a well-known economic research company. Following the oil price crash that began in 2014, it stated that oil prices would rapidly rebound and increase steadily into the future, and easily top $100/ bbl again within 4 years time. Forecasts predicting a rapid rebound like this were very common and generally accepted during this timeframe.    </p1>
+
+<b>Exhibit 1: Oil price forecast (2003-30) released in October 2014 by well-known research company   </b>
+<p> (Note: WTI stands for West Texas Intermediate, and is used to describe the type of oil typically for sale in West Texas. It represents the North American price of oil. Brent refers to the Brent Oil Field in the North Sea off of the coast of the UK, and represents the international price of oil. Note that Brent is usually about $2-$10 dollars more expensive than WTI, but the spread changes everyday: https://ycharts.com/indicators/brent_wti_spread. The current spread is about $5-$7/bbl.) For the purposes of this article, all oil prices are assumed to be WTI unless otherwise specified. </p>
+
+
+
+
+<p>In the name of giving clients assurance about the future, there is generally an optimism bias that pervades many corporate forecasts. However, the forecast in Exhibit 1 dramatically underestimated the depth of the oil price crash that begin in 2014, whereby the price cratered to $28/bbl in early 2016. Unlike in the forecast, oil prices continue to lag below $60/bbl, well below the $100+ level forecast to be achieved by 2016.    </p1>
+
+<b>Exhibit 2: Actual WTI Oil Prices (2009- present)    </b>
+<p>This well-known forecaster is not alone in making such overly- simplistic forecasts, many of which sound like the following:
+•	(May 2018) Bank of America: Oil prices might spike to $100/bbl in 2019 
+•	In 2018, Deloitte predicted $68-$70/bbl range for 2019-2025 period
+•	Sanford Bernstein predicts $76/bbl in 2019  
+•	Goldman: Brent to hit $75/bbl in Q1 2019  
+Meanwhile, as of December 2019, WTI oil prices remain well below $60.    </p1>
+
+<h2> How are traditional forecast models for crude oil prices made?    </h2>
+
+<p>A traditional model for oil and gas is typically based off of supply and demand fundamentals, whereby the modeler will assume that there is an interplay between supply and demand which affects the price of oil. Given the multitude of parties on both sides, this is already a fairly complex model. For example, when crude supply builds up, the price will expect to decrease due to over-supply. However, when there are larger-than-expected draws on the crude inventory (an indication of increasing demand), the price will rise.     </p1>
+<p>On the supply side, the major suppliers will be examined for their current and expected levels of production. A modeler will also look at drilling rig count as an indicator of production activity, their production inventory, and what projects they may have coming online or going offline. They will do this for every major supplier, such as the US, Russia, Saudi Arabia, and OPEC .    </p1>
+<p>Sometimes, a geopolitical bent is added, whereby forecasters will also look for events which may cause disruptions to supply, such as a war breaking out, an attack on a pipeline, countries looking to restrain supply, etc. There is an assumption that suppliers are in a battle for market share, with everyone looking to advance market share while obtaining the highest price possible.     </p1>
+<p>For traditional forecasters, the demand side is typically simpler than the supply side. Demand for crude oil is generally considered quite stable, and fairly closely tied to GDP growth rates. Therefore, looking at whether the global economy is in a growth or contraction phase, based on GDP figures, is enough to make a short-term prediction on oil demand. Sometimes, a more macro view will be examined, such as accounting for energy transitions, for example the impact of electric vehicles, legislation pertaining to ‘climate change’, impact of growth of renewable energy sources, etc.    </p1>
+<p>In general, the supply and demand sides, however, are kept separate.  GDP is GDP, while suppliers have their own issues to worry about. Again, the main driver of price determination is the oil supply and demand balance. According to these traditional models, if oil supply is greater than oil demand, this is enough to nudge the oil price to fall. Conversely, if demand is greater than price, then the oil price is expected to rise.
+See Exhibit 4 below for an example.
+    </p1>
+<b>Exhibit 4: Sample of typical oil price supply and demand model     </b>
+<h2>Why does the traditional forecast model fail?    </h2>
+<p> As we saw in the section above, however, models based primarily on supply and demand have consistently failed to be accurate in recent years. What are these models missing? Perhaps they are over-simplified and do not go deep enough into the intricacies of the involved parties, nor do they account for seeing how everything is tied together?  The increased complexity and inter-connectedness of the world might indicate that a new type of model is needed. If so, what would that model look like?   </p1>
+<h2>Advanced model for oil prices    </h2>
+<p>In the advanced model, we have increased the complexity of the model. We take a much closer look at the financials of the buyers and suppliers, and find that the world is more intertwined than we previously thought. Suppliers have their break-even production costs which set a floor to the oil price. The seller’s health affects the buyer’s ability to buy- sellers produce jobs for buyers, and their national budgets affect the economic health of the buyers. Central banks are the glue which holds the energy ecosystem together, and their policies have a dramatic effect on the demand for oil. Note that this sort of model requires an increase in the level of complexity to account for the additional variables. We need more data. Luckily, much of this data is publicly available.    </p1>
+
+
+
+
+
+
+
+
+<p>    </p1>
+</body>
+</html>
