@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <title>"Decentralized Data and Research Services"</title> 
+    <link rel="stylesheet" href="./style.css">
+
+
+ 
+  
+  </head>
+ 
+  <body> 
+
+    <header>
+        <button id="buy" > Buy Data/ Consulting Request</button>       
+        <button id="sell">Sell Data/ Consulting Services</button>
+        <button id= "login"> Login </button>
+        <button id = "register">Register </button>
+        <button id = "about">About Us </button>
+        <button id = "wallet"> Wallet </button>
+        
+      <script src = "https://unpkg.com/@cityofzion/neon-js"></script>
+  
+        
+
+    
+    <div id="banner">
+        <h1>
+            Welcome to Decentralized Data and Research Store
+        </h1>
+    </div>
+
+    <figure id = "DDRlogo">
+    <img src="./DDRLogo2.png" width = 220 height = 195/>
+    <img src= "./silas.jpg" width = 220 height = 195/>
+    </figure>
+   
+    <div id="secured">
+    <p> Secured by escrow </p>
+    </div>
+
+    <figure id= "NEOlogo">
+    <img src="./NEO Logo.jpg"/>
+     <figcaption><strong>Powered by NEO3</strong></figcaption>
+    </figure>
+  </header>
+
+    <h1></h1> 
+
+
+        <script type = "text/javascript">
+      document.getElementById("buy").onclick = function() {
+    
+      
+      window.location.href = "./Buy-Data.html";
+
+        };
+        </script>
+
+        <script type = "text/javascript">
+      document.getElementById("sell").onclick = function() {
+    
+      
+      window.location.href = "./Sell-Data.html";
+
+        };
+
+
+      </script>
+
+      <script type = "text/javascript">
+        document.getElementById("login").onclick = function() {
+
+        
+        window.location.href = "./Login.html";
+
+          };
+
+
+        </script>
+
+        <script type = "text/javascript">
+          document.getElementById("register").onclick = function() {
+
+          
+          window.location.href = "./Register.html";
+
+            };
+
+
+          </script>
+
+          <script type = "text/javascript">
+            document.getElementById("about").onclick = function() {
+
+            
+            window.location.href = "./About-Us.html";
+
+              };
+
+
+            </script>
+
+
+            
+   
+            
+
+            <script type = "text/javascript" >
+             document.getElementById("wallet").onclick = function() {
+          
+              neoDapi.getBalance({
+  params: {
+    address: 'AeysVbKWiLSuSDhg7DTzUdDyYYKfgjojru',
+  },
+  network: 'MainNet',
+})
+.then(results => {
+  Object.keys(results).forEach(address => {
+    const balances = results[address];
+    balances.forEach(balance => {
+      const { assetID, symbol, amount } = balance
+
+      console.log('Address: ' + address);
+      console.log('Asset ID: ' + assetID);
+      console.log('Asset symbol: ' + symbol);
+      console.log('Amount: ' + amount);
+    });
+  });
+})
+
+                </script>
+           
+ 
+              
+
+             
+        
+              
+
+         </body>
+</html>

@@ -1,0 +1,10 @@
+footer      {position: fixed;
+            bottom: 0;
+            width: 89vw;
+            height: auto;
+            text-align: right;
+            background-color: transparent;
+            padding: var(--small-padding);
+            font-size: 80%;
+            border-radius: var(--border-radius-outer);
+}

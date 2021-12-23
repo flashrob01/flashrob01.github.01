@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Buy-Escrow1 </title>
+        <link rel="stylesheet" href= "./style.css">
+    </head>
+
+    <body>
+        <header>
+
+            <img src="./DDRLogo2.png" onClick = "location.href ='./index3.html'" width = 100 height = 90/>
+
+            <img src="N3logo.jpg" img id = "Neo3" onClick = "location.href = 'http:/www.neo.org'" width = 120 height = 50%/>
+
+            <button id = "send" > try </button>  
+
+            
+
+            <script type = "text/javascript" >
+
+                    
+                    document.getElementById("send").onclick = function() {
+               var g_NeoLine3obj = new window.NEOLineN3.Init();
+g_NeoLine3obj.getAccount()
+.then(account => {
+const {
+address,
+label
+} = account;
+console.log('Provider address: ' + address);
+console.log('Provider account label (Optional): ' + label);
+g_NeoLine3obj.send({fromAddress: address, toAddress: address, amount: '0', asset: 'GAS', fee: '0',}).then(result => {
+    console.log('Send transaction success!');
+    console.log('Transaction ID: ' + result.txid);
+    console.log('RPC node URL: ' + result.nodeURL);
+                });
+            }}
+                </script>
+
+</header>
+</body>
+</html>

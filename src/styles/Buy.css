@@ -1,0 +1,43 @@
+table, td, tr, th {
+ 
+    table-layout: fixed; 
+    border: 1px solid black;
+    border-collapse: collapse;
+    color: #111827; 
+    font-size: 1rem;
+    line-height: 1.5rem; 
+}
+
+td {
+    border-width: 1px; 
+    border-color: #10B981; 
+}
+
+tr{
+    
+    border-width: 1px; 
+    border-color: #10B981; 
+}
+
+tr:nth-child(even){
+    background-color: #10B981;
+    opacity: .7;
+   }
+
+th{
+
+}
+
+button{
+   
+    padding-top: 0.5rem; 
+padding-bottom: 0.5rem; 
+padding-right: 1rem; 
+padding-left: 1rem; 
+background-color: #6EE7B7; 
+transition-property: background-color, border-color, color, fill, stroke; 
+color: #000000; 
+border-radius: 0.375rem; 
+
+
+}

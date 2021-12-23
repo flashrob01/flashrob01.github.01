@@ -1,0 +1,305 @@
+body{
+    background-color: #f7f1f1;
+    margin: auto;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+header{
+    
+    position: sticky;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+footer{
+    position: fixed;
+    bottom:10px;
+    right: 250px;
+    width: 100%;
+    margin-right: 20px;
+    margin-left: 20px
+}
+
+
+
+button{
+   
+    border-radius:20%;
+
+}
+
+#buy{
+    height: 40px;
+}
+
+#sell{
+    height: 40px;
+}
+
+#create-sell{
+    height: 40px;
+
+}
+
+#create-buy{
+    height: 40px;
+
+}
+
+
+#test{
+    height: 40px;
+    width: 80px;
+}
+
+#login{
+    position: relative;
+    left: 500px;
+    height: 40px;
+    width: 100px;
+    
+}
+
+
+
+#register{
+    position: relative;
+    left: 500px;
+    height: 40px;
+    width: 100px;
+    
+}
+
+#about{
+    position: relative;
+    left: 500px;
+    height: 40px;
+    width: 100px;
+}
+
+#banner{
+    position: relative;
+    top: 100px;
+    margin: 5px;
+    padding: 5px;
+    border: red solid 1px;
+    text-align: center;
+    margin: auto;
+    color: black;
+}
+
+#Neo3{
+    position: relative;
+    left: 900px;
+
+
+}
+
+#consult1{
+    
+    text-align: center;
+    position: absolute;
+    right: 400px;
+    top: 400px;
+    width: 200px;
+     height: 20%;
+}
+
+#consult2{
+    
+    text-align: center;
+    position: absolute;
+    right: 350px;
+    top: 450px;
+    width: 300px;
+     height: 50%;
+}
+
+#consult3{
+    
+    text-align: center;
+    position: absolute;
+    right: 720px;
+    width: 160px;
+    top:900px;
+     height: 22%;
+}
+
+#consult4{
+    
+   
+   
+    width: 300px;
+    height: 50%
+    
+   
+}
+
+h1 {
+    color: #466995;
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  h2 {
+
+    text-align: center;
+
+  }
+
+  #DDRlogo {
+    top: 100px;
+    position: relative;
+    text-align: center;
+    
+
+     }
+
+#secured {
+     position: relative;
+    top:270px;
+    font-size:20px;
+     left: 400px;
+    font-weight: bold;
+}
+
+#purchase {
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    left: 600px;
+    height: 40px;
+    color: blue
+}
+
+#purchase_button {
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    left: 600px;
+    height: 40px;
+}
+
+#timer2 {
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    left: 600px;
+    color:#6473ff
+    
+}
+
+
+#deposit {
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    left: 550px;
+    height: 40px;
+}
+
+#like_button_container{
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    left: 0px;
+    height: 40px;
+   
+}
+
+#deposit_completed {
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    left: 550px;
+    height: 40px;
+}
+
+#cancel_button {
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    left: 570px;
+    height: 20px;
+}
+
+#release_escrow{
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    left: 570px;
+    height: 40px;
+
+}
+
+#dispute_transaction{
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    left: 570px;
+    height: 40px;
+}
+
+
+
+
+  #NEOlogo {
+    position: relative;
+    top: 100px;
+    font-size:20px;
+
+   left: 800px;
+  }
+
+  table, td {
+      border: 1px solid black;
+      text-align: center;
+  }
+
+#h1center {
+    text-align: center;
+}
+
+
+.container {
+height: 650px;
+width: 550px;    
+display: inline-flex;
+border: 1px solid grey;
+justify-content: center;
+flex-wrap: wrap;
+flex-direction: row;
+margin: auto;
+
+}
+
+.container2 {
+    height: 900px;
+    width: 1000px;    
+    display: inline-flex;
+    border: 1px solid grey;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: auto;
+    
+    }
+
+.item {
+  height: 75px;
+  width: 400px;
+  text-align: center;
+
+}
+
+.form {
+    height: 400px;
+    width: 500px;  
+    text-align: center;
+    background-color: #6473ff;
+
+}

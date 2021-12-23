@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Buy Data/ Consulting Request </title>
+        <link rel="stylesheet" href= "./style.css">
+    </head>
+
+
+
+
+
+    <body>
+
+        <header>
+            
+            <img src="./images/DDRLogo2.png" onClick = "location.href ='./index.html'" width = 100 height = 80/>
+            
+            <button id="buy"> Buy Data</button>
+            
+           
+            <button id="sell">Sell Data/ Consulting Services</button>
+            <button id="create-buy"> Create an Offer </button>
+            <button id= "login"> Login </button>
+            <button id ="register">Register </button>
+         
+            
+        </header>
+       
+        <h1> Buy Data/ Consulting Request           </h1>
+
+        <form>
+            <label for "industry" > Search requests by industry</label>
+            <select id = "industry" name = "industry" onChange = "window.document.location.href=this.options[this.selectedIndex].value;" value="GO">
+              <option value="./Buy-Data.html"> Tech </option>
+              <option value="./Buy-Data-Energy.html"> Energy </option>
+              <option value="./Buy-Data-Retail.html"> Retail </option>
+              <option value="./Buy-Data-Healthcare.html"> Healthcare </option>
+              <option value="./Buy-Data-Other.html"> Other </option>
+          </select>
+        </form>  
+
+        <br>
+        <br>
+        
+        <table>
+            <tr>
+                <th scope = "col"> Buy From</th>
+                <th scope = "col"> Rating (/ 5) </th>
+                <th scope =" col"> Data for Sale</th>
+                <th scope =" col"> Industry/ Sector</th>
+                <th scope ="col"> Date Listed </th>
+                <th scope = "col"> Price </th>
+                <th scope = "col>"> Buy </th>
+            </tr>
+
+            <tr>
+                <td> Alex C., ex- Booz Allen and ex- IHS Markit </td>
+                <td> **** </td>
+                <td>Hydraulic fracturing market - Texas Permian Basin. 25 page report plus data.  </td>
+                <td>Energy </td>
+                <td>9/19/2021 </td>
+                 <td>$750.</td>
+                 <td></td>
+            </tr>
+
+                <tr>
+                <td>Jefferson Z., former engineer for Westinghouse </td>
+                <td> ***** </td>
+                <td>1 hour discussion on advanced nuclear power plant market developments          </td>
+                <td>Energy </td>
+                <td>November 2020</td>
+                <td>$250 . hour</td>
+                <td></td>
+                </tr>
+
+                <tr>
+                <td> Hyun H.,
+                    Ex- BCG, Engineer for Hyundai
+                   </td>
+                <td> ***** </td>    
+                <td>1 Hr. Discussion- 
+                    State of Hydrogen- Korea, Japan, China
+                </td>
+                <td>Energy </td>
+                <td>October 2021
+                </td>
+                <td>$250/hr.</td>
+                <td></td>
+                 </tr>
+            
+                    <script type = "text/javascript">
+                    document.getElementById("clickRonnie").onclick = function() {
+    
+      
+                     window.location.href = "./services/Buy-Terms.html";
+
+                                                                          };
+
+                     </script>
+
+
+        </table>
+
+        <footer>
+            <img src="./images/N3logo.jpg" img id = "Neo3" onClick = "location.href = 'http:/www.neo.org'" width = 120 height = 50%/>
+      
+      
+        </footer>
+                                 
+        <script type="text/javascript" src="./js/headers.js"> </script>
+
+                                        <script type = "text/javascript">
+                                      document.getElementById("buy").onclick = function() {
+
+
+                                      window.location.href = "./services/Buy-Data.html";
+
+                                        };
+                                        </script>
+
+                                        <script type = "text/javascript">
+                                      document.getElementById("sell").onclick = function() {
+
+
+                                      window.location.href = "./services/Sell-Data.html";
+
+                                        };
+
+
+                                      </script>
+
+
+                                    <script type = "text/javascript">
+                                        document.getElementById("login").onclick = function() {
+
+                                        
+                                        window.location.href = "./services/Login.html";
+
+                                        };
+
+
+                                        </script>
+
+                                        <script type = "text/javascript">
+                                        document.getElementById("register").onclick = function() {
+
+                                        
+                                        window.location.href = "./services/Register.html";
+
+                                            };
+
+
+                                        </script>  
+
+
+                                        <script type = "text/javascript">
+                                    document.getElementById("clickRonnie").onclick = function() {
+
+
+                                     window.location.href = "./services/Buy-Terms.html";
+                                       };
+
+                                        </script>
+ 
+                                        <script type = "text/javascript">
+                                    document.getElementById("clickPaul").onclick = function() {
+
+
+                                     window.location.href = "./services/Buy-Terms2.html";
+
+                                        };
+                                        </script>
+
+                                    <script type = "text/javascript">
+                                        document.getElementById("create-buy").onclick = function() {
+
+
+                                        window.location.href = "./services/Create-Buy.html";
+                                        };
+
+                                        </script>
+
+
+                                    
+
+
+    </body>
+
+
+
+
+
+
+
+
+
+</html>
