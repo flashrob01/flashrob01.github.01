@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/flashrob01/DDR-test.git/static/css/main.46856381.chunk.css",
+    "main.js": "/flashrob01/DDR-test.git/static/js/main.85e3e80a.chunk.js",
+    "main.js.map": "/flashrob01/DDR-test.git/static/js/main.85e3e80a.chunk.js.map",
+    "runtime-main.js": "/flashrob01/DDR-test.git/static/js/runtime-main.d9c63f72.js",
+    "runtime-main.js.map": "/flashrob01/DDR-test.git/static/js/runtime-main.d9c63f72.js.map",
+    "static/js/2.7d9b41cc.chunk.js": "/flashrob01/DDR-test.git/static/js/2.7d9b41cc.chunk.js",
+    "static/js/2.7d9b41cc.chunk.js.map": "/flashrob01/DDR-test.git/static/js/2.7d9b41cc.chunk.js.map",
+    "static/js/3.a82731d3.chunk.js": "/flashrob01/DDR-test.git/static/js/3.a82731d3.chunk.js",
+    "static/js/3.a82731d3.chunk.js.map": "/flashrob01/DDR-test.git/static/js/3.a82731d3.chunk.js.map",
+    "index.html": "/flashrob01/DDR-test.git/index.html",
+    "static/css/main.46856381.chunk.css.map": "/flashrob01/DDR-test.git/static/css/main.46856381.chunk.css.map",
+    "static/js/2.7d9b41cc.chunk.js.LICENSE.txt": "/flashrob01/DDR-test.git/static/js/2.7d9b41cc.chunk.js.LICENSE.txt",
+    "static/media/loading.330b7d99.svg": "/flashrob01/DDR-test.git/static/media/loading.330b7d99.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d9c63f72.js",
+    "static/js/2.7d9b41cc.chunk.js",
+    "static/css/main.46856381.chunk.css",
+    "static/js/main.85e3e80a.chunk.js"
+  ]
+}
