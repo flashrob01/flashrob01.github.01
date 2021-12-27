@@ -1,7 +1,5 @@
 import React, {useState, useEffect, Component} from 'react';
 
-import DOMPurify from'dompurify';
-
 import {Link} from 'react-router-dom';
 
 import { useAuth0 } from "@auth0/auth0-react";
