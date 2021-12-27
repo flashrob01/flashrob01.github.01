@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';
 import {Auth0Provider} from "@auth0/auth0-react";
+import { HashRouter as Router } from 'react-router-dom';
 
 
 import store from './store';
@@ -14,13 +15,15 @@ ReactDOM.render(
   <Auth0Provider
   domain="dev-7-8i89hb.us.auth0.com"
   clientId='stYoaCVnntvABpLxIxIdXnxX4riYXRnF'
-  redirectUri='http://localhost:3000'
+  redirectUri='https://ddrc-app.netlify.app/'
   
 >
+ 
 
   <Provider store = {store}>
        <App />
      </Provider>
+    
      </Auth0Provider>,
   
   document.getElementById('root')
