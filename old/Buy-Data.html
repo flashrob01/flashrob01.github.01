@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Buy Data/ Consulting Request </title>
+        <link rel="stylesheet" href= "./style.css">
+    </head>
+
+
+
+
+
+    <body>
+
+        <header>
+            
+            <img src="./images/DDRLogo2.png" onClick = "location.href ='./index.html'" width = 100 height = 80/>
+            
+            <button id="buy"> Buy Data</button>
+            
+           
+            <button id="sell">Sell Data/ Consulting Services</button>
+            <button id="create-buy"> Create an Offer to Buy </button>
+            <button id= "login"> Login </button>
+            <button id = "register">Register </button>
+         
+            
+        </header>
+       
+        <h1> Buy Data/ Consulting Request           </h1>
+
+        <form>
+            <label for "industry" > Search requests by industry</label>
+          <select id = "industry" name = "industry" onChange = "window.document.location.href=this.options[this.selectedIndex].value;" value="GO">
+            <option value="./services/Buy-Data.html"> Tech </option>
+            <option value="./services/Buy-Data-Energy.html"> Energy </option>
+            <option value="./services/Buy-Data-Retail.html"> Retail </option>
+            <option value="./services/Buy-Data-Healthcare.html"> Healthcare </option>
+            <option value="./services/Buy-Data-Other.html"> Other </option>
+
+          </select>
+
+          <div id="passenger1" style="display:none;"> hey, 1 works </div>
+          <div id="passenger2" style="display:none;"> hey, 2 works </div>
+          <div id="passenger3" style="display:none;"> hey, 3 works </div>
+
+
+        </form>  
+
+        <br>
+        <br>
+        
+        <table>
+            <tr>
+                <th scope = "col"> Buy From</th>
+                <th scope = "col"> Rating (/ 5) </th>
+                <th scope =" col"> Data for Sale</th>
+                <th scope ="col"> Industry/ Sector </th>
+                <th scope ="col"> Date Listed </th>
+                <th scope = "col"> Price </th>
+                <th scope = "col>"> Buy </th>
+            </tr>
+
+            <tr>
+                <td>Ronnie C., PhD, ex- SMIC </td>
+                <td> **** </td>
+                <td>1 Hr. Discussion- Semiconductors in China/ Asia</td>
+                <td> Tech- Semiconductors </td>
+                <td>9/19/2021 </td>
+                 <td>$250/hr.</td>
+                 <td><button id="clickRonnie"> Buy </button></td>
+            </tr>
+
+                <tr>
+                <td>Paul A., IC Insights </td>
+                <td> ***** </td>
+                <td>Break-even cost estimates for 7nm, 5nm, 3nm, production fabs for top 5 industry players, by region (proprietary)          </td>
+                <td> Tech- Semiconductors </td>
+                <td>December 2020</td>
+                <td>$2500</td>
+                <td><button id="clickPaul"> Buy </button></td>
+                </tr>
+
+                <tr>
+                <td>Thomas M.,
+                    Ex- Intel
+                    Ex- Mckinsey
+                </td>
+                <td> *** </td>    
+                <td>1 Hr. Discussion- 
+                    State of Semiconductors in North America and Europe 
+                </td>
+                <td> Tech- Semiconductors </td>
+                <td>August 2021
+                </td>
+                <td>$400/hr.</td>
+                <td></td>
+                 </tr>
+            
+                  
+
+
+        </table>
+        <br>
+        <br>
+        <br>
+
+
+        <img src="./images/Consulting3.jpg" width = 400 height = 50% right = 400px text-align= center justify-content= center/>
+
+
+        <footer>
+            <img src="./images/N3logo.jpg" img id = "Neo3" onClick = "location.href = 'http:/www.neo.org'" width = 120 height = 50%/>
+
+
+        </footer>
+            
+        <script type = "text/javascript">
+            document.getElementById("clickRonnie").onclick = function() {
+
+
+             window.location.href = "./Buy-Terms.html";
+
+                                                                  };
+
+             </script>
+
+                                    <script type="text/javascript" src="./js/headers.js"> </script>
+
+
+                                        <script type = "text/javascript">
+                                    document.getElementById("clickRonnie").onclick = function() {
+
+
+                                     window.location.href = "./services/Buy-Terms.html";
+                                       };
+
+                                        </script>
+
+                                        <script type = "text/javascript">
+                                    document.getElementById("clickPaul").onclick = function() {
+
+
+                                     window.location.href = "./services/Buy-Terms2.html";
+
+                                        };
+                                        </script>
+
+                                    <script type = "text/javascript">
+                                        document.getElementById("create-buy").onclick = function() {
+
+
+                                        window.location.href = "./services/Create-Buy.html";
+                                        };
+
+                                        </script>
+
+
+                                    
+
+
+    </body>
+
+
+
+
+
+
+
+
+
+</html>
+
+
+
+
+
+
+
+</html>

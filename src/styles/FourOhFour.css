@@ -1,0 +1,9 @@
+.FourOhFourContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.FourOhFour {
+  font-size: 10rem;
+  line-height: 6rem;
+}

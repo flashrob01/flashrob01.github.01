@@ -1,0 +1,42 @@
+.FourOhFourContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .FourOhFour {
+    font-size: 10rem;
+    line-height: 6rem;
+  }
+  
+  .img1{
+    width: 30%;
+    height: 90;
+  
+  }
+
+  .img2{
+    width: 60%;
+    height: 90;
+  }
+
+  .img3{
+    width: 20%;
+    height: 90;
+  }
+
+  .img4{
+    width: 50%;
+    height: 90;
+  }
+
+  .img5{
+    width: 20%;
+    height: 90;
+  }
+
+  .img6{
+    width: 50%;
+    height: 90;
+  }
+
+              
