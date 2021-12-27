@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/flashrob01/DDR-test.git/static/css/main.46856381.chunk.css",
-    "main.js": "/flashrob01/DDR-test.git/static/js/main.85e3e80a.chunk.js",
-    "main.js.map": "/flashrob01/DDR-test.git/static/js/main.85e3e80a.chunk.js.map",
-    "runtime-main.js": "/flashrob01/DDR-test.git/static/js/runtime-main.d9c63f72.js",
-    "runtime-main.js.map": "/flashrob01/DDR-test.git/static/js/runtime-main.d9c63f72.js.map",
-    "static/js/2.7d9b41cc.chunk.js": "/flashrob01/DDR-test.git/static/js/2.7d9b41cc.chunk.js",
-    "static/js/2.7d9b41cc.chunk.js.map": "/flashrob01/DDR-test.git/static/js/2.7d9b41cc.chunk.js.map",
-    "static/js/3.a82731d3.chunk.js": "/flashrob01/DDR-test.git/static/js/3.a82731d3.chunk.js",
-    "static/js/3.a82731d3.chunk.js.map": "/flashrob01/DDR-test.git/static/js/3.a82731d3.chunk.js.map",
-    "index.html": "/flashrob01/DDR-test.git/index.html",
-    "static/css/main.46856381.chunk.css.map": "/flashrob01/DDR-test.git/static/css/main.46856381.chunk.css.map",
-    "static/js/2.7d9b41cc.chunk.js.LICENSE.txt": "/flashrob01/DDR-test.git/static/js/2.7d9b41cc.chunk.js.LICENSE.txt",
-    "static/media/loading.330b7d99.svg": "/flashrob01/DDR-test.git/static/media/loading.330b7d99.svg"
+    "main.css": "/DDR-test/static/css/main.46856381.chunk.css",
+    "main.js": "/DDR-test/static/js/main.aa6d97d0.chunk.js",
+    "main.js.map": "/DDR-test/static/js/main.aa6d97d0.chunk.js.map",
+    "runtime-main.js": "/DDR-test/static/js/runtime-main.c2c659f5.js",
+    "runtime-main.js.map": "/DDR-test/static/js/runtime-main.c2c659f5.js.map",
+    "static/js/2.db23bf97.chunk.js": "/DDR-test/static/js/2.db23bf97.chunk.js",
+    "static/js/2.db23bf97.chunk.js.map": "/DDR-test/static/js/2.db23bf97.chunk.js.map",
+    "static/js/3.a82731d3.chunk.js": "/DDR-test/static/js/3.a82731d3.chunk.js",
+    "static/js/3.a82731d3.chunk.js.map": "/DDR-test/static/js/3.a82731d3.chunk.js.map",
+    "index.html": "/DDR-test/index.html",
+    "static/css/main.46856381.chunk.css.map": "/DDR-test/static/css/main.46856381.chunk.css.map",
+    "static/js/2.db23bf97.chunk.js.LICENSE.txt": "/DDR-test/static/js/2.db23bf97.chunk.js.LICENSE.txt",
+    "static/media/loading.330b7d99.svg": "/DDR-test/static/media/loading.330b7d99.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d9c63f72.js",
-    "static/js/2.7d9b41cc.chunk.js",
+    "static/js/runtime-main.c2c659f5.js",
+    "static/js/2.db23bf97.chunk.js",
     "static/css/main.46856381.chunk.css",
-    "static/js/main.85e3e80a.chunk.js"
+    "static/js/main.aa6d97d0.chunk.js"
   ]
 }
