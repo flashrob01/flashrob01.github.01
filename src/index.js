@@ -13,8 +13,8 @@ import store from './store';
 ReactDOM.render(
   
   <Auth0Provider
-  domain="dev-7-8i89hb.us.auth0.com"
-  clientId='stYoaCVnntvABpLxIxIdXnxX4riYXRnF'
+  domain="dev-rocjro18.us.auth0.com"
+  clientId='ES8TMj4azUBmrxg97Kedf0TiFPL99N7H'
   redirectUri='https://ddrc-app.netlify.app/'
   
 >
