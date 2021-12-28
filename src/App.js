@@ -25,6 +25,8 @@ import Buy from "./components/Buy";
 import BuyIndex from "./components/BuyIndex";
 import BuyEscrow from "./components/BuyEscrow";
 import Sell from "./components/Sell";
+import SellTerms from "./components/SellTerms";
+import SellIndex from "./components/SellIndex";
 import CreateBuy from "./components/CreateBuy";
 import CreateSell from "./components/CreateSell";
 import CallbackRouter from "./components/CallbackRouter";
@@ -65,6 +67,9 @@ const App = () => {
                             <Route path="/buy/escrow/:buy_offer_id" element = {<BuyEscrow />} />
                             
                         <Route path="/sell" element = {<Sell />} />
+                            <Route path="/sell/:sell_offer_id" element = {<SellIndex />} />
+                            <Route path="/sell/escrow/:sell_offer_id" element = {<SellTerms />} />
+
                         <Route path="/CreateBuy" element = {<CreateBuy />} />
                         <Route path="/CreateSell" element = {<CreateSell />} />
                         <Route path="/CallbackRouter" element = {<CallbackRouter />} />
