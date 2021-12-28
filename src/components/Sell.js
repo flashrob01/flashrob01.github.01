@@ -5,6 +5,7 @@ import tw from "twin.macro";
 import { GlobalFilter } from "./globalFilter";
 import API from './API';
 import './../styles/Sell.css';
+import {Link} from 'react-router-dom';
 
 const Table = tw.table`
   table-fixed
@@ -157,9 +158,13 @@ export function Sell(props) {
         id: "Select",
         Header: "Select",
         Cell: ({ row }) => (
+
+          <Link to= {{
+            pathname: `/sell/${row.values.sell_offer_id}`}}>
           <Button onClick={() => alert("Selecting: " + row.values.price)}>
             Select
           </Button>
+          </Link>
         ),
       },
     ]);
