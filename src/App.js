@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { selectCustomer } from "./slice_reducers/customerSlice";
 import { useSelector } from "react-redux";
-import { LinkedInCallback } from 'react-linkedin-login-oauth2';
 import ProtectedRoute from "./auth/ProtectedRoute";
 
 
@@ -29,8 +28,6 @@ import SellTerms from "./components/SellTerms";
 import SellIndex from "./components/SellIndex";
 import CreateBuy from "./components/CreateBuy";
 import CreateSell from "./components/CreateSell";
-import CallbackRouter from "./components/CallbackRouter";
-import SSOWithLinkedin from "./components/SSOWithLinkedin";
 import Profile from "./components/Profile";
 import Loading from "./components/Loading";
 
@@ -56,7 +53,6 @@ const App = () => {
                         <Route path="/login/*" element={<Login />} />
                         <Route path="/logout/*" element={<Logout />} />
                         <Route path="/profile*" element={<ProtectedRoute><Profile /> </ProtectedRoute>} />
-                        <Route path="linkedin/*" element={<LinkedInCallback />} />
                         <Route path="productItem/:id" element={<ProductItem />} />
                         <Route path="register/*" element ={<Register />} />
                         <Route path="checkout/*" element = {<Checkout />} /> 
@@ -71,9 +67,7 @@ const App = () => {
                             <Route path="/sell/escrow/:sell_offer_id" element = {<SellTerms />} />
                         </Route>
                         <Route path="/CreateBuy" element = {<ProtectedRoute component = {CreateBuy} />} />
-                        <Route path="/CreateSell" element = {<ProtectedRoute><CreateSell /> </ProtectedRoute>}/>
-                        <Route path="/CallbackRouter" element = {<CallbackRouter />} />
-                        <Route path="/linkedin-sso-response" element = {<SSOWithLinkedin />} />                      
+                        <Route path="/CreateSell" element = {<ProtectedRoute><CreateSell /> </ProtectedRoute>}/>               
                         <Route path="/Loading" element = {<Loading />} />
                         
                       
