@@ -1,22 +1,11 @@
-const {Client} = require('pg');
-
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-ssl: {
-  rejectUnauthorized: false
-}
-});
-
-client.connect();
-
-client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
-  if (err) throw err;
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-  }
-  client.end();
-});
-
+const Pool = require('pg').Pool
+const pool = new Pool({
+  user: 'ddrc',
+  host: '/cloudsql/opportune-ego-337301:us-central1:ddrc',
+  database: 'ddrc',
+  password: 'pfloyd2717',
+  port: 5432,
+})
 const getUsers = (request, response) => {
   pool.query('SELECT * FROM users ORDER BY user_id ASC', (error, results) => {
     if (error) {
