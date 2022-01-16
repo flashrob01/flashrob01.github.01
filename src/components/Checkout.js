@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import StripeCheckout from 'react-stripe-checkout';
+//import StripeCheckout from 'react-stripe-checkout';
 import {Link} from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux";
 import {removeProductFromCart, selectCart } from "../slice_reducers/cartSlice";
@@ -104,7 +104,17 @@ const removeItem = (cartItem) => {
          <h3>Payment Details</h3>
         <p>To pay for your eco-friendly Sunshine products please complete your payment details below:</p>
         <p>For testing purposes use this card number: <span className='boldOrange'>4242 4242 4242 4242</span> with any 3 digits for CVC and a future date.</p>
-        <StripeCheckout 
+        
+          <h3>Delivery</h3>
+          <Shipping />
+          </div>}
+          </div>
+    )
+}
+
+export default Checkout
+
+{/* <StripeCheckout 
           name='Sunshine-Stores'
           image={Logo}
           description={`Sunshine Stores Eco-Products`}
@@ -117,15 +127,7 @@ const removeItem = (cartItem) => {
           allowRememberMe={false}
           >
           <button className='btn'>Pay Now</button>
-          </StripeCheckout>
-          <h3>Delivery</h3>
-          <Shipping />
-          </div>}
-          </div>
-    )
-}
-
-export default Checkout
+          </StripeCheckout> */}
 
 // amount={poundToPenny(totalWithShipping)}
 //token={onToken(poundToPenny(totalWithShipping), 'Eco-products')}
