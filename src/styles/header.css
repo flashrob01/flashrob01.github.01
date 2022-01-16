@@ -5,7 +5,7 @@
 
 header {
   height: 15vh;
-  width: 90vw;
+  width: 100vw;
   border-top-right-radius: var(--border-radius-outer);
   border-top-left-radius: var(--border-radius-outer);
   display: flex;
@@ -13,6 +13,8 @@ header {
   justify-content: space-between;
   background-color: var(--lightBackground)
 }
+
+
 
 h1 {
   color: var(--highlight-colour);
@@ -43,14 +45,6 @@ h2 {
   }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 #LoadingIcon {
   padding: var(--padding);

@@ -1,26 +1,33 @@
-import React from 'react'
-
-import {Link} from 'react-redux'
 import './../styles/About.css'
-import {DynamicTable} from "./DynamicTable"
+
 
 const About = () => {
 
- 
+  
 
     return (
-        <div className= "pageContainer">
-               <h1 id= "h1center"> About DDR         </h1>
+      <div class= "grid">
+        
+      
+        <h1 className= 'Headline'> About DDR         </h1>   
+
+       <div className= "pageContainer">
+
+       
+         
+               
+           
+
         <div className= 'flexRow'>
           
-          
+         
 
-          <img src="../images/accenture_logo.jpg" className='img1'/>
-          <img src="../images/bain_logo.jpg"  className='img2'/>
-          <img src="../images/aws_logo.jpg"  className='img3'/>
-          <img src="../images/booz_logo.jpg"  className='img4'/>
-          <img src="../images/GLG_logo.jpg"  className='img5'/>
-          <img src="../images/Mckinsey_logo.jpg"  className='img6'/>
+        <img src={require("../images/accenture_logo.jpg").default}  className='img1'/>
+          <img src={require("../images/bain_logo.jpg").default}  className='img2'/>
+          <img src={require("../images/aws_logo.jpg").default}  className='img3'/>
+          <img src={require("../images/booz_logo.jpg").default}  className='img4'/>
+          <img src={require("../images/GLG_logo.jpg").default}  className='img5'/>
+          <img src={require("../images/Mckinsey_logo.jpg").default}  className='img6'/>
 
 
       
@@ -46,7 +53,7 @@ const About = () => {
       </div>
 
       </div>      
-            
+            </div>
     )
 }
 

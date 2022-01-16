@@ -5,9 +5,9 @@ const Pool = require('pg').Pool
 const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
-  database: 'DDR',
+  database: 'postgres',
   password: 'pfloyd2717',
-  port: 5432,
+  port: 5433,
 })
 
 //'/' refers to the path name, not database name!

@@ -1,8 +1,8 @@
 const Pool = require('pg').Pool
 const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'DDR',
+  user: 'ddrc',
+  host: '/cloudsql/opportune-ego-337301:us-central1:ddrc',
+  database: 'ddrc',
   password: 'pfloyd2717',
   port: 5432,
 })
@@ -27,15 +27,15 @@ const getUserById = (request, response) => {
 }
 
 const createUser = (request, response) => {
-  const { user_id, first_name, last_name, email, password, city, country, external_id, external_type} = request.body
+  const { id, firstname, localizedfirstname, lastname, localizedlastname, email, profilepicture, user_id} = request.body
 
-  pool.query('INSERT INTO users (user_id, first_name, last_name, email, password, city, country, external_id, external_type) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)', 
+  pool.query('INSERT INTO users (id, firstname, localizedfirstname, lastname, localizedlastname, email, profilepicture, user_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)', 
   //Rows cannot be split in this language!
-  [user_id, first_name, last_name, email, password, city, country, external_id, external_type], (error, results) => {
+  [id, firstname, localizedfirstname, lastname, localizedlastname, email, profilepicture, user_id], (error, results) => {
     if (error) {
       throw error
     }
-    response.status(201).send(`User added with ID: ${user_id}`)
+    response.status(201).send(`User added with ID: ${email}`)
   })
 }
 //This used to say ${result.insert.Id}; I have NO idea where the heck that came from!

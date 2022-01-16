@@ -2,7 +2,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 82vw;
+  width: 100vw;
   height: 7vh;
   background-color: var(--font-color);
     padding: var(--small-padding);
@@ -20,7 +20,7 @@ nav {
     font-size: 90%;
   }
   
-  #icon {
+  .icon {
     height: 5vh;
     margin: 0;
   }

@@ -1,27 +1,29 @@
 POST
 
-curl --data "user_id=8&first_name=Tomasz&last_name=Voeltzman&email=Voeltz@yahoo.com&linked_in=Voeltz@linked_in.com&date_of_birth=1970_09_12&city=London&country=UK&identity_confirmed=1&company=Barclays" http://localhost:3000/users
+curl --data "email=JRRRRRDuduhisShoudlWork@ren.com" https://heavy-chicken-63.loca.lt/users
 
-curl --data "industry=automotive&offer_type=powerpoint&offer_details=21 pages double spaced&price=450&qualifications=20 year automotive veteran with Honda and Ford&buy_offer_id=4&user_id=9" http://localhost:3000/buy_offers
+curl --data "user_id=8&first_name=Tomasz&last_name=Voeltzman&email=Voeltz@yahoo.com&linked_in=Voeltz@linked_in.com&date_of_birth=1970_09_12&city=London&country=UK&identity_confirmed=1&company=Barclays" http://localhost:4000/users
 
-curl --data "user_id=11&first_name=James&last_name=Belitnikopf&email=belitnikopf@yahoo.ru&linked_in=belitnikopf@linked_in.com&date_of_birth=1980_02_12&city=Moscow&country=Russia&identity_confirmed=1&company=microsoft&user_id=4 "http://localhost:3000/users
+curl --data "industry=automotive&offer_type=powerpoint&offer_details=21 pages double spaced&price=450&qualifications=20 year automotive veteran with Honda and Ford&buy_offer_id=4&user_id=9" http://localhost:4000/buy_offers
 
-curl --data "industry=automotive&offer_type=powerpoint&offer_details=21 pages double spaced&price=450&qualifications=20 year automotive veteran with Honda and Ford&buy_offer_id=4&user_id=9" http://localhost:3000/buy_offers
+curl --data "user_id=11&first_name=James&last_name=Belitnikopf&email=belitnikopf@yahoo.ru&linked_in=belitnikopf@linked_in.com&date_of_birth=1980_02_12&city=Moscow&country=Russia&identity_confirmed=1&company=microsoft&user_id=4 "http://localhost:4000/users
 
-curl --data "industry=semiconductors&offer_type=1 hour phone&offer_details=discussion on latest build costs and forecasts for 5nm, 3nm, 1nm for Intel and Asian Competitor Fabs&price=450&qualifications=10 years ex-Engineering manager with SMIC and Intel, PhD Materials Engineer from US&sell_offer_id=2&user_id=10" http://localhost:3000/sell_offers
+curl --data "industry=automotive&offer_type=powerpoint&offer_details=21 pages double spaced&price=450&qualifications=20 year automotive veteran with Honda and Ford&buy_offer_id=4&user_id=9" http://localhost:4000/buy_offers
 
-curl --data "industry=Defi Engineer&offer_type=1 hour phone discussion&offer_details=Looking for engineers or consultants with deep experience in emerging De-fi and blockchain technologies as applied to Web 3.0 and Emerging De-Fi within Supply Chain in mid-market Central Asian Economies &price=200&qualifications=Prefer engineers or consultants with 2-3 years experience minimum&buy_offer_id=2&user_id=10" http://localhost:3000/buy_offers
+curl --data "industry=semiconductors&offer_type=1 hour phone&offer_details=discussion on latest build costs and forecasts for 5nm, 3nm, 1nm for Intel and Asian Competitor Fabs&price=450&qualifications=10 years ex-Engineering manager with SMIC and Intel, PhD Materials Engineer from US&sell_offer_id=2&user_id=10" http://localhost:4000/sell_offers
 
-curl --data "review_id=3&content=Consultant was excellent and very knowledgeable. Provided excellent value for price. Would recommend to anyone else in this market for services. Highly recommended.&date=2021-09-15&reviewer_id=3&rating=5&user_id=3" http://localhost:3000/reviews
+curl --data "industry=Defi Engineer&offer_type=1 hour phone discussion&offer_details=Looking for engineers or consultants with deep experience in emerging De-fi and blockchain technologies as applied to Web 3.0 and Emerging De-Fi within Supply Chain in mid-market Central Asian Economies &price=200&qualifications=Prefer engineers or consultants with 2-3 years experience minimum&buy_offer_id=2&user_id=10" http://localhost:4000/buy_offers
+
+curl --data "review_id=3&content=Consultant was excellent and very knowledgeable. Provided excellent value for price. Would recommend to anyone else in this market for services. Highly recommended.&date=2021-09-15&reviewer_id=3&rating=5&user_id=3" http://localhost:4000/reviews
 
 
 PUT
 
-curl -X PUT -d first_name=Tomasz -d "last_name=Voeltzman" -d "email=Voeltz@yahoo.com" -d "linked_in=Voeltz@linked_in.com" -d "date_of_birth=1970_09_12" -d "city=London" -d "country=UK" -d "identity_confirmed=1" -d "company=BNP Paribas" http://localhost:3000/users/8
+curl -X PUT -d first_name=Tomasz -d "last_name=Voeltzman" -d "email=Voeltz@yahoo.com" -d "linked_in=Voeltz@linked_in.com" -d "date_of_birth=1970_09_12" -d "city=London" -d "country=UK" -d "identity_confirmed=1" -d "company=BNP Paribas" http://localhost:4000/users/8
 
 curl -X PUT -d "content=YXYY" -d "date=2021-10-09" -d "reviewer_id=1" -d "rating=5" -d "user_id=1" http://localhost:3000/reviews/1
 
-curl -X PUT -d "first_name=Tom" -d "last_name=Fang" -d "email=fang@yahoo.com" -d "linked_in=fang@linked_in.com" -d "date_of_birth=1970_09_12" -d "city=hanoi" -d "country=vietnam" -d "identity_confirmed=1" -d "company=microsoft" http://localhost:3000/users/10
+curl -X PUT -d "first_name=Tom" -d "last_name=Fang" -d "email=fang@yahoo.com" -d "linked_in=fang@linked_in.com" -d "date_of_birth=1970_09_12" -d "city=hanoi" -d "country=vietnam" -d "identity_confirmed=1" -d "company=microsoft" http://localhost:4000/users/10
 
 
 

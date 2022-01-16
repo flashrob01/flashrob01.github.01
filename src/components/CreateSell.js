@@ -17,12 +17,13 @@ const [qualifications, setQualifications] = useState('');
 //const [values, handleChange] = UseForm({industry:"", offer_type:"", offer_details:"", price:"10", qualifications:"", user_id:"", buy_offer_id:""});
 //const values = {industry, offer_type, offer_details, price, qualifications, user_id, buy_offer_id};
 
+//'http://127.0.0.1:4000/sell_offers'
 
    const handleSubmit = (e) => {
     e.preventDefault();
     const points = {industry, offer_type, offer_details, price, qualifications, user_id, sell_offer_id};
    
-   fetch('http://127.0.0.1:4000/sell_offers', {
+   fetch('http://localhost:4000/sell_offers', {
        method: 'POST',
        headers: {"Content-Type": "application/json"},
        body: JSON.stringify(points)

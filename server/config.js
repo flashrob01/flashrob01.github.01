@@ -1,7 +1,7 @@
 module.exports = {
     clientID:'868dd98yvyhfen', 
   clientSecret:'qxXla7X8WC5lxd2h',
-  callbackURL:"http://localhost:3000",
+  callbackURL:"https://ddrc-app.netlify.app/",
     }
     
 

@@ -20,13 +20,21 @@
     text-decoration: none;
   }
   
+  .grid{
+    display: grid;
+    border: 1px rgb(38, 0, 255) solid;
+
+   
+  
+  }
+
   body {
     background-color: var(--outsideBackground);
     font-family: "Poppins", "Lato", sans-serif;
     color: var(--font-color);
   }
   
-  #mainContainer {
+ /*  #mainContainer {
     width: 90vw;
     min-height: 90vh;
     margin: 1vh 5vw;
@@ -36,8 +44,8 @@
   }
   
   .innerContainer {
-    width: 90vw;
-  }
+    width: 20vw;
+  } */
   
   img{
     filter: saturate(120%);
@@ -52,7 +60,7 @@
     align-items: center;
     margin: var(--margin);
     padding: 3vw;
-    max-width: 76vw;
+    max-width: 100vw;
     background-color: var(--lightBackground);
     border-radius: var(--border-radius-outer);
     box-shadow: var(--box-shadow);

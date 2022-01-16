@@ -25,11 +25,15 @@ import Buy from "./components/Buy";
 import BuyIndex from "./components/BuyIndex";
 import BuyEscrow from "./components/BuyEscrow";
 import Sell from "./components/Sell";
+import SellTerms from "./components/SellTerms";
+import SellIndex from "./components/SellIndex";
 import CreateBuy from "./components/CreateBuy";
 import CreateSell from "./components/CreateSell";
 import CallbackRouter from "./components/CallbackRouter";
 import SSOWithLinkedin from "./components/SSOWithLinkedin";
 import Profile from "./components/Profile";
+import Loading from "./components/Loading";
+
 
 
 
@@ -50,30 +54,30 @@ const App = () => {
                         <Route path="/" element ={<Home />} />
                         <Route path="/home" element ={<Home />} />
                         <Route path="/login/*" element={<Login />} />
-                        <Route path="/auth/logout/*" element={<Logout />} />
-                        
+                        <Route path="/logout/*" element={<Logout />} />
                         <Route path="/profile*" element={<ProtectedRoute><Profile /> </ProtectedRoute>} />
-                        
                         <Route path="linkedin/*" element={<LinkedInCallback />} />
                         <Route path="productItem/:id" element={<ProductItem />} />
                         <Route path="register/*" element ={<Register />} />
                         <Route path="checkout/*" element = {<Checkout />} /> 
                         <Route path="/account" element = {<Account />} /> 
                         <Route path="/about" element = {<About />} />    
-                        <Route path="/buy" element = {<Buy />} />
-                            <Route path="/buy/:buy_offer_id" element = {<BuyIndex />} />
-                            <Route path="/buy/escrow/:buy_offer_id" element = {<BuyEscrow />} />
-                            
-                        <Route path="/sell" element = {<Sell />} />
-                        <Route path="/CreateBuy" element = {<CreateBuy />} />
-                        <Route path="/CreateSell" element = {<CreateSell />} />
+                        <Route path="/buy" element = {<Buy />} >
+                            <Route path="/buy/:buy_offer_id" element = {<ProtectedRoute component = {BuyIndex} />} />
+                            <Route path="/buy/escrow/:buy_offer_id" element = {<ProtectedRoute><BuyEscrow /></ProtectedRoute>} />
+                        </Route>
+                        <Route path="/sell" element = {<Sell />} >
+                            <Route path="/sell/:sell_offer_id" element = {<SellIndex />} />
+                            <Route path="/sell/escrow/:sell_offer_id" element = {<SellTerms />} />
+                        </Route>
+                        <Route path="/CreateBuy" element = {<ProtectedRoute component = {CreateBuy} />} />
+                        <Route path="/CreateSell" element = {<ProtectedRoute><CreateSell /> </ProtectedRoute>}/>
                         <Route path="/CallbackRouter" element = {<CallbackRouter />} />
-                        <Route path="/linkedin-sso-response" element = {<SSOWithLinkedin />} />
-                      
+                        <Route path="/linkedin-sso-response" element = {<SSOWithLinkedin />} />                      
+                        <Route path="/Loading" element = {<Loading />} />
                         
-
-                          
-                    </Routes>
+                      
+                     </Routes>
                  </div>
                 <Footer />
             </div>

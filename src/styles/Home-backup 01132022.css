@@ -1,0 +1,35 @@
+
+
+.FourOhFourContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .headline{
+    text-align: center;
+    display: inline block;
+    padding-right: 30%;
+
+  }
+
+  .FourOhFour {
+    font-size: 10rem;
+    line-height: 6rem;
+  }
+  
+  
+
+  @media only screen and (max-width: 700px){
+
+      .DDRLogo{
+        display: inline block;
+        max-width: 90%;
+
+      }
+
+      .consult4{
+        display: inline block;
+        max-width: 90%;
+        height: 70;
+      }
+  }

@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useGlobalFilter, useSortBy, useTable } from "react-table";
 import tw from "twin.macro";
 import { GlobalFilter } from "./globalFilter";

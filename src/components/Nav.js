@@ -91,9 +91,9 @@ const Nav = () => {
     return (
         <div>
         <nav>
-              <Link to="/"><img src="/images/homeIcon.png" alt="Homepage Icon" id="icon"/></Link>
+              <Link to="/home">Home</Link>
               <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-               
+              
                 <li 
                   className='nav-item'
                   onMouseEnter={onMouseEnter}
@@ -104,7 +104,7 @@ const Nav = () => {
                   className='nav-links'
                   onClick={closeMobileMenu}
                   >
-                    <li className='fas fa-caret-down' /><img src="/images/buy_now_icon.png" alt="Shopping Bag Icon for Cart" id="icon"/>
+                    <li className='fas fa-caret-down' />Buy
                     </Link>
                     {dropdownbuy && <DropdownBuy />}
                     </li>
@@ -123,7 +123,7 @@ const Nav = () => {
                   className='nav-links'
                   onClick={closeMobileMenu}
                   >
-                    <li className='fas fa-caret-down' /><img src="/images/sell_icon.png" alt="Shopping Bag Icon for Cart" id="icon"/>
+                    <li className='fas fa-caret-down' />Sell
                     </Link>
                     {dropdownsell && <DropdownSell />}
                     </li>
@@ -132,7 +132,7 @@ const Nav = () => {
 
                   
 
-              <div id='about'><Link to="/about"><img src="/images/about_us.png" alt="Shopping Bag Icon for Cart" id="icon"/></Link></div>
+              <div id='about'><Link to="/about">About Us</Link></div>
 
               <AuthNav />
 

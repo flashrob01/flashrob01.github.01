@@ -4,24 +4,31 @@ import { Navigate, Route } from 'react-router-dom';
 
 import { withAuthenticationRequired } from '@auth0/auth0-react';
 
-import { Loading } from '../components/index/Loading';
+import  Loading from '../components/Loading';
 
-import { useAuth0 } from '@auth0/auth0-react';
+import  useAuth0  from '@auth0/auth0-react';
 
 
-function ProtectedRoute({ children }) {
-    const auth = useAuth0();
+
+
+  function ProtectedRoute({ children }) {
+    const auth = useAuth();
     return auth ? children : <Navigate to="/" />;
-}
+} 
 
-/* /* const ProtectedRoute = ({ component, ...args}) => (
-    <Route
+function useAuth() {
+  return true;
+}
+ 
+/* const ProtectedRoute = ({ component, ...args }) => (
+  <Route
     component={withAuthenticationRequired(component, {
-      onRedirecting: () => <Loading />,
+      onRedirecting: () =><Loading />
     })}
     {...args}
   />
-); */ 
-
-
+); 
+ */
 export default ProtectedRoute;
+
+//
