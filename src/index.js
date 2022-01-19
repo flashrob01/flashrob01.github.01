@@ -1,20 +1,29 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';
 import {Auth0Provider} from "@auth0/auth0-react";
-
-
-
 import store from './store';
+require('dotenv').config();
+
+
+
+
+
+const { Pool } = require('pg');
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: false
+});
 
 ReactDOM.render(
   
   <Auth0Provider
   domain="dev-7-8i89hb.us.auth0.com"
   clientId='stYoaCVnntvABpLxIxIdXnxX4riYXRnF'
-  redirectUri='https://ddrc-app.netlify.app/'
+  redirectUri='https://ddrc-app.heroku.app/'
   
 >
  
