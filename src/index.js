@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -43,3 +43,6 @@ ReactDOM.render(
 reportWebVitals();
 
 //<Note- wrapped Provider around App, which allows react-redux functionality to take place...>
+
+//import 'bootstrap/dist/css/bootstrap.min.css';
+//removed so that auth0 could work for heroku deployment
