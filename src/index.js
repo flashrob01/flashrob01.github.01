@@ -19,7 +19,7 @@ ReactDOM.render(
   <Auth0Provider
   domain="dev-7-8i89hb.us.auth0.com"
   clientId='stYoaCVnntvABpLxIxIdXnxX4riYXRnF'
-  redirectUri='ddrc-app.herokuapp.com'
+  redirectUri='https://ddrc-app.herokuapp.com/'
   
 >
  
