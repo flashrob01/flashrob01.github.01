@@ -12,18 +12,14 @@ require('dotenv').config();
 
 
 
-const { Pool } = require('pg');
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: false
-});
+
 
 ReactDOM.render(
   
   <Auth0Provider
   domain="dev-7-8i89hb.us.auth0.com"
   clientId='stYoaCVnntvABpLxIxIdXnxX4riYXRnF'
-  redirectUri='https://ddrc-app.heroku.app/'
+  redirectUri='ddrc-app.herokuapp.com'
   
 >
  
@@ -46,3 +42,11 @@ reportWebVitals();
 
 //import 'bootstrap/dist/css/bootstrap.min.css';
 //removed so that auth0 could work for heroku deployment
+
+//This below is for ElephantSQL!
+/* const { Pool } = require('pg');
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: false
+}); */
+//This above is for ElephantSQL!
