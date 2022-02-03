@@ -25,7 +25,7 @@ const [qualifications, setQualifications] = useState('');
     e.preventDefault();
     const points = {industry, offer_type, offer_details, price, qualifications, user_id, sell_offer_id};
    
-   fetch('process.env.DATABASE_URL', {
+   fetch('postgres://bxkyjzscchnevi:f565cb3b40d15583e75e7f89764f28e1a19eee1cef39602281516a8a459aba20@ec2-52-203-74-38.compute-1.amazonaws.com:5432/d7aeq2fm1fnl4k', {
        method: 'POST',
        headers: {"Content-Type": "application/json"},
        body: JSON.stringify(points)
