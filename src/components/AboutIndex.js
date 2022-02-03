@@ -50,29 +50,9 @@ const BuyIndex = function(){
      //slug method below
       
       if(!response) {
-        return <h2> Offer Not Found!</h2>;
+        return <h2> Not Found!</h2>;
       } 
       
-    }
-
-    const [buyUser, setBuyUser] = useState([]);
-    const fetchUser = async() => {
-      const response = await axios.get(API+ "/users").catch((err)=>console.log(err));
-
-      if(response){
-
-        const seller = response.data;
-
-        console.log("The sellers are", seller);
-      
-
-        setBuyUser(seller);
-
-        
-      }
-      if(!response){
-        return <h2> Seller Not Found! </h2>
-      }
     }
 
       //This 'slug' method of getting info from arrays above courtesy of Halliday on YT (Jordan shoes)
@@ -80,30 +60,21 @@ const BuyIndex = function(){
 
   useEffect(() => {
     fetchOffer();
-    fetchUser();
+   
   }, []); 
 
   console.log("Buy Offers 888: ", buyOffer);
   
-  console.log("buyUser is", buyUser);
+  
 
-  var number = Number(buy_offer_id); 
- 
+  var number = Number(buy_offer_id);
+
   //Have to convert buy_offer_id to num in order to be recognized by filter/ find functions!!
-
-
-
-  //There are muktiple buyOffers and sellers, so how does the program know which seller it is? Probably need to use Filtered item...
-
-
-  //Therefore cannot get the ID of the seller yet here!
 
   const filteredItems = buyOffer.filter((item) => {
     return (item.buy_offer_id === number); 
   }
   );
-
-
 
   //this works
     
@@ -114,56 +85,36 @@ const BuyIndex = function(){
 
     //can't use foundItem; only filteredItems works!!!
 
-  console.log('Filtered item is:',  filteredItems);
+  console.log('Filtered items are:',  filteredItems);
 
-  const idOfSeller = String(filteredItems['user_id']);
-
-  const buyOfferId = Number(filteredItems.buy_offer_id);
-
-  console.log("The ID of the seller is:", idOfSeller);
-
-  console.log("The ID of the buy_offer is:", buyOfferId);
-
-  const filteredUser = buyUser.filter((seller) => {
-    return(seller.user_id === idOfSeller);
-  }
-  );
-
-  console.log('Filtered user is:',  filteredUser);
+  
 
   console.log('Found item is:',  foundItem);
 
-
+ console.log('the buyofferid is:', buy_offer_id);
        
 
-//This is so frustrating! I can't understand why any functions above the line from 'return' to get from the database come out UNDEFINED, but 
+//Old- This is so frustrating! I can't understand why any functions above the line from 'return' to get from the database come out UNDEFINED, but 
 //but only work when under the return statement??? Tried Find, Map, Reduce, all types of variables, EVERYTHING!!!!
-/// Found the reason why- Looking at dev tools- after the object name, there is an additional  0,1,2 title given to each 
-// item that is not included in the SQL database! This needs to be referenced explicitly, or else 'undefined' will be returned!!
+///
+//
 
  return (
 
   <div>
+Hello!!!
 
-  { Object.entries(filteredItems).map(([none, { price, industry, offer_details, offer_type, qualifications, user_id }]) =>
+  { Object.entries(filteredItems).map(([none, { price, industry, offer_details, offer_type, qualifications }]) =>
   <div>
     <div key ={buy_offer_id } className="offer" id='offer'>
  <Link to={`/Buy/${buy_offer_id}`}>
  <h2>You selected to purchase:  {buy_offer_id} </h2>
  </Link>
-
- <Link to= {{
-               pathname: `/buy/BuyUserInfo/${buy_offer_id}`}}>
-             
-              <Button onClick={() => alert("Selecting: " + buy_offer_id)}> Click to see User's LinkedIn verified information
-                </Button>
-           </Link>
-
-
+ 
  <h2> Price:  {price} </h2>
  About this offer
 
- <h2> User id: {user_id} </h2>
+ 
  <h2> Offer details: {offer_details} </h2>
  <h2> Industry: {industry} </h2>
  <h2> Offer type: {offer_type} </h2>
@@ -180,8 +131,6 @@ const BuyIndex = function(){
 
  <div>
 </div>
-
-
 
  Send the seller a message:
 
@@ -201,35 +150,10 @@ const BuyIndex = function(){
     )
     )
     </div>  
-    
 
   
-  ) 
-  
-  }
- 
- {Object.entries(filteredUser).map(([none, {first_name, last_name, email, user_id, picture}]) =>
-    <div>
-    <div key ={user_id } className="user1" id='user1'>
-    <Link to={`/Buy/${buy_offer_id}`}>
- <h2>You selected to purchase:  {buy_offer_id} </h2>
- </Link>
-      <h2> First name of seller: {first_name} </h2> WTF??
-      First name of seller:
-      <h2> Last name of seller: {last_name} </h2>
-      Last name of seller:
-      <h2> Email of seller: {email} </h2>
-      <h2> User ID of seller: {user_id} </h2>
-      <Link to={`${picture}`}>
- <img src ={picture} />
- </Link>
-      </div>
-      </div>
-   
-    )}
-<h1>WTF??</h1> WTF??
+  ) }
   </div>
- 
  )
 
 }        

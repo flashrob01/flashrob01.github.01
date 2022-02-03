@@ -19,7 +19,7 @@ const Button = tw.button`
 `;
 
 
-const BuyIndex = function(){ 
+const BuyUserInfo = function(){ 
 
   
 
@@ -85,7 +85,7 @@ const BuyIndex = function(){
 
   console.log("Buy Offers 888: ", buyOffer);
   
-  console.log("buyUser is", buyUser);
+  console.log("The sellers are2", buyUser);
 
   var number = Number(buy_offer_id); 
  
@@ -105,41 +105,102 @@ const BuyIndex = function(){
 
 
 
-  //this works
+ 
     
   const foundItem = buyOffer.find((item) => {
-    return item.buy_offer_id === number; 
+    return (item.buy_offer_id === number); 
   }
   );
 
-    //can't use foundItem; only filteredItems works!!!
+    //Both filtered and foundItem work now, whereas before only filtered did!
 
-  console.log('Filtered item is:',  filteredItems);
 
-  const idOfSeller = String(filteredItems['user_id']);
+
+
+
+
+  
 
   const buyOfferId = Number(filteredItems.buy_offer_id);
 
-  console.log("The ID of the seller is:", idOfSeller);
+  console.log('Found item is:',  foundItem);
 
   console.log("The ID of the buy_offer is:", buyOfferId);
 
+  console.log('Filtered item is:',  filteredItems);
+
+
+   function getSeller(filteredItems) {
+
+  
+async function firstFilter(){
+
+ await String(filteredItems['user_id']);
+
+}
+
+      firstFilter();
+        
+
+          let promise = new Promise((resolve, reject) => {
+      setTimeout(() => resolve("done!"), 100)
+    });
+  
+    promise.then((value) => {
+      console.log(value);
+    }); 
+        
+        const infoOfSeller =  String((filteredItems)['user_id']);
+    
+        
+      
+        return infoOfSeller;
+
+  
+  };
+
+  
+
+
+  let sellerId = String(getSeller(filteredItems));
+
+  getSeller(filteredItems);
+
+ 
+
+  
+
+  console.log("The ID of the seller is:", getSeller(filteredItems));
+
+  console.log("sellerId:", sellerId);
+
+  console.log("The buyUser is:", buyUser);  
+
+
   const filteredUser = buyUser.filter((seller) => {
-    return(seller.user_id === idOfSeller);
+    console.log("seller.user_id:", seller.user_id); 
+
+    return(seller.user_id === getSeller(filteredItems));
+    
+  
   }
   );
 
-  console.log('Filtered user is:',  filteredUser);
+  const foundUser = buyUser.find((seller1) => {
+    return seller1.user_id === sellerId; 
+  }
+  );
 
-  console.log('Found item is:',  foundItem);
 
+  console.log("The filteredUser is:", filteredUser);
 
-       
+     
+  
 
 //This is so frustrating! I can't understand why any functions above the line from 'return' to get from the database come out UNDEFINED, but 
 //but only work when under the return statement??? Tried Find, Map, Reduce, all types of variables, EVERYTHING!!!!
-/// Found the reason why- Looking at dev tools- after the object name, there is an additional  0,1,2 title given to each 
-// item that is not included in the SQL database! This needs to be referenced explicitly, or else 'undefined' will be returned!!
+///
+//
 
  return (
 
@@ -151,13 +212,6 @@ const BuyIndex = function(){
  <Link to={`/Buy/${buy_offer_id}`}>
  <h2>You selected to purchase:  {buy_offer_id} </h2>
  </Link>
-
- <Link to= {{
-               pathname: `/buy/BuyUserInfo/${buy_offer_id}`}}>
-             
-              <Button onClick={() => alert("Selecting: " + buy_offer_id)}> Click to see User's LinkedIn verified information
-                </Button>
-           </Link>
 
 
  <h2> Price:  {price} </h2>
@@ -236,7 +290,7 @@ const BuyIndex = function(){
         
         
 
-         export default BuyIndex;
+         export default BuyUserInfo;
 /* /* 
 
  </div>

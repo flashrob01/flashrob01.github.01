@@ -25,7 +25,7 @@ const [qualifications, setQualifications] = useState('');
     e.preventDefault();
     const points = {industry, offer_type, offer_details, price, qualifications, user_id, sell_offer_id};
    
-   fetch('http://127.0.0.1:4000/sell_offers', {
+   fetch('process.env.DATABASE_URL', {
        method: 'POST',
        headers: {"Content-Type": "application/json"},
        body: JSON.stringify(points)

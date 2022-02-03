@@ -4,7 +4,7 @@ import tw from "twin.macro";
 import { useLocation, useParams } from 'react-router-dom';
 import API from './API';
 import './../styles/Buy.css';
-import {Link} from 'react-router-dom';
+import {Outlet, Link} from 'react-router-dom';
 
 const Button = tw.button`
   pl-4
@@ -20,6 +20,7 @@ const Button = tw.button`
 
 
 const SellIndex = function(){ 
+
 
   
 
@@ -101,7 +102,7 @@ const SellIndex = function(){
 
       
   <div>
-
+HELLO!!!
   { Object.entries(filteredItems).map(([none, { price, industry, offer_details, offer_type, qualifications }]) =>
   <div>
     <div key ={sell_offer_id } className="offer" id='offer'>

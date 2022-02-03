@@ -5,7 +5,11 @@ const Footer = () => {
     return (
         <footer>
 
-            
+    <div id = "DDRlogo">
+    
+    <img src={require("../images/N3logo.jpg").default} className="N3logo"/>
+   
+    </div>
            
 
             <div id="secured">

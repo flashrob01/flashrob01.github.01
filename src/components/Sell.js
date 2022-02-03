@@ -5,7 +5,7 @@ import tw from "twin.macro";
 import { GlobalFilter } from "./globalFilter";
 import API from './API';
 import './../styles/Sell.css';
-import {Link} from 'react-router-dom';
+import {Outlet, Link} from 'react-router-dom';
 
 const Table = tw.table`
   table-fixed
@@ -19,12 +19,13 @@ const TableHead = tw.thead`
 
 const TableRow = tw.tr`
 border
-border-green-500
+border-red-200
+hover:bg-green-200
 `;
 
 const TableHeader = tw.th`
 border
-border-green-500
+border-red-200
 p-2
 `;
 
@@ -33,7 +34,7 @@ const TableBody = tw.tbody`
 
 const TableData = tw.td`
 border
-border-green-500
+border-red-200
 p-5
 `;
 
@@ -158,13 +159,16 @@ export function Sell(props) {
         id: "Select",
         Header: "Select",
         Cell: ({ row }) => (
-
+<Button onClick={() => alert("Selecting: " + row.values.price)}>
           <Link to= {{
             pathname: `/sell/${row.values.sell_offer_id}`}}>
-          <Button onClick={() => alert("Selecting: " + row.values.price)}>
+          
             Select
-          </Button>
+          
           </Link>
+          
+          </Button>
+         
         ),
       },
     ]);
@@ -229,7 +233,7 @@ export function Sell(props) {
                 className={isEven(idx) ? "bg-green-400 bg-opacity-30" : ""}
               >
                 {row.cells.map((cell, idx) => (
-                  <TableData {...cell.getCellProps()}>
+                  <TableData {...cell.getCellProps()}> 
                     {cell.render("Cell")}
                   </TableData>
                 ))}
@@ -239,7 +243,9 @@ export function Sell(props) {
         </TableBody>
       </Table>
     </>
+    
   );
+ 
 }
 
 export default Sell;

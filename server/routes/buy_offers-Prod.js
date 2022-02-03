@@ -1,21 +1,31 @@
 const express = require('express');
 const buyOffersRouter = express.Router();
 
-const Pool = require('pg').Pool
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'postgres',
-  password: 'pfloyd2717',
-  port: 5432,
-})
+const {Client} = require('pg');
+
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+ssl: {
+  rejectUnauthorized: false
+}
+});
+
+client.connect();
+
+client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
+  if (err) throw err;
+  for (let row of res.rows) {
+    console.log(JSON.stringify(row));
+  }
+  client.end();
+});
 
 //'/' refers to the path name, not database name!
 buyOffersRouter.get('/', (request, response) => {
   pool.query('SELECT * FROM buy_offers ORDER BY buy_offer_id ASC', (error, results) => {
     if (error) {
       throw error
-    }
+    }s
     response.status(200).json(results.rows)
   })
 });
@@ -32,12 +42,12 @@ buyOffersRouter.get('/:buy_offer_id', (request, response) => {
 });
 
 buyOffersRouter.post('/', (request, response) => {
-  const { industry, offer_type, offer_details, price, qualifications, headline, buy_offer_id, user_id } = request.body
+  const { industry, offer_type, offer_details, price, qualifications, buy_offer_id, user_id } = request.body
   //the program picks up these values because of the app.use() command in the main file!
 
-  pool.query('INSERT INTO buy_offers (industry, offer_type, offer_details, price, qualifications, headline, buy_offer_id, user_id) VALUES ($1, $2, $3, $4, $5, $6, $7)', 
+  pool.query('INSERT INTO buy_offers (industry, offer_type, offer_details, price, qualifications, buy_offer_id, user_id) VALUES ($1, $2, $3, $4, $5, $6, $7)', 
   //Rows cannot be split in this language!
-  [industry, offer_type, offer_details, price, qualifications, headline, buy_offer_id, user_id], (error, results) => {
+  [industry, offer_type, offer_details, price, qualifications, buy_offer_id, user_id], (error, results) => {
     if (error) {
       throw error
     }

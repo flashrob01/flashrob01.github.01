@@ -1,3 +1,6 @@
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+
 import React, {useCallback, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchingProducts, gotProducts, fetchingProductsFailed } from '../slice_reducers/productsSlice';
@@ -12,39 +15,21 @@ const axios = require('axios');
   
 const Products = () => {
 
-    const productCommand = '/products';
-    const dispatch = useDispatch();
 
-    const getProducts = useCallback(() => {
-        dispatch(fetchingProducts);
-        axios.get(`${API_Endpoint}${productCommand}`).then(data => {
-            dispatch(gotProducts(data)) 
-          })
-          .catch(() => 
-          dispatch(fetchingProductsFailed));
-        }, [productCommand, dispatch]);
-       
-      useEffect(() => {
-          getProducts()},[getProducts])
-      
-          const products = useSelector(selectProducts)
 
    return (
         <div>
-            {products.isLoading && <LoadingIcon/>}
-            {(products.data !== undefined) ?
-              <div className="productDisplay">
-               
-              {products.data.data.map((product) =>
-                    <div key={product.product_id} className="card" id='productCard'>
-                    <Link to={{
-                      pathname: `/products/${product.product_id}`,
-                      state: {product},
-                    }}>
-                    <img src={product.image} alt={product.name} className="productImg" props={product.product_id}/>
-                    <h3 className='boldOrange'>{product.name}</h3>
-                    <p>£{product.price}</p></Link>
-            </div>)}</div> : <h3 id="LoadingIcon">It's worth waiting for!</h3>}
+           <Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src="holder.js/100px180" />
+  <Card.Body>
+    <Card.Title>Card Title</Card.Title>
+    <Card.Text>
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </Card.Text>
+    <Button variant="primary">Go somewhere</Button>
+  </Card.Body>
+</Card>
               
       </div>
     )

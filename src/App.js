@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import { selectCustomer } from "./slice_reducers/customerSlice";
 import { useSelector } from "react-redux";
 import ProtectedRoute from "./auth/ProtectedRoute";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 
@@ -10,7 +12,7 @@ import "./styles/index.css";
 
 import Header from "./components/Header";
 import Home from "./components/Home";
-import Nav from "./components/Nav";
+import Navigation from "./components/Navigation";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
 import Account from "./components/Account";
@@ -30,7 +32,10 @@ import CreateBuy from "./components/CreateBuy";
 import CreateSell from "./components/CreateSell";
 import Profile from "./components/Profile";
 import Loading from "./components/Loading";
-
+import AboutIndex from "./components/AboutIndex";
+import ProfileCard from "./components/ProfileCard";
+import BuyUserInfo from "./components/BuyUserInfo";
+import Products from "./components/Products";
 
 
 
@@ -43,10 +48,10 @@ const App = () => {
 
     return (
         <Router>
-            <div id ="mainContainer">
+            
                 <Header />
-                <Nav />
-                <div className = "innerContainer">
+                <Navigation />
+             
                     <Routes>
                         <Route path="/" element ={<Home />} />
                         <Route path="/home" element ={<Home />} />
@@ -57,24 +62,30 @@ const App = () => {
                         <Route path="register/*" element ={<Register />} />
                         <Route path="checkout/*" element = {<Checkout />} /> 
                         <Route path="/account" element = {<Account />} /> 
-                        <Route path="/about" element = {<About />} />    
-                        <Route path="/buy" element = {<Buy />} >
-                            <Route path="/buy/:buy_offer_id" element = {<ProtectedRoute component = {BuyIndex} />} />
-                            <Route path="/buy/escrow/:buy_offer_id" element = {<ProtectedRoute><BuyEscrow /></ProtectedRoute>} />
-                        </Route>
-                        <Route path="/sell" element = {<Sell />} >
-                            <Route path="/sell/:sell_offer_id" element = {<SellIndex />} />
-                            <Route path="/sell/escrow/:sell_offer_id" element = {<SellTerms />} />
-                        </Route>
-                        <Route path="/CreateBuy" element = {<ProtectedRoute component = {CreateBuy} />} />
-                        <Route path="/CreateSell" element = {<ProtectedRoute><CreateSell /> </ProtectedRoute>}/>               
+                        <Route path="/about" element = {<About />}  />  
+                             <Route path="/about/:about_id" element = {<AboutIndex />} />
+                             
+                        <Route path="/buy" element = {<Buy />} /> 
+                            <Route path="/buy/:buy_offer_id" element = {<BuyIndex />} />
+                            <Route path="/buy/BuyUserInfo/:buy_offer_id" element = {<BuyUserInfo />} />
+                            <Route path="/buy/:buy_offer_id/escrow" element = {<BuyEscrow />} />
+                            
+                            
+                        <Route path="/sell" element = {<Sell />} />
+                            <Route path="/sell/:sell_offer_id" element = {<SellIndex />}  />
+                            <Route path="/sell/:sell_offer_id/escrow" element = {<SellTerms />} />
+                            
+                        <Route path="/CreateBuy" element = { <CreateBuy />} />
+                        <Route path="/CreateSell" element = {<CreateSell />} />               
                         <Route path="/Loading" element = {<Loading />} />
+                        <Route path="/ProfileCard" element = {<ProfileCard />} />
+                        <Route path="/Products" element = {<Products />} />
                         
                       
                      </Routes>
-                 </div>
+            
                 <Footer />
-            </div>
+           
         </Router>
     );
 
@@ -89,3 +100,11 @@ export default App;
 
 //note: Child elements uses < / Outlay> and requires rendering on same page as parent; if don't want this, don't use child!
 
+// Below protected route for BuyIndex works...
+{/* <Route path="/buy" element = {<Buy />} > </Route>
+<Route path="/buy/:buy_offer_id" element = {<ProtectedRoute component = {BuyIndex} />} />
+<Route path="/buy/escrow/:buy_offer_id" element = {<ProtectedRoute><BuyEscrow /></ProtectedRoute>} /> */}
+
+
+{/* <Route path="/CreateBuy" element = {<ProtectedRoute component = {CreateBuy} />} />
+<Route path="/CreateSell" element = {<ProtectedRoute><CreateSell /> </ProtectedRoute>}/>     */}

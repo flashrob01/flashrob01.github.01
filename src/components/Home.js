@@ -5,9 +5,9 @@ import '../styles/Home.css';
 const Home = () => {
 
     return (
-        
-        <div class= "grid">
-
+     
+        <div class="grid" >
+ 
                <div id="banner">
         <h1>
             Welcome to Decentralized Data, Research,  <br />
@@ -18,14 +18,10 @@ const Home = () => {
                 </div>
 
                 <div id="consulting1">
-                    <h1>
-                        Buy Data or Consulting Services
-                    </h1>
+                   
                 </div>
                 <div id="consulting2">
-                <h1>
-                        Sell Data or Consulting Services
-                    </h1>
+                
                 </div>
         
         
@@ -34,12 +30,10 @@ const Home = () => {
                 
             </div>
     
-            
+           
 
    
-    <div id="secured">
-    <p> Secured by escrow </p>
-    </div>
+   
         
     </div>    
     )

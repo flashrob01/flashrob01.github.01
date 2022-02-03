@@ -1,14 +1,24 @@
 const express = require('express');
 const sellOffersRouter = express.Router();
 
-const Pool = require('pg').Pool
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'postgres',
-  password: 'pfloyd2717',
-  port: 5433,
-})
+const {Client} = require('pg');
+
+var conString = "postgres://mcdyzqzn:tNZhAqSUXzbdvAGBM4QdN7kpQa-Rz3Js@john.db.elephantsql.com/mcdyzqzn"
+var client = new pg.Client(conString);
+client.connect(function(err) {
+  if(err){
+    return console.error('couldn not connect to postgres', err);
+  }
+  client.query('SELECT NOW() AS "theTime"', function(err, result) {
+    if(err){
+      return console.error('error running query', err);
+    }
+    console.log(result.rows[0].theTime);
+    client.end();
+  });
+});
+
+
 
 sellOffersRouter.get('/', (request, response) => {
   pool.query('SELECT * FROM sell_offers ORDER BY sell_offer_id ASC', (error, results) => {

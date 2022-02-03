@@ -9,13 +9,13 @@ table, td, tr, th {
 }
 
 td {
-    border-width: 1px; 
+    border-width: 0px; 
     border-color: #10B981; 
 }
 
 tr{
     
-    border-width: 1px; 
+    border-width: 0px; 
     border-color: #10B981; 
 }
 
@@ -41,3 +41,40 @@ border-radius: 0.375rem;
 
 
 }
+
+.customCard{
+    background: rgb(241, 117, 117);
+    color:seashell;
+    width: 100vw;
+    
+}
+
+#productCard {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 70vw;
+    flex-shrink: 3;
+    background-color: whitesmoke;
+  }
+
+.productImg {
+    max-width: 100%;  
+height: auto;  
+}
+
+.productDisplay {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    font-size: 0.9rem;
+  }
+
+  .grid {
+      border: 2px blue solid;
+      width: 400px;
+      height: 500px;
+      
+  }

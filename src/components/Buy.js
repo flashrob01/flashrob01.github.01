@@ -8,10 +8,15 @@ import './../styles/Buy.css';
 import {Link} from 'react-router-dom';
 
 
+//Note - all Buy table stuff is taken care of in this file, not buy.css! 
 const Table = tw.table`
   table-fixed
   text-base
   text-gray-900
+  
+
+
+ 
 `;
 
 const TableHead = tw.thead`
@@ -21,6 +26,7 @@ const TableHead = tw.thead`
 const TableRow = tw.tr`
 border
 border-green-500
+hover:bg-green-200
 `;
 
 const TableHeader = tw.th`
@@ -32,9 +38,10 @@ p-2
 const TableBody = tw.tbody`
 `;
 
+//TableData is where the borders of the table are set!
 const TableData = tw.td`
-border
-border-green-500
+border-0
+
 p-5
 `;
 
@@ -181,7 +188,7 @@ export function Buy(props){
         setGlobalFilter={setGlobalFilter}
         globalFilter={state.globalFilter}
       />
-      <Table {...getTableProps()}>
+      <Table {...getTableProps()} >
         <TableHead>
           {headerGroups.map((headerGroup) => (
             <TableRow {...headerGroup.getHeaderGroupProps()}>

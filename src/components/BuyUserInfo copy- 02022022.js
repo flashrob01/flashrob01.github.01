@@ -3,8 +3,10 @@ import React, { useEffect, useCallback, useMemo, useState } from "react";
 import tw from "twin.macro";
 import { useLocation, useParams } from 'react-router-dom';
 import API from './API';
-import './../styles/Buy.css';
+import './../styles/BuyUserInfo.css';
 import {Outlet, Link} from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
+
 
 const Button = tw.button`
   pl-4
@@ -19,7 +21,7 @@ const Button = tw.button`
 `;
 
 
-const BuyIndex = function(){ 
+const BuyUserInfo = function(){ 
 
   
 
@@ -85,7 +87,7 @@ const BuyIndex = function(){
 
   console.log("Buy Offers 888: ", buyOffer);
   
-  console.log("buyUser is", buyUser);
+  console.log("The sellers are2", buyUser);
 
   var number = Number(buy_offer_id); 
  
@@ -105,61 +107,148 @@ const BuyIndex = function(){
 
 
 
-  //this works
+ 
     
   const foundItem = buyOffer.find((item) => {
-    return item.buy_offer_id === number; 
+    return (item.buy_offer_id === number); 
   }
   );
 
-    //can't use foundItem; only filteredItems works!!!
+    //Both filtered and foundItem work now, whereas before only filtered did!
 
-  console.log('Filtered item is:',  filteredItems);
 
-  const idOfSeller = String(filteredItems['user_id']);
 
-  const buyOfferId = Number(filteredItems.buy_offer_id);
 
-  console.log("The ID of the seller is:", idOfSeller);
 
-  console.log("The ID of the buy_offer is:", buyOfferId);
 
-  const filteredUser = buyUser.filter((seller) => {
-    return(seller.user_id === idOfSeller);
-  }
-  );
+  
 
-  console.log('Filtered user is:',  filteredUser);
+  const buyOfferId = String(filteredItems['buy_offer_id']);
 
   console.log('Found item is:',  foundItem);
 
+  console.log("The ID of the buy_offer is:", buyOfferId);
 
-       
+  console.log('Filtered item is:',  filteredItems);
+
+
+                          let obj = filteredItems.find(o => o.buy_offer_id === 10);
+
+                        console.log('This is using the array of objects method', obj);
+
+   function getSeller(filteredItems) {
+
+  
+async function firstFilter(){
+
+ await String(filteredItems['user_id']);
+
+}
+
+      firstFilter();
+        
+
+          let promise = new Promise((resolve, reject) => {
+      setTimeout(() => resolve("done!"), 100)
+    });
+  
+    promise.then((value) => {
+      console.log(value);
+    }); 
+        
+        const infoOfSeller =  filteredItems ['user_id'];
+    
+        
+      
+        return infoOfSeller;
+
+
+  };
+
+  
+
+
+  let sellerId = String(getSeller(filteredItems));
+
+  getSeller(filteredItems);
+
+ 
+
+  
+
+  console.log("The ID of the seller is:", getSeller(filteredItems));
+
+  console.log("sellerId:", sellerId);
+
+  console.log("The buyUser is:", buyUser);  
+
+                        let obj2 = filteredItems.find(o => o.user_id === 10);
+
+                        var result = filteredItems.map(function(a) {
+                        
+                          return String(a.user_id);
+                                                                    });
+
+                       //Note- xxx.map will return an array of objects! Need to check console so know what is being returned!
+                                                                    
+                        console.log('This is the array of buy users', buyUser); 
+
+
+                        console.log('This is the user_id using the array of objects method aka result', result);
+
+                      
+
+
+   const filteredUser = buyUser.filter((seller) => {
+    console.log("seller.user_id:", seller.user_id); 
+
+    return(seller.user_id === result[0]);
+    
+  
+  }
+  ); 
+
+  //This(result) is an array !!! so have to use result[0]!!! !!!!Spent 2 days on this!
+
+  const foundUser = buyUser.find((seller1) => {
+    return seller1.user_id === result; 
+  }
+  );
+
+  
+
+   console.log("The filteredUser is:", filteredUser); 
+  
+   console.log("The foundUser is:", foundUser); 
+
+     
+    
+   let finalUser = buyUser.find(o => o.user_id === result);
+
+   console.log('This is Final User using the array of objects method', finalUser); 
 
 //This is so frustrating! I can't understand why any functions above the line from 'return' to get from the database come out UNDEFINED, but 
 //but only work when under the return statement??? Tried Find, Map, Reduce, all types of variables, EVERYTHING!!!!
-/// Found the reason why- Looking at dev tools- after the object name, there is an additional  0,1,2 title given to each 
-// item that is not included in the SQL database! This needs to be referenced explicitly, or else 'undefined' will be returned!!
+///
+//
 
  return (
 
-  <div>
+  <div class="grid">
+     
 
-  { Object.entries(filteredItems).map(([none, { price, industry, offer_details, offer_type, qualifications, user_id }]) =>
+  { Object.entries(filteredItems).map(([none, { price, industry, offer_details, offer_type, headline, qualifications, user_id }]) =>
   <div>
     <div key ={buy_offer_id } className="offer" id='offer'>
- <Link to={`/Buy/${buy_offer_id}`}>
- <h2>You selected to purchase:  {buy_offer_id} </h2>
+    <div class="title">
+  
+      
+ <Link to={`/Buy/${headline}`}>
+ <h2>You selected to purchase:  {headline} </h2>
  </Link>
-
- <Link to= {{
-               pathname: `/buy/BuyUserInfo/${buy_offer_id}`}}>
-             
-              <Button onClick={() => alert("Selecting: " + buy_offer_id)}> Click to see User's LinkedIn verified information
-                </Button>
-           </Link>
-
-
+ 
+ 
+ </div>
  <h2> Price:  {price} </h2>
  About this offer
 
@@ -220,14 +309,42 @@ const BuyIndex = function(){
       Last name of seller:
       <h2> Email of seller: {email} </h2>
       <h2> User ID of seller: {user_id} </h2>
+     
+      <Card style={{ width: '18rem' }}
+          className ="customCard"
+          >
+  <Card.Img variant="top" src={picture} className="productImg"/>
+  <Card.Body
+  
+  color="warning"
+  inverse>
+    <Card.Title>Card Title</Card.Title>
+    <Card.Text>
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </Card.Text>
+    <Button variant="primary">Go somewhere</Button>
+  </Card.Body>
+</Card>
+<div class="grid">
+<div  className="card" id='productCard' >
+  <div className="productDisplay">
+Adjustable!???                   
+                    <img src={picture}  className="productImg" />
+                    <h3 className='boldOrange'>x</h3>
+                    <p>£</p>
+            </div></div>
+
       <Link to={`${picture}`}>
  <img src ={picture} />
  </Link>
       </div>
-      </div>
-   
+     </div>
+   </div>
     )}
-<h1>WTF??</h1> WTF??
+
+
+
   </div>
  
  )
@@ -236,7 +353,7 @@ const BuyIndex = function(){
         
         
 
-         export default BuyIndex;
+         export default BuyUserInfo;
 /* /* 
 
  </div>

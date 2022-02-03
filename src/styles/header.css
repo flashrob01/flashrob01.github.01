@@ -1,7 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-}
+
 
 header {
   height: 15vh;
@@ -11,6 +8,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-right: 5vw;
   background-color: var(--lightBackground)
 }
 
@@ -34,16 +32,13 @@ h2 {
 }
 
 .App-logo {
-  height: 25vh;
+  height: 5rem;
   pointer-events: none;
   padding-right: 5vw;
+  padding: 37px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+
 
 
 #LoadingIcon {

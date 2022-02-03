@@ -4,15 +4,28 @@ nav {
   justify-content: space-evenly;
   width: 100vw;
   height: 7vh;
+ 
   background-color: var(--font-color);
-    padding: var(--small-padding);
-    border-bottom-right-radius: var(--border-radius-outer);
+/*     padding: var(--small-padding);
+    border-bottom-right-radius: var(--border-radius-outer); */
     box-shadow: var(--box-shadow);
   }
   
+  #Navbar{
+    background-color: #0f3157;
+
+  }
+
+
+  .nav-link{
+    color: white !important;
+    font-size: larger;
+  }
+
   #nav-links:hover{
-    background-color: #1888ff;
+    background-color: #b32816;
     border-radius: 0;
+    
   }
 
   nav a {

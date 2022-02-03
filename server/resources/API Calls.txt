@@ -6,7 +6,7 @@ curl --data "user_id=8&first_name=Tomasz&last_name=Voeltzman&email=Voeltz@yahoo.
 
 curl --data "industry=automotive&offer_type=powerpoint&offer_details=21 pages double spaced&price=450&qualifications=20 year automotive veteran with Honda and Ford&buy_offer_id=4&user_id=9" http://localhost:4000/buy_offers
 
-curl --data "user_id=11&first_name=James&last_name=Belitnikopf&email=belitnikopf@yahoo.ru&linked_in=belitnikopf@linked_in.com&date_of_birth=1980_02_12&city=Moscow&country=Russia&identity_confirmed=1&company=microsoft&user_id=4 "http://localhost:4000/users
+curl --data "user_id=11&first_name=James&last_name=Belitnikopf&email=belitnikopf@yahoo.ru&linked_in=belitnikopf@linked_in.com" postgres://bxkyjzscchnevi:f565cb3b40d15583e75e7f89764f28e1a19eee1cef39602281516a8a459aba20@ec2-52-203-74-38.compute-1.amazonaws.com:5432/d7aeq2fm1fnl4k/users
 
 curl --data "industry=automotive&offer_type=powerpoint&offer_details=21 pages double spaced&price=450&qualifications=20 year automotive veteran with Honda and Ford&buy_offer_id=4&user_id=9" http://localhost:4000/buy_offers
 

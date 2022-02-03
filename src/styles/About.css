@@ -1,24 +1,64 @@
+main{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  min-height: 1200px;
+  max-height: 1500px;
+  min-width: 90%;
+  gap: 5px;
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 80vw;
+  margin-left: 15px;
 
+}
 
-.FourOhFourContainer {
-    display: flex;
-    flex-direction: column;
-  }
+.pageContainer {
+  display: grid;
+
   
+  margin: var(--margin);
+  padding: 3vw;
+  max-width: 76vw;
+  background-color: rgb(239, 243, 214);
+  border-radius: var(--border-radius-outer);
+  box-shadow: var(--box-shadow);
+}
+
+.p1 {
+  font-family: 'Work Sans', sans-serif;
+}
+
+/* #mainContainer {
+  width: 90vw;
+  min-height: 90vh;
+  margin: 1vh 5vw;
+  border-radius: var(--border-radius-outer);
+  background-color: var(--insideBackground);
+  box-shadow: var(--box-shadow);
+} 
+ */
   .Headline{
     
-    text-align: left;
+    text-align: center;
     display: block;
     padding: 5px;
     width: 100%;
 
   }
 
-  .FourOhFour {
-    font-size: 10rem;
-    line-height: 6rem;
-  }
+ 
   
+  .images{
+    justify-items: center;
+    justify-content: center;
+    width: 60%;
+    text-align: center;
+    display: block;
+
+  }
+
   .img1{
     width: 30%;
     height: 70;

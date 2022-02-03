@@ -1,9 +1,9 @@
 /* custom variables */
 
 :root {
-    --outsideBackground: #e6e4d4;
-    --insideBackground: #eee4da;
-    --lightBackground: #fff2bf;
+    --outsideBackground: #f8f8f6;
+    --insideBackground: #f5f5e4;
+    --lightBackground: #fafadf;
     --padding: 1vw;
     --margin: 1vw;
     --small-padding: 0.5vw;
@@ -13,40 +13,60 @@
     --box-shadow: 1px 1px 5px orangered;
     --border-radius-outer: 20px;
     --border-radius-inner: 5px;
+    --font-family: 'Work Sans', sans-serif;
+    --background-color: rgb(239, 243, 214);
+
   }
   
   * {
     word-wrap: break-word;
     text-decoration: none;
   }
-  
+
   .grid{
+    min-height: 1200px;
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+    gap: 5px;
+    border: 1px rgb(38, 0, 255) solid;
+    justify-items: center;
+    justify-content: center;
+
+   
+  
+  }
+  
+ /*  .grid{
     display: grid;
     border: 1px rgb(38, 0, 255) solid;
 
    
   
-  }
+  } */
 
   body {
     background-color: var(--outsideBackground);
-    font-family: "Poppins", "Lato", sans-serif;
-    color: var(--font-color);
+/*     font-family: 'Work Sans', sans-serif;
+ */    color: var(--font-color);
+ font-family: 'Work Sans', sans-serif;
+
   }
   
- /*  #mainContainer {
+/*    #mainContainer {
     width: 90vw;
     min-height: 90vh;
     margin: 1vh 5vw;
     border-radius: var(--border-radius-outer);
     background-color: var(--insideBackground);
     box-shadow: var(--box-shadow);
-  }
-  
-  .innerContainer {
-    width: 20vw;
   } */
   
+ /*  .innerContainer {
+    width: 10vw;
+  } 
+   */
   img{
     filter: saturate(120%);
     border-radius: var(--border-radius-inner);
@@ -54,7 +74,7 @@
   
   }
   
-  .pageContainer {
+/*   .pageContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -64,9 +84,9 @@
     background-color: var(--lightBackground);
     border-radius: var(--border-radius-outer);
     box-shadow: var(--box-shadow);
-  }
+  } */
   
-  .card {
+/*   .card {
     display: flex;
     flex-direction: column;
     padding: var(--small-padding);
@@ -78,7 +98,7 @@
     color: var(--highlight-colour);
     font-size: 90%;
     box-shadow: var(--box-shadow);
-  }
+  } */
   
   .card img {
     width: 85%;
@@ -107,13 +127,13 @@
   
   
   button {
-    font-family: "Inter", "Lato", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     padding: var(--small-padding);
     border: 0.5vw solid white;
     border-radius: var(--border-radius-inner);
     margin: var(--margin);
     color: whitesmoke;
-    box-shadow: 0 0 30px 30px   darkslateblue inset, 0 0 0 0 darkslateblue;
+    box-shadow: 0 0 30px 30px   rgb(224, 122, 27) inset, 0 0 0 0 darkslateblue;
     -webkit-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out;
     background-color: var(--font-color);
