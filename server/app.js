@@ -16,7 +16,7 @@ const cors = require('cors')
 //const session = require('express-session')
 
 
-const port = 4000;
+//const port = 4000;
 
 //below from Shaun of Dead - Google
 
@@ -35,17 +35,17 @@ app.get('/logout', (req, res) => {
 
 
 
-//const corsOptions = {
-//  origin: '*',
-//  credentials: true,
-//  optionSuccessStatus: 200,
-//}
-//This seems to have fixed the CORS issue - from the CORS book
+const corsOptions = {
+  origin: "http://ddrc-app.herokuapp.com",
+  credentials: true,
+  optionSuccessStatus: 200,
+}
+This seems to have fixed the CORS issue - from the CORS book
 
-//app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 //copied from sunshine-server==
 
-app.use((req, res, next) => {
+/*app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "http://ddrc-app.herokuapp.com/")
     res.header(
       "Access-Control-Allow-Headers",
@@ -60,7 +60,7 @@ app.use((req, res, next) => {
     }
     next()
   });
-
+*/
 //This seems to have fixed the CORS issue - from the CORS book
 
 
