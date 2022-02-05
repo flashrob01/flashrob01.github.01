@@ -1,3 +1,3 @@
-export default "postgres://bxkyjzscchnevi:f565cb3b40d15583e75e7f89764f28e1a19eee1cef39602281516a8a459aba20@ec2-52-203-74-38.compute-1.amazonaws.com:5432/d7aeq2fm1fnl4k";
+export default "postgres://jenmayquzeprgw:8c854577b12b3fa95d882de2ce8b2b4cdb7f777ebf74530583f757891e9228a3@ec2-34-205-217-14.compute-1.amazonaws.com:5432/dce5a6da9jem9u";
 
 //This is necessary because React automatically assumes the PG database is sitting at port 3000
