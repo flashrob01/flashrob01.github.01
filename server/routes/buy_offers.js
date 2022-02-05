@@ -12,14 +12,6 @@ ssl: {
 
 client.connect();
 
-client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
-  if (err) throw err;
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-  }
-  client.end();
-});
-
 //'/' refers to the path name, not database name!
 buyOffersRouter.get('/', (request, response) => {
   client.query('SELECT * FROM buy_offers ORDER BY buy_offer_id ASC', (error, results) => {
