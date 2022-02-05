@@ -12,6 +12,18 @@ ssl: {
 
 client.connect();
 
+const allowedOrigins = ['https://ddrc-app.herokuapp.com'];
+buyOffersRouter.use(cors({
+    credentials: true,
+    origin: (origin, callback) => {
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true) 
+      } else {
+        callback(new Error(`Origin: ${origin} is now allowed`))
+      }
+    }
+  }));
+
 //'/' refers to the path name, not database name!
 buyOffersRouter.get('/', (request, response) => {
   client.query('SELECT * FROM buy_offers ORDER BY buy_offer_id ASC', (error, results) => {
