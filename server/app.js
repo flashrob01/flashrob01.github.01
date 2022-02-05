@@ -46,7 +46,7 @@ app.get('/logout', (req, res) => {
 //copied from sunshine-server==
 
 app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*")
+    res.header("Access-Control-Allow-Origin", "http://ddrc-app.herokuapp.com/")
     res.header(
       "Access-Control-Allow-Headers",
       "Origin, X-Requested, Content-Type, Accept Authorization"
