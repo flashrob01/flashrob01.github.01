@@ -35,14 +35,14 @@ app.get('/logout', (req, res) => {
 
 
 
-const corsOptions = {
-  origin: '*',
-  credentials: true,
-  optionSuccessStatus: 200,
-}
+//const corsOptions = {
+//  origin: '*',
+//  credentials: true,
+//  optionSuccessStatus: 200,
+//}
 //This seems to have fixed the CORS issue - from the CORS book
 
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
 //copied from sunshine-server==
 
 app.use(function(req, res, next){
