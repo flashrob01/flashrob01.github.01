@@ -33,7 +33,19 @@ app.get('/logout', (req, res) => {
   res.send('logging out')
 });
 
+const allowedOrigins = ['http://ddrc-app.herokuapp.com'];
+app.use(cors({
+    credentials: true,
+    origin: (origin, callback) => {
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true) 
+      } else {
+        callback(new Error(`Origin: ${origin} is now allowed`))
+      }
+    }
+  }));
 
+/*
 
 const corsOptions = {
   origin: "http://ddrc-app.herokuapp.com",
@@ -43,6 +55,7 @@ const corsOptions = {
 This seems to have fixed the CORS issue - from the CORS book
 
 app.use(cors(corsOptions));
+*/
 //copied from sunshine-server==
 
 /*app.use((req, res, next) => {
