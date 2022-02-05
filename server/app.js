@@ -33,7 +33,7 @@ app.get('/logout', (req, res) => {
   res.send('logging out')
 });
 
-const allowedOrigins = ['http://ddrc-app.herokuapp.com'];
+const allowedOrigins = ['https://ddrc-app.herokuapp.com'];
 app.use(cors({
     credentials: true,
     origin: (origin, callback) => {
