@@ -63,7 +63,7 @@ export function Buy(props){
 
   const fetchOffers = async () => {
     const response = await axios
-      .get(API+ "/buy_offers")
+      .get(process.env.DATABASE_URL+ "/buy_offers")
       .catch((err) => console.log(err));
 
     if (response) {
