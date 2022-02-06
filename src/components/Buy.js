@@ -63,7 +63,7 @@ export function Buy(props){
 
   const fetchOffers = async () => {
     const response = await axios
-      .get('/buy_offers')
+      .get(API + '/buy_offers')
       .catch((err) => console.log(err));
 
     if (response) {
