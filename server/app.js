@@ -20,6 +20,8 @@ const cors = require('cors')
 
 //below from Shaun of Dead - Google
 
+var express = require('express') , cors = require('cors') , app = express(); app.options('*', cors());
+
 app.get('/', (req, res) => {
   res.render('home');
 });
@@ -33,7 +35,7 @@ app.get('/logout', (req, res) => {
   res.send('logging out')
 });
 
-
+/*
 const allowedOrigins = ['https://ddrc-app.herokuapp.com'];
 app.use(cors({
     credentials: true,
@@ -45,7 +47,7 @@ app.use(cors({
       }
     }
   }));
-
+*/
 
 /*
 const corsOptions = {
@@ -56,10 +58,11 @@ const corsOptions = {
 This seems to have fixed the CORS issue - from the CORS book
 
 app.use(cors(corsOptions));
+*/
 
 //copied from sunshine-server==
 
-
+/*
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*")
     res.header(
@@ -75,10 +78,11 @@ app.use((req, res, next) => {
     }
     next()
   });
+*/
 
 //This seems to have fixed the CORS issue - from the CORS book
 
-*/
+
 
 /* function requestAccessToken(code,state) {
   return request.post('https://www.linkedin.com/oauth/v2/accessToken')
@@ -97,7 +101,7 @@ function requestProfile(token) {
 
 // above from Tony Xu callback.js!!
 
-/* 
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.static(path.join(__dirname, 'client/build'))); */
