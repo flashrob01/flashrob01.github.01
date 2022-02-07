@@ -33,7 +33,7 @@ app.get('/logout', (req, res) => {
   res.send('logging out')
 });
 
-/*
+
 const allowedOrigins = ['https://ddrc-app.herokuapp.com'];
 app.use(cors({
     credentials: true,
@@ -45,9 +45,9 @@ app.use(cors({
       }
     }
   }));
-*/
 
 
+/*
 const corsOptions = {
   origin: "*",
   credentials: true,
@@ -78,7 +78,7 @@ app.use((req, res, next) => {
 
 //This seems to have fixed the CORS issue - from the CORS book
 
-
+*/
 
 /* function requestAccessToken(code,state) {
   return request.post('https://www.linkedin.com/oauth/v2/accessToken')
