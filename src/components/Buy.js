@@ -59,6 +59,15 @@ const Button = tw.button`
 
 export function Buy(props){
   const [offers, setOffers] = useState([]);
+  
+  const options = {
+      headers: {
+        'x-hasura-admin-secret': process.env.HASURA_KEY;
+        'content-type': application/json;
+        
+      },
+      responseType: 'json'
+    }
 
 
   const fetchOffers = async () => {
