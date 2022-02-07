@@ -77,7 +77,9 @@ const response = axios({
   const options = {
       headers: {
         'x-hasura-admin-secret': 'T0UZGxeG1kpknf6t4hTrr5RKiaEMQUd5tCIhydl2Np8SJig9ReHwDP7mUyJqSgYn',
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+	          'withCredentials': 'true'
+
         
       },
       
