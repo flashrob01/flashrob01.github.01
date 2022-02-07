@@ -59,6 +59,7 @@ app.use(cors(corsOptions));
 
 //copied from sunshine-server==
 
+/*
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "https://ddrc-app.herokuapp.com/")
     res.header(
@@ -76,7 +77,7 @@ app.use((req, res, next) => {
   });
 
 //This seems to have fixed the CORS issue - from the CORS book
-
+*/
 
 
 /* function requestAccessToken(code,state) {
