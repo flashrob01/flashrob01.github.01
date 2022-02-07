@@ -63,10 +63,10 @@ export function Buy(props){
   const options = {
       headers: {
         'x-hasura-admin-secret': process.env.HASURA_KEY,
-        'content-type': application/json
+        'content-type': 'application/json'
         
       },
-      responseType: 'json'
+      
     }
 
 
