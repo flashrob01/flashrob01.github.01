@@ -54,7 +54,7 @@ const corsOptions = {
   credentials: true,
   optionSuccessStatus: 200,
 }
-This seems to have fixed the CORS issue - from the CORS book
+//This seems to have fixed the CORS issue - from the CORS book
 
 app.use(cors(corsOptions));
 
