@@ -60,10 +60,24 @@ const Button = tw.button`
 export function Buy(props){
   const [offers, setOffers] = useState([]);
   
+const endpoint = "https://bright-mullet-79.hasura.app/api/rest";
+const headers = {
+	"content-type": "application/json",
+    "Authorization": "<token>"
+};
+
+
+const response = axios({
+  url: endpoint,
+  method: 'get',
+  headers: headers,
+
+});
+  
   const options = {
       headers: {
-        x-hasura-admin-secret: process.env.HASURA_KEY,
-        content-type: 'application/json'
+        'x-hasura-admin-secret': 'T0UZGxeG1kpknf6t4hTrr5RKiaEMQUd5tCIhydl2Np8SJig9ReHwDP7mUyJqSgYn',
+        'content-type': 'application/json'
         
       },
       
