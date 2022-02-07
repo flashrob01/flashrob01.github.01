@@ -88,7 +88,7 @@ const response = axios({
 
   const fetchOffers = async () => {
     const response = await axios
-      .get('https://cors-anywhere.herokuapp.com/'+ API + '/buy_offers', options)
+      .get( API + '/buy_offers', options)
       .catch((err) => console.log(err));
 
     if (response) {
