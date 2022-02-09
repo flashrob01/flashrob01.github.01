@@ -19,7 +19,7 @@ const client = new ApolloClient({
     url: 'https://bright-mullet-79.hasura.app/v1/graphql',
     headers: {
       'content-type': 'application/json',
-      'x-hasura-admin-secret':  T0UZGxeG1kpknf6t4hTrr5RKiaEMQUd5tCIhydl2Np8SJig9ReHwDP7mUyJqSgYn,
+      'x-hasura-admin-secret':  'T0UZGxeG1kpknf6t4hTrr5RKiaEMQUd5tCIhydl2Np8SJig9ReHwDP7mUyJqSgYn',
           
 }
   }),
