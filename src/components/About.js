@@ -57,17 +57,18 @@ function BuyOffers(){
     ));
 }
 
-/* client
+ client
   .query({
     query: gql`
-      query GetRates {
-        rates(currency: "USD") {
-          currency
-        }
+    query MyQuery {
+      price{
+         buy_offer_id
+         headline
+      }
       }
     `
   })
-  .then(result => console.log(result));  */
+  .then(result => console.log(result));  
 
 
 const About = () => {
