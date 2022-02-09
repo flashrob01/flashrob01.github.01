@@ -4,13 +4,30 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';
+
+//!!
+import {
+  ApolloProvider,
+  ApolloClient,
+  InMemoryCache
+
+} from "@apollo/client";
+
+//!! Above from: https://www.apollographql.com/docs/react/get-started/
+
 import {Auth0Provider} from "@auth0/auth0-react";
 import store from './store';
+
+
+
+
 require('dotenv').config();
 
 
-
-
+const client = new ApolloClient({
+  uri: 'https://bright-mullet-79.hasura.app/v1/graphql',
+  cache: new InMemoryCache()
+});
 
 
 
@@ -22,12 +39,15 @@ ReactDOM.render(
   redirectUri='https://ddrc-app.herokuapp.com/'
   
 >
+<ApolloProvider client={client}>
  
 
   <Provider store = {store}>
        <App />
      </Provider>
-    
+
+     </ApolloProvider>
+
      </Auth0Provider>,
   
   document.getElementById('root')
