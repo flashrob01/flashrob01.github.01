@@ -30,7 +30,7 @@ useEffect(() => {
       try {
 
         const accessToken = await getAccessTokenSilently();
-        const result = await fetch('https://bright-mullet-79.hasura.app/', {
+        const result = await fetch('https://bright-mullet-79.hasura.app/v1/graphql/', {
            method: 'POST',
            headers: {
                Authorization: 'Bearer' + accessToken
