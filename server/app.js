@@ -33,7 +33,7 @@ app.get('/logout', (req, res) => {
   res.send('logging out')
 });
 
-app.options('/products/:id', cors());
+app.options('https://bright-mullet-79.hasura.app/', cors());
 
 const corsOptions = {
   origin: '*',
