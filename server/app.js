@@ -16,10 +16,9 @@ const cors = require('cors')
 //const session = require('express-session')
 
 
-//const port = 4000;
+const port = 4000;
 
 //below from Shaun of Dead - Google
-
 
 app.get('/', (req, res) => {
   res.render('home');
@@ -34,52 +33,28 @@ app.get('/logout', (req, res) => {
   res.send('logging out')
 });
 
-/*
-const allowedOrigins = ['https://ddrc-app.herokuapp.com'];
-app.use(cors({
-    credentials: true,
-    origin: (origin, callback) => {
-      if (allowedOrigins.includes(origin)) {
-        callback(null, true) 
-      } else {
-        callback(new Error(`Origin: ${origin} is now allowed`))
-      }
-    }
-  }));
-*/
-
+app.options('/products/:id', cors());
 
 const corsOptions = {
-  origin: "*",
+  origin: '*',
   credentials: true,
   optionSuccessStatus: 200,
 }
 //This seems to have fixed the CORS issue - from the CORS book
 
 app.use(cors(corsOptions));
-
-
 //copied from sunshine-server==
 
-
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*")
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested, Content-Type, Accept Authorization"
-    )
-    res.header(
-        "Access-Control-Allow-Methods",
-        "POST, PUT, PATCH, GET, DELETE"
-      )
-    if (req.method === "OPTIONS") {
-      console.log('blah');
-      
-      return res.status(200).json({})
-    }
-    next()
-  });
-
+app.use(function(req, res, next){
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept", "application/x-www-form-urlencoded");
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.header('Access-Control-Allow-Origin', '*');
+ /*  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type', "application/x-www-form-urlencoded");
+  res.header('Access-Control-Allow-Credentials', true); */
+  next();
+});
 
 //This seems to have fixed the CORS issue - from the CORS book
 
@@ -102,7 +77,7 @@ function requestProfile(token) {
 
 // above from Tony Xu callback.js!!
 
-
+/* 
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.static(path.join(__dirname, 'client/build'))); */
