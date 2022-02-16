@@ -5,6 +5,18 @@ import { useSelector } from "react-redux";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+//!!
+import {
+    ApolloProvider,
+    ApolloClient,
+    InMemoryCache
+  
+  } from "@apollo/client";
+  
+  //!! Above from: https://www.apollographql.com/docs/react/get-started/
+  
+  import {Auth0Provider} from "@auth0/auth0-react";
+
 
 
 
@@ -36,6 +48,8 @@ import AboutIndex from "./components/AboutIndex";
 import ProfileCard from "./components/ProfileCard";
 import BuyUserInfo from "./components/BuyUserInfo";
 import Products from "./components/Products";
+import Dudu from "./components/users";
+//PRofile above is for testing the use-api hook- https://github.com/auth0/auth0-react/blob/master/EXAMPLES.md#4-create-a-useapi-hook-for-accessing-protected-apis-with-an-access-token
 
 
 
@@ -51,7 +65,8 @@ const App = () => {
             
                 <Header />
                 <Navigation />
-             
+                
+                   
                     <Routes>
                         <Route path="/" element ={<Home />} />
                         <Route path="/home" element ={<Home />} />
@@ -80,10 +95,12 @@ const App = () => {
                         <Route path="/Loading" element = {<Loading />} />
                         <Route path="/ProfileCard" element = {<ProfileCard />} />
                         <Route path="/Products" element = {<Products />} />
-                        
+                        <Route path="/Dudu" element = {<Dudu />} />
                       
                      </Routes>
-            
+                    
+
+                   
                 <Footer />
            
         </Router>
