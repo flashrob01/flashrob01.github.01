@@ -6,7 +6,8 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { useAuth0 } from "@auth0/auth0-react";
-import fetch from "isomorphic-fetch";
+require('isomorphic-fetch');
+
 
 const API_URL = "https://bright-mullet-79.hasura.app/v1/graphql/";
 
