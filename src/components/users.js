@@ -1,4 +1,6 @@
 import { useApi } from './use-api';
+import { useAuth0 } from '@auth0/auth0-react';
+
 
  const Dudu = () => {
   const opts = {
