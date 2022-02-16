@@ -22,7 +22,7 @@ const GetProfile = () => {
   */
 
 
-//useEffect from auth0 "calling an API" tutorial
+//useEffect from auth0 "calling an API" tutorial - https://auth0.com/docs/quickstart/spa/react/02-calling-an-api#set-up-the-auth0-service
 // calling an API from- https://auth0.com/docs/libraries/auth0-single-page-app-sdk#create-the-client
 useEffect(() => {
     const getUserMetadata = async () => {
@@ -44,8 +44,10 @@ useEffect(() => {
       }
     };
   
+    getUserMetadata();
+}, [getAccessTokenSilently, user?.sub]);
     
-  },);
+  
 
   return (
     isAuthenticated && (
