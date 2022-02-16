@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';
+import { WithApolloProvider } from './components/Apollo/WithApolloProvider';
+
 
 //!!
 import {
@@ -33,22 +35,27 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   
+  
   <Auth0Provider
   domain="dev-7-8i89hb.us.auth0.com"
   clientId='stYoaCVnntvABpLxIxIdXnxX4riYXRnF'
   redirectUri='https://ddrc-app.herokuapp.com/'
+  audience="hasura"
   
 >
-<ApolloProvider client={client}>
+ <ApolloProvider client={client}> 
+
  
 
   <Provider store = {store}>
+   
        <App />
      </Provider>
-
-     </ApolloProvider>
+ 
+     </ApolloProvider> 
 
      </Auth0Provider>,
+   
   
   document.getElementById('root')
 );
