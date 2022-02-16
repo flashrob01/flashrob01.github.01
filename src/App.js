@@ -49,6 +49,7 @@ import ProfileCard from "./components/ProfileCard";
 import BuyUserInfo from "./components/BuyUserInfo";
 import Products from "./components/Products";
 import Dudu from "./components/users";
+import GetProfile from "./components/getProfile";
 //PRofile above is for testing the use-api hook- https://github.com/auth0/auth0-react/blob/master/EXAMPLES.md#4-create-a-useapi-hook-for-accessing-protected-apis-with-an-access-token
 
 
@@ -96,6 +97,7 @@ const App = () => {
                         <Route path="/ProfileCard" element = {<ProfileCard />} />
                         <Route path="/Products" element = {<Products />} />
                         <Route path="/Dudu" element = {<Dudu />} />
+                        <Route path="/getProfile" element = {<GetProfile />} />
                       
                      </Routes>
                     
