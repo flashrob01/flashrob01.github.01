@@ -6,12 +6,7 @@ import ProtectedRoute from "./auth/ProtectedRoute";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //!!
-import {
-  ApolloProvider,
-  ApolloClient,
-  InMemoryCache
 
-} from "@apollo/client";
 
 //!! Above from: https://www.apollographql.com/docs/react/get-started/
 
