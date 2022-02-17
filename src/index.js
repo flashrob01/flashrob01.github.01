@@ -37,7 +37,7 @@ ReactDOM.render(
   redirectUri='https://ddrc-app.herokuapp.com/'
  
 >
- <ApolloProvider > 
+ <ApolloProvider client={client}> 
 
  
 
