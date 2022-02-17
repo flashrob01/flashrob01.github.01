@@ -5,15 +5,11 @@ import { useSelector } from "react-redux";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-//!!
-import {
-    ApolloProvider,
-    ApolloClient,
-    InMemoryCache
-  
-  } from "@apollo/client";
-  
-  //!! Above from: https://www.apollographql.com/docs/react/get-started/
+import ApolloClient from "apollo-client"
+import { InMemoryCache } from "apollo-cache-inmemory"
+import { ApolloProvider } from "@apollo/react-hooks"
+import { createHttpLink } from "apollo-link-http"
+
   
   import {Auth0Provider} from "@auth0/auth0-react";
 
@@ -51,12 +47,27 @@ import Products from "./components/Products";
 import Dudu from "./components/users";
 import GetProfile from "./components/getProfile";
 //PRofile above is for testing the use-api hook- https://github.com/auth0/auth0-react/blob/master/EXAMPLES.md#4-create-a-useapi-hook-for-accessing-protected-apis-with-an-access-token
-import GetProfile2 from "./components/getProfile2";
 
+
+
+const createApolloClient = () => {
+    const httpLink = createHttpLink({
+      uri: "http://localhost:8080/graphql",
+      options: {
+        reconnect: true,
+      },
+    })
+  
+    return new ApolloClient({
+      link: httpLink,
+      cache: new InMemoryCache(),
+    })
+  }
+  
 
 const App = () => {
 
-    console.log('If you can read this, glory be to God!!!! Du duuuuu!!!')
+    const client = createApolloClient()
 
     const customerDetails = useSelector(selectCustomer);
     const customerLoggedIn = customerDetails.isLoggedin;
@@ -67,7 +78,7 @@ const App = () => {
                 <Header />
                 <Navigation />
                 
-                   
+                   <ApolloProvider client={client}>
                     <Routes>
                         <Route path="/" element ={<Home />} />
                         <Route path="/home" element ={<Home />} />
@@ -97,12 +108,12 @@ const App = () => {
                         <Route path="/ProfileCard" element = {<ProfileCard />} />
                         <Route path="/Products" element = {<Products />} />
                         <Route path="/Dudu" element = {<Dudu />} />
+                        
                         <Route path="/getProfile" element = {<GetProfile />} />
-                        <Route path="/getProfile2" element = {<GetProfile2 />} />
                       
                      </Routes>
                     
-
+                     </ApolloProvider>
                    
                 <Footer />
            
