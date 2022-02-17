@@ -59,7 +59,6 @@ import GetProfile from "./components/getProfile";
 
 const App = () => {
 
-    const client = createApolloClient()
 
     const customerDetails = useSelector(selectCustomer);
     const customerLoggedIn = customerDetails.isLoggedin;
