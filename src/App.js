@@ -55,20 +55,7 @@ import GetProfile from "./components/getProfile";
 
 
 
-const createApolloClient = () => {
-    const httpLink = createHttpLink({
-      uri: "http://localhost:8080/graphql",
-      options: {
-        reconnect: true,
-      },
-    })
-  
-    return new ApolloClient({
-      link: httpLink,
-      cache: new InMemoryCache(),
-    })
-  }
-  
+
 
 const App = () => {
 
@@ -83,7 +70,7 @@ const App = () => {
                 <Header />
                 <Navigation />
                 
-                   <ApolloProvider client={client}>
+                 
                     <Routes>
                         <Route path="/" element ={<Home />} />
                         <Route path="/home" element ={<Home />} />
@@ -118,7 +105,7 @@ const App = () => {
                       
                      </Routes>
                     
-                     </ApolloProvider>
+                  
                    
                 <Footer />
            
