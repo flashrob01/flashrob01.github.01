@@ -27,7 +27,7 @@ ReactDOM.render(
   domain="dev-7-8i89hb.us.auth0.com"
   clientId='stYoaCVnntvABpLxIxIdXnxX4riYXRnF'
   redirectUri='https://ddrc-app.herokuapp.com/'
- 
+  audience='hasura'
 >
 
 
