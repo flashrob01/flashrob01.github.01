@@ -5,10 +5,15 @@ import { useSelector } from "react-redux";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import ApolloClient from "apollo-client"
-import { InMemoryCache } from "apollo-cache-inmemory"
-import { ApolloProvider } from "@apollo/react-hooks"
-import { createHttpLink } from "apollo-link-http"
+//!!
+import {
+  ApolloProvider,
+  ApolloClient,
+  InMemoryCache
+
+} from "@apollo/client";
+
+//!! Above from: https://www.apollographql.com/docs/react/get-started/
 
   
   import {Auth0Provider} from "@auth0/auth0-react";
