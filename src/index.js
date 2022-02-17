@@ -6,15 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';
 
 
-//!!
-import {
-  ApolloProvider,
-  ApolloClient,
-  InMemoryCache
 
-} from "@apollo/client";
-
-//!! Above from: https://www.apollographql.com/docs/react/get-started/
 
 import {Auth0Provider} from "@auth0/auth0-react";
 import store from './store';
@@ -37,7 +29,7 @@ ReactDOM.render(
   redirectUri='https://ddrc-app.herokuapp.com/'
  
 >
- <ApolloProvider client={client}> 
+
 
  
 
@@ -46,7 +38,7 @@ ReactDOM.render(
        <App />
      </Provider>
  
-     </ApolloProvider> 
+    
 
      </Auth0Provider>,
    
