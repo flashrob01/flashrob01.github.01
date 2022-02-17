@@ -25,10 +25,6 @@ import store from './store';
 require('dotenv').config();
 
 
-const client = new ApolloClient({
-  uri: 'https://bright-mullet-79.hasura.app/v1/graphql',
-  cache: new InMemoryCache()
-});
 
 
 
@@ -39,8 +35,7 @@ ReactDOM.render(
   domain="dev-7-8i89hb.us.auth0.com"
   clientId='stYoaCVnntvABpLxIxIdXnxX4riYXRnF'
   redirectUri='https://ddrc-app.herokuapp.com/'
-  audience="hasura"
-  
+ 
 >
  <ApolloProvider client={client}> 
 
