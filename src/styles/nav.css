@@ -87,4 +87,22 @@ nav {
     margin: var(--margin);
   }
   
- 
+  @media only screen and (max-width: 700px){
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100vw;
+      height: 9vh;
+      
+
+      background-color: var(--font-color);
+    /*     padding: var(--small-padding);
+        border-bottom-right-radius: var(--border-radius-outer); */
+        box-shadow: var(--box-shadow);
+      }
+
+      
+
+
+    }

@@ -3,7 +3,7 @@ Dropdown {
 }
 
 .dropdown-menu{
-    background: red;
+    background: #afe3f8;
     width: 200px;
     position: absolute;
     top: 80px;
@@ -12,7 +12,7 @@ Dropdown {
 }
 
 .dropdown-menu li {
-    background: #e08f26;
+    background: #afe3f8;
     cursor: pointer;
 }
 

@@ -1,0 +1,7 @@
+.ContentDiv {
+    margin-Top: 10;
+    display: 'flex';
+    flex-Direction: 'column';
+    width: '100%';
+    text-align: 'center';
+}

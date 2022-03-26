@@ -1,0 +1,32 @@
+:root {
+   --white: hsl(0, 0%, 100%);
+}
+
+.card-body-container {
+   background-color: var(--white);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: -0.5em;
+   max-width: 350px;
+   width: 100%;
+}
+
+.card-body-container > img {
+   border: 5px solid var(--white);
+   border-radius: 50px;
+   margin-top: -3em;
+}
+
+.text-container {
+   padding: 1.5em 0;
+}
+
+.main-text {
+   margin-bottom: 0.5em;
+}
+
+.secondary-text {
+   font-weight: 300;
+}

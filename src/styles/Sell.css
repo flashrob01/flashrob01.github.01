@@ -1,8 +1,8 @@
 table, td, tr, th {
  
     table-layout: fixed; 
-    border: 1px solid black;
-    border-collapse: collapse;
+    border: 1px solid rgb(241, 247, 215);
+     border-collapse: collapse;
     color: #111827; 
     font-size: 1rem;
     line-height: 1.5rem; 
@@ -10,18 +10,19 @@ table, td, tr, th {
 
 td {
     border-width: 1px; 
-    border-color: #10B981; 
+    border-color: beige; 
 }
 
 tr{
     
     border-width: 1px; 
-    border-color: #10B981; 
+    border-color: rgb(15, 15, 2); 
 }
 
 tr:nth-child(even){
-    background-color: #10B981;
+    background: #3AAFAB;
     opacity: .7;
+    color: #111827; 
    }
 
 th{

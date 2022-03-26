@@ -71,6 +71,7 @@ const fetchOffer = async() => {
 
 return(
     <div>
+      <div id='sellText'></div>
     {Object.entries(filteredItems).map(([none, { price, industry, offer_details, offer_type, qualifications }]) =>
     <div key ={sell_offer_id } className="offer" id='offer'>
     <h2>Please make an escrow payment of ${price} to your DDR account now.</h2>

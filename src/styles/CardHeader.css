@@ -1,0 +1,9 @@
+.card-header-container {
+   max-width: 350px;
+   width: 100%;
+}
+
+.card-header-container img {
+   border-top-left-radius: 1rem;
+   border-top-right-radius: 1rem;
+}

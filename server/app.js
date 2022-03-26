@@ -11,7 +11,48 @@ const sellOffersRouter = require('./routes/sell_offers')
 const reviewsRouter = require('./routes/reviews')
 const cors = require('cors')
 
+//--https://betterprogramming.pub/build-a-send-me-a-message-component-for-your-site-229c2b8195e1
+creds=require("./config")
+nodemailer = require("nodemailer")
+app.use(express.json());
 
+var transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: creds.USER,
+    pass: creds.PASS
+  }
+});
+
+transporter.verify((err, success) => {
+  if (err) {
+    console.log(error);
+  } else {
+    console.log("Successfully signed into Gmail account");
+  }
+});
+
+app.post("/send", (req, res) => {
+  const { name } = req.body;
+  const { message } = req.body;
+
+  var mail = {
+    from: name,
+    to: "Enter your email here",
+    subject: "Feedback From The Blog",
+    html: `${message}` + "<br><br>Kindly,<br>" + `${name}`
+  };
+
+  transporter.sendMail(mail, (err, data) => {
+    if (err) {
+      res.json({ msg: "err" });
+    } else {
+      res.json({ msg: "suc" });
+    }
+  });
+});
+
+//--
 
 //const session = require('express-session')
 
@@ -33,7 +74,8 @@ app.get('/logout', (req, res) => {
   res.send('logging out')
 });
 
-
+app.options('https://bright-mullet-79.hasura.app/v1/graphql/', cors());
+//app.options above worked to eliminate the CORS error!!! - https://stackoverflow.com/questions/67716707/cors-response-to-preflight-request-doesnt-pass-access-control-check-when-add-h
 
 const corsOptions = {
   origin: '*',

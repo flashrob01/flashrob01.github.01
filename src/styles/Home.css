@@ -4,22 +4,15 @@
     display: flex;
     flex-direction: column;
   } */
- 
-  main{
-   
-    
 
-    
-}
 
-  .grid{
+  .wrapper{
     min-height: 1200px;
     min-width: 100%;
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 6fr 3fr 1fr;
-    gap: 5px;
-    border: 1px rgb(38, 0, 255) solid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(9 1fr);
+    gap:  20px;
     justify-items: center;
     justify-content: center;
 
@@ -27,29 +20,163 @@
   
   }
 
+  
+
   #banner {
   
     background-image:url("../images/Consulting1.jpg");
     grid-row-start: 1; 
-    grid-row-end: 2;
+    grid-row-end: span 1;
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: span 2;
     background-position: center;
-    /* height: 46rem; */
+      height: 600px;   
     width: 100%;
     background-repeat: no-repeat;
-    display: grid;
-    justify-content: center;
     align-items: center;
     text-align: center;
     background-size: cover;
+    padding: 5% 5% 5% 5% ;
+
+    position: relative;
+
+  
     
   }
 
+  #h1{
+    position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+  }
+
+  #winner{
+    background-image:url("../images/Launchpad-gif1.png");
+    height: 150px;
+    grid-row-start: 2; 
+    grid-row-end: span 1;
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    width: 100%;
+    background-repeat: no-repeat;
+
+
+  }
+
+  #h3{
+    grid-row-start: 3; 
+    grid-row-end: span 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  #featuredId{
+   
+    grid-row-start: 4; 
+    grid-row-end: span 1;
+    grid-column-start: 1;
+    grid-column-end:  3;
+/*     background-position: center;
+ */    width: 65%;
+   display: grid;
+   position: relative;
+
+ /*    margin-left: auto;
+  margin-right: auto; */
+/*       justify-content: end;
+ *//*     align-items: center;
+     display: grid;
+
+    /*    justify-items: center; */
+      padding: 3% 5% 3% 5% ;
+  /*     display: inline-block; */
+    margin: 0% 5% 0% 35%;
+    
+  }
+
+
+ .carousel-indicators{
+  margin-right: 80%;
+  margin-bottom: 25rem;
+ }
+
+ .carousel-indicators [data-bs-target]{
+   width: 50px;
+   height: 15px;
+ }
+
+ #AboutBanner {
+  
+  background-image:url("../images/Consulting4.jpg");
+  grid-row-start: 5; 
+  grid-row-end: span 1;
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  background-position: center;
+    height: 400px;   
+  width: 100%;
+  background-repeat: no-repeat;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+  
+  position: relative;
+
+
+  
+}
+
+#headline2{
+/*   background-image:url("../images/mauve.png");
+ */
+   
+  grid-row-start: 5; 
+  grid-row-end: span 1;
+  grid-column-start: 1;
+  grid-column-end: 3;
+ 
+
+ 
+}
+
+#BuyButton{
+  grid-row-start: 7; 
+  grid-row-end: span 1;
+  grid-column-start: 1;
+  grid-column-end: span 1;
+}
+
+#SellButton{
+  grid-row-start: 7; 
+  grid-row-end: span 1;
+  grid-column-start: 2;
+  grid-column-end: span 1;
+}
+
+#About{
+  text-align: center;
+  display: inline block;
+  padding-right: 0%;
+  grid-row-start: 6; 
+  grid-row-end: span 1;
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  margin-left: 200px;
+  margin-right: 200px;
+
+}
+
+
+
   #consulting1{
-    background-image:url("../images/Consulting4.jpg");
-    grid-row: 2 / span 1;
-    grid-column: 1 /span 1;
+    height: 300px;   
+
+    background-image:url("../images/Consulting4-grey.jpg");
+
+    grid-row-start: 7; 
+      grid-row-end: span 1;
+      grid-column-start: 1;
+      grid-column-end: span 1;
     background-position: center;
     width: 100%;
     background-repeat: no-repeat;
@@ -58,13 +185,22 @@
     align-items: center;
     text-align: center;
     background-size: cover;
+
+    padding: 10% 5% 5% 5% ;
+
+    position: relative;
+
   }
 
   
   #consulting2{
-    background-image:url("../images/Consulting5.jpg");
-    grid-row: 2 / span 1;
-    grid-column: 2 / span 1;
+    height: 300px;   
+
+    background-image:url("../images/Consulting5-grey.jpg");
+    grid-row-start: 7; 
+  grid-row-end: span 1;
+  grid-column-start: 2;
+  grid-column-end: span 1;
     background-position: center;
     width: 100%;
     background-repeat: no-repeat;
@@ -73,6 +209,10 @@
     align-items: center;
     text-align: center;
     background-size: cover;
+    padding: 10% 5% 5% 5% ;
+
+    position: relative;
+
   }
  
   #logo {
@@ -83,11 +223,13 @@
    
   }
  
-
+  .h6{
+  font-weight: bold;
+  }
 
   #banner h1 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+/*     font-family: 'Roboto', sans-serif;
+ */    font-weight: 300;
     color: white;
       font-size: 3.75em;
   
@@ -96,13 +238,16 @@
   .headline{
     text-align: center;
     display: inline block;
-    padding-right: 30%;
+    padding-right: 0%;
 
   }
+
 
   #consult4{
     max-width: 500px;
   }
+
+  
 
 /*   .FourOhFour {
     font-size: 10rem;
@@ -110,6 +255,7 @@
   }
    */
   
+   
 
   @media only screen and (max-width: 700px){
 
@@ -122,6 +268,44 @@
       #banner{
         display: inline block;
         max-width: 90%;
-        height: 70;
+        height: 400px;   
+
+      }
+
+      #banner h1{
+        font-size: 2em;
+      }
+
+      #winner{
+        background-image:url("../images/ExcellenceAward.png");
+       max-width: 100%;
+       margin-left: 20px;
+
+             
+    
+      }
+
+      #featuredId{
+          width: 100%;
+      display: grid;
+      position: relative;
+   
+    /*    margin-left: auto;
+     margin-right: auto; */
+   /*       justify-content: end;
+    *//*     align-items: center;
+        display: grid;
+   
+       /*    justify-items: center; */
+         padding: 5% 5% 5% 5% ;
+     /*     display: inline-block; */
+       margin: 5% 5% 5% 5%;
+      }
+
+      #About{
+   
+        margin-left: 30px;
+        margin-right: 30px;
+      
       }
   }

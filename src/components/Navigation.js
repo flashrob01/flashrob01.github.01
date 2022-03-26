@@ -120,6 +120,8 @@ const Navigation = () => {
      
       <Nav.Link  id="nav-links" href="/About">About</Nav.Link>
 
+      <Nav.Link  id="nav-links" href="/Profile">My Profile</Nav.Link>
+
   
 
     </Nav>

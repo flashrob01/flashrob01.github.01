@@ -1,0 +1,29 @@
+:root {
+    --white: hsl(0, 0%, 100%);
+    --grayish-blue: hsl(227, 10%, 46%);
+ }
+ 
+ .card-footer-list {
+    background-color: var(--white);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-top: 1px solid #e8e8e8;
+    display: flex;
+    justify-content: space-between;
+    max-width: 350px;
+    padding: 2em;
+    width: 100%;
+ }
+ 
+ .primary-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+ }
+ 
+ .secondary-text {
+    color: var(--grayish-blue);
+    font-size: 0.85rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+ }

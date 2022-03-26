@@ -1,0 +1,44 @@
+
+  .flex-container{
+    display: flex;
+  flex-direction: row;
+     min-width: 85%;
+    max-width: 85%; 
+    margin-left: 15px;
+    
+    border: 1px rgb(253, 252, 253) solid;
+    /* justify-items: center;
+  justify-content: center;
+  text-align: center; */
+ 
+  
+  }
+
+  .pageContainer {
+    display: grid;
+    grid-row: 1 / span 1;
+    grid-column: 1 /span 1;
+    justify-content: right;
+    margin: var(--margin);
+    padding: 3vw;
+    max-width: 76vw;
+    min-width: 76vw;
+    background-color: rgb(239, 243, 214);
+    border-radius: var(--border-radius-outer);
+    box-shadow: var(--box-shadow);
+  }
+
+  
+
+  .Headline {
+    
+    text-align: center;  
+  }
+
+
+  
+
+  @media only screen and (max-width: 700px){
+
+      
+  }

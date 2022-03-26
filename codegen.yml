@@ -1,0 +1,13 @@
+schema:
+  - https://bright-mullet-79.hasura.app/v1/graphql:
+      headers:
+        x-hasura-admin-secret: 'password'
+documents: './src/queries/get-offers.query.graphql'
+generates:
+  graphql/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      withHooks: true

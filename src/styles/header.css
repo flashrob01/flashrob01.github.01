@@ -1,5 +1,12 @@
 
 
+ .wrapper{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1fr);
+
+}
+
 header {
   height: 15vh;
   width: 100vw;
@@ -17,8 +24,8 @@ header {
 h1 {
   color: var(--highlight-colour);
   font-size: 300%;
-  padding-top: var(--padding);
-  padding-left: var(--padding);
+/*   padding-top: var(--padding);
+  padding-left: var(--padding); */
 
 }
 
@@ -26,7 +33,6 @@ h2 {
   font-family: "Inter", sans-serif;
   color: orangered;
   font-size: 150%;
-  font-family: "Poppins", "Lato", sans-serif;
   padding-left: var(--padding);
   padding-bottom: var(--padding);
 }
@@ -36,6 +42,18 @@ h2 {
   pointer-events: none;
   padding-right: 5vw;
   padding: 37px;
+  grid-template-columns: 1 span 1;
+}
+
+.linkedInSignIn{
+  grid-template-columns: 3 span 1;
+  justify-self: end;
+  size: 24rem;
+}
+
+.authNav{
+  grid-template-columns: 3 span 1
+
 }
 
 
@@ -53,9 +71,15 @@ h2 {
 h2 {
     font-size: 115%;
   } 
-App-logo {
-    height: 15vh;
+.App-logo {
+  padding-right: 0;
+  padding: 0;
+  height: 2rem;
   }
+}
+.linkedInSignIn{
+ 
+  height: 2.5em;
 }
 
 
@@ -66,7 +90,11 @@ App-logo {
 h2 {
     font-size: 105%;
   } 
-App-logo {
-    height: 11vh;
+.App-logo {
+  height: 3rem;
+  }
+  .linkedInSignIn{
+ 
+    height: 2em;
   }
 }

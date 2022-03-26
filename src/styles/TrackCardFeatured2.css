@@ -1,0 +1,88 @@
+#CardContainer {
+    border-Radius: 6;
+    color: 'black';
+    background-Size: 'cover';
+    background-Color: 'white';
+    box-Shadow: '0px 1px 5px 0px rgba(0,0,0,0.15)';
+    background-Position: 'center';
+    display: 'flex';
+    flex-Direction: 'column';
+    justify-Content: 'space-between';
+    
+    height: 380;
+    margin: 10;
+    overflow: 'hidden';
+        position: 'relative';
+ 
+    cursor: 'pointer';
+    text-Decoration: 'none';
+  };
+  
+ #CardContent {
+    display: 'flex';
+    flex-Direction: 'column';
+    justify-Content: 'space-around';
+    height: '100%';
+  };
+  
+   #CardTitle {
+    text-Align: 'center';
+    font-Size: '1.4em';
+    line-Height: '1em';
+    font-Weight: 700;
+    color: 'black';
+    flex: 1;
+  };
+  
+  #CardImageContainer {
+    height: 220;
+    position: 'relative';
+
+  };
+  
+  #CardImage{
+    object-Fit: 'cover';
+    width: '100%';
+    height: '100%';
+    filter: 'grayscale(60%)';
+    background-image:url("../images/LIProfile.jpg");
+
+  };
+  
+  #CardBody{
+    padding: 18;
+    flex: 1;
+    display: 'flex';
+    color: 'grey';
+    flex-Direction: 'column';
+    justify-Content: 'space-around';
+  };
+  
+   #CardFooter{
+    display: 'flex';
+    flex-Direction: 'Row';
+  };
+  
+  #AuthorImage {
+    height: 30;
+    width: 30;
+    margin-Right: 8;
+    border-Radius: '50%';
+    object-Fit: 'cover';
+  };
+  
+  #AuthorAndTrack {
+    display: 'flex';
+    flex-Direction: 'column';
+    justify-Content: 'space-between';
+  };
+  
+  #AuthorName {
+    line-Height: '1em';
+    font-Size: '1.1em';
+  };
+  
+  #TrackLength {
+    font-Size: '0.8em';
+  };
+  

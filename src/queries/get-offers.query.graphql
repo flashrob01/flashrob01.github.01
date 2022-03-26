@@ -1,0 +1,11 @@
+
+ query  {
+  buy_offers{
+    headline
+    industry
+    offer_details
+    offer_type
+    price
+    buy_offer_id
+  }
+}
