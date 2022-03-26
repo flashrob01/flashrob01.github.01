@@ -9,6 +9,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const InputForm = () => {
 
+  const [status, setStatus] = useState("");
+
+
 const [sent_message, setSent_message] = useState('');
 
 /* const [user_id, setUser_id] = useState('');

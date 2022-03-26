@@ -3,6 +3,9 @@ import "./../styles/NeolineConnect.css";
 
 function NeolineConnect() {
   const [neoline, setNeoLine] = useState();
+  const [neolineN3, setNeoLineN3] = useState();
+  const [account, setAccount] = useState("");
+  const [error, setError] = useState("");
 
 
   useEffect(() => {
