@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {Provider} from 'react-redux';
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+/* import {Provider} from 'react-redux';
+ */import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import AuthorizedApolloProvider from './AuthorizedApolloProvider';
 
 import {Auth0Provider} from "@auth0/auth0-react";
-import store from './store';
-
+/* import store from './store';
+ */
 //wrapping with ApolloClient allows us to access top-level Apollo Client from anywhere within app...???
 //https://odyssey.apollographql.com/lift-off-part1/the-usequery-hook
 
@@ -58,10 +58,9 @@ ReactDOM.render(
 <AuthorizedApolloProvider>
  
 
-  <Provider store = {store}>
+
   
        <App />
-     </Provider>
  
     
      </AuthorizedApolloProvider>

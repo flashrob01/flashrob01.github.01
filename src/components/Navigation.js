@@ -7,9 +7,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container'
 import {useState} from 'react'
 
-import { useSelector, useDispatch} from 'react-redux';
+/* import { useSelector, useDispatch} from 'react-redux';
 import { emptyCartForSale, selectCart } from '../slice_reducers/cartSlice';
-import { selectCustomer, loggedOutOfCustomerDb, talkingToCustomerDbFailed } from '../slice_reducers/customerSlice';
+import { selectCustomer, loggedOutOfCustomerDb, talkingToCustomerDbFailed } from '../slice_reducers/customerSlice'; */
 import API_Endpoint from '../config/server';
 import './../styles/nav.css';
 
@@ -20,10 +20,10 @@ const axios = require('axios');
 
 const Navigation = () => {
 
-    const cart = useSelector(selectCart)
-  //  const cartCounter = cart.data.length;
-    const customerInfo = useSelector(selectCustomer);
-    const loggedIndicator = customerInfo.isLoggedin;
+/*     const cart = useSelector(selectCart)
+ */  //  const cartCounter = cart.data.length;
+/*     const customerInfo = useSelector(selectCustomer);
+    const loggedIndicator = customerInfo.isLoggedin; */
 
     const[click, setClick] = useState(false);
     const[dropdownbuy, setDropdownBuy] = useState(false);
@@ -69,7 +69,7 @@ const Navigation = () => {
 
 
 
-    const dispatch = useDispatch();
+   /*  const dispatch = useDispatch();
     
     const logoutOfDb = async() => { 
       try {
@@ -81,12 +81,12 @@ const Navigation = () => {
       catch (error) {
       dispatch(talkingToCustomerDbFailed)
     };
-    };
-    
+    }; */
+/*     
     const logout = (e) => {
       e.preventDefault()
       logoutOfDb()
-    }
+    } */
     
 //Noote: for onMouseLeave={onMouseLeave}; the first onMouseLeave is a pre-installed 'action', whereas the second is 
 //a function as defined above and instantiated below!

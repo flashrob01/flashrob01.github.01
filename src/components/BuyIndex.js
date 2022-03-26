@@ -1,18 +1,17 @@
 
 import { useParams } from 'react-router-dom';
 import './../styles/Buy.css';
-import {Outlet, Link} from 'react-router-dom';
 import { useQuery } from "@apollo/client";
 import { gql} from '@apollo/client';
-import QueryResult from './query-result';
+/* import QueryResult from './query-result';
 import TrackDetail from './track-detail';
 import  Layout from './layout';
 import { Query } from "react-apollo";
-import {InMemoryCache as cache} from "@apollo/client";
+import {InMemoryCache as cache} from "@apollo/client"; */
 
 
 //*Below from Apollo Catstronauts
-import styled from '@emotion/styled';
+/* import styled from '@emotion/styled';
 import {
   IconRun,
   IconView,
@@ -21,7 +20,7 @@ import {
 } from '../styles';
 import ContentSection from './content-section';
 import MarkDown from './md-content';
-import { userInfo } from "os";
+import { userInfo } from "os"; */
 //*
 
 //Need to change type of buy_offer_id within Hasura to int!

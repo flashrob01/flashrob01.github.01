@@ -1,17 +1,15 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import { selectCustomer } from "./slice_reducers/customerSlice";
-import { useSelector } from "react-redux";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import ProtectedRoute from "./auth/ProtectedRoute";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //--https://auth0.com/blog/complete-guide-to-react-user-authentication/
 
-import Auth0ProviderWithHistory from './auth/auth0-provider-with-history';
-//This is not logging me in; only providing credentials?
+/* import Auth0ProviderWithHistory from './auth/auth0-provider-with-history';
+ *///This is not logging me in; only providing credentials?
 
-import { ApolloProvider } from '@apollo/client';
-//import { useAppApolloClient } from "./config/apolloClient";
+/* import { ApolloProvider } from '@apollo/client';
+ *///import { useAppApolloClient } from "./config/apolloClient";
 //{ApolloProvider} and useAppApolloClient comes from https://medium.com/ovrsea/token-authentication-with-react-and-apollo-client-a-detailed-example-a3cc23760e9
 
 //--
@@ -41,8 +39,6 @@ import Login from "./components/Login";
 import Logout from "./components/Logout";
 import Footer from "./components/Footer";
 import FourOhFour from "./components/FourOhFour";
-import Register from "./components/Register";
-import ProductItem from "./components/ProductItem";
 import About from "./components/About";
 import Buy from "./components/Buy";
 import BuyIndex from "./components/BuyIndex";
@@ -56,7 +52,6 @@ import Profile from "./components/Profile";
 import Loading from "./components/Loading";
 import ProfileCard from "./components/ProfileCard";
 import BuyUserInfo from "./components/BuyUserInfo";
-import Products from "./components/Products";
 import ExternalApi from "./components/ExternalApi";
 //PRofile above is for testing the use-api hook- https://github.com/auth0/auth0-react/blob/master/EXAMPLES.md#4-create-a-useapi-hook-for-accessing-protected-apis-with-an-access-token
 //import GetProfile3 from "./components/getProfile3";
@@ -81,8 +76,8 @@ const App = () => {
 
  //   const apolloClient = useAppApolloClient();
 
-    const customerDetails = useSelector(selectCustomer);
-    const customerLoggedIn = customerDetails.isLoggedin;
+/*     const customerDetails = useSelector(selectCustomer);
+    const customerLoggedIn = customerDetails.isLoggedin; */
 
     return (
         <Router>
@@ -98,8 +93,6 @@ const App = () => {
                         <Route path="/login/*" element={<Login />} />
                         <Route path="/logout/*" element={<Logout />} />
                         <Route path="/profile/*" element={<ProtectedRoute component = {Profile} />} />
-                        <Route path="productItem/:id" element={<ProductItem />} />
-                        <Route path="register/*" element ={<Register />} />
                         <Route path="/about" element = {<About />}  />  
                              
                         <Route path="/buy" element = {<Buy />} /> 
@@ -116,7 +109,6 @@ const App = () => {
                         <Route path="/CreateSell" element = {<ProtectedRoute component = {CreateSell} />} />
                         <Route path="/Loading" element = {<Loading />} />
                         <Route path="/ProfileCard" element = {<ProfileCard />} />
-                        <Route path="/Products" element = {<Products />} />
                         <Route path="/externalApi" element = {<ExternalApi/>} />
                         <Route path="/CreateLink" element = {<CreateLink />} />  
                         <Route path="/trackCard" element = {<TrackCard />} />  
