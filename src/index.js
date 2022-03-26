@@ -34,6 +34,9 @@ require('dotenv').config();
 
 
 
+require('dotenv').config();
+
+
 
 
 
@@ -43,7 +46,11 @@ ReactDOM.render(
   <Auth0Provider
   domain="dev-7-8i89hb.us.auth0.com"
   clientId='stYoaCVnntvABpLxIxIdXnxX4riYXRnF'
-  redirectUri='http://localhost:3000'
+/*   redirectUri='http://localhost:3000'
+ */ 
+//Note- unfreeze above and freeze below when going from production to local testing!
+redirectUri='https://ddrc-app.herokuapp.com/'
+//
   audience='hasura'
 >
 
@@ -55,6 +62,7 @@ ReactDOM.render(
   
        <App />
      </Provider>
+ 
     
      </AuthorizedApolloProvider>
     
