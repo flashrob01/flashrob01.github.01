@@ -1,9 +1,6 @@
-import React from 'react';
 import styled from '@emotion/styled';
-import { humanReadableTimeFromSeconds } from '../utils/helpers';
 import { Link } from '@reach/router';
-import ContentSection from './content-section';
-import MarkDown from './md-content';
+
 import { useQuery } from "@apollo/client";
 import { gql} from '@apollo/client';
 import './../styles/TrackDetail.css';

@@ -1,24 +1,11 @@
 import axios from "axios";
-import React, { useEffect, useCallback, useMemo, useState } from "react";
-import tw from "twin.macro";
-import { useLocation, useParams } from 'react-router-dom';
+import  { useEffect,  useState } from "react";
+import {  useParams } from 'react-router-dom';
 import API from './API';
 import './../styles/BuyUserInfo.css';
-import {Outlet, Link} from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 
-
-const Button = tw.button`
-  pl-4
-  pr-4
-  pt-2
-  pb-2
-  text-black
-  rounded-md
-  bg-green-300
-  hover:bg-green-200
-  transition-colors
-`;
 
 
 const BuyUserInfo = function(){ 

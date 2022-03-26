@@ -1,5 +1,4 @@
 import React from 'react';
-import Bg from '../images/Consulting4.jpg';
 import './../styles//CardHeader.css';
 
 function CardHeader() {

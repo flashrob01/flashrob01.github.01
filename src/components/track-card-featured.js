@@ -1,6 +1,4 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { mq } from '../styles';
+
 
 import './../styles/TrackCardFeatured2.css';
 import N3_logo from '../images/N3_logo.jpg'

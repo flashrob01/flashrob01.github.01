@@ -5,10 +5,9 @@ import './../styles/CreateSell.css';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'   
 import { gql, useQuery, useMutation } from '@apollo/client';
-import Alert from 'react-bootstrap/Alert';
 import { useAuth0 } from "@auth0/auth0-react";
 import {  useParams } from 'react-router-dom';
-import {Link, useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import Tooltip from 'react-bootstrap/Tooltip';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 

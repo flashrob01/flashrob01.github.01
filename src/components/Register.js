@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react'
+import  {useCallback, useState} from 'react'
 import UseForm from './UseForm';
 import { useDispatch, useSelector } from 'react-redux';
 import {talkingToCustomerDb, talkedToCustomerDb, talkingToCustomerDbFailed} from './../slice_reducers/customerSlice';

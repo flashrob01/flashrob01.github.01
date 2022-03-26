@@ -1,7 +1,7 @@
 
 import '../styles/Home.css';
-import Testing from './Testing';
-import styled from '@emotion/styled';
+/* import Testing from './Testing';
+ */import styled from '@emotion/styled';
 import LIProfile from '../images/LIProfile.jpg';
 import Carousel from 'react-bootstrap/Carousel';
 import {useState} from 'react';

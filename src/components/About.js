@@ -1,112 +1,11 @@
 import './../styles/About.css'
-import Button from 'react-bootstrap/Button';
 import Accordion from 'react-bootstrap/Accordion';
-import { Container } from 'react-bootstrap';
-
-//!!
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  useQuery,
-  gql,
-  HttpLink
-} from "@apollo/client";
-
-//!! Above from: https://www.apollographql.com/docs/react/get-started/
-
-const client = new ApolloClient({
- 
-  
-  link: new HttpLink({
-    url: 'https://bright-mullet-79.hasura.app/v1/graphql',
-    headers: {
-      'content-type': 'application/json',
-      'x-hasura-admin-secret':  'T0UZGxeG1kpknf6t4hTrr5RKiaEMQUd5tCIhydl2Np8SJig9ReHwDP7mUyJqSgYn',
-          
-}
-  }),
-  cache: new InMemoryCache(),
-
-  });
-
-
-
-
- const BUY_OFFERS = gql`
- 
-   query MyQuery {
-     price{
-        buy_offer_id
-        headline
-     }
-
-  }
-
-`;
-
-function BuyOffers(){
-  const { loading, error, data } = useQuery(BUY_OFFERS);
-
-  if(loading) return <p> Loading...</p>;
-  if(error) return <p>Error :(</p>;
-
-    return data.rates.map(({ buy_offer_id, industry}) => (
-      <div key={buy_offer_id}>
-        <p>
-          {buy_offer_id}: {industry}
-        </p>
-      </div>
-    ));
-}
-
- client
-  .query({
-    query: gql`
-    query MyQuery {
-      price{
-         buy_offer_id
-         headline
-      }
-      }
-    `
-  })
-  .then(result => console.log(result));  
-
-
-//!!
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  useQuery,
-  gql,
-  HttpLink
-} from "@apollo/client";
-import createAuth0Client from '@auth0/auth0-spa-js';
-
-import { useAuth0 } from '@auth0/auth0-react'
-
-import { useApi } from './use-api';
-
-
-const axios = require("axios");
-
-
-
-
-
-
 
 //!! Above from: https://www.apollographql.com/docs/react/get-started/
 
 
 const About = () => {
-
-  const {user} = useAuth0();
-
-
-  
+ 
 
      return (
       <div>

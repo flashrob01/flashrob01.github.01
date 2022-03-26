@@ -1,16 +1,12 @@
-import React, {useState} from 'react';
+import  {useState} from 'react';
 import styled from '@emotion/styled';
-import { humanReadableTimeFromSeconds } from '../utils/helpers';
 import { Link } from '@reach/router';
-import ContentSection from './content-section';
-import MarkDown from './md-content';
+
 import { useQuery } from "@apollo/client";
 import { gql} from '@apollo/client';
 import './../styles/TrackDetail.css';
-import { stringifyForDisplay } from '@apollo/client/utilities';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
-import { InputForm } from "./InputForm";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 

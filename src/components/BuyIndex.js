@@ -1,8 +1,5 @@
-import axios from "axios";
-import React, { useEffect, useCallback, useMemo, useState } from "react";
-import tw from "twin.macro";
-import { useLocation, useParams } from 'react-router-dom';
-import API from './API';
+
+import { useParams } from 'react-router-dom';
 import './../styles/Buy.css';
 import {Outlet, Link} from 'react-router-dom';
 import { useQuery } from "@apollo/client";
@@ -22,7 +19,6 @@ import {
   IconTime,
   IconBook,
 } from '../styles';
-import { humanReadableTimeFromSeconds } from '../utils/helpers';
 import ContentSection from './content-section';
 import MarkDown from './md-content';
 import { userInfo } from "os";

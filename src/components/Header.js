@@ -1,7 +1,6 @@
 
 import './../styles/header.css';
 import AuthNav from './auth-nav';
-import linkedInSignIn from "../images/linkedin.png";
 import { useAuth0 } from "@auth0/auth0-react";
 
 

@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import  {useState} from 'react';
 //import {fetchingOffers, gotOffers, fetchingOffersFailed} from '../slice_reducers/offersSlice.js';
 import './../styles/CreateSell.css';
 //const axios = require('axios');
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'   
-import { gql, useQuery, useMutation } from '@apollo/client';
-import Alert from 'react-bootstrap/Alert';
+import { gql, useMutation } from '@apollo/client';
 import { useAuth0 } from "@auth0/auth0-react";
 
 

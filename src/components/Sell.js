@@ -1,11 +1,6 @@
-import axios from "axios";
-import { useEffect, useMemo, useState } from "react";
-import { useGlobalFilter, useSortBy, useTable } from "react-table";
 import tw from "twin.macro";
-import { GlobalFilter } from "./globalFilter";
-import API from './API';
 import './../styles/Sell.css';
-import {Link, useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import { gql, useQuery } from '@apollo/client';
 import { Container } from 'react-bootstrap';
 import { Loader, ApolloTableQL } from 'react-tableql'

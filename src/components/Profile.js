@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import  { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { gql, useQuery } from '@apollo/client';
-import { Container } from 'react-bootstrap';
-import { Loader, ApolloTableQL  } from 'react-tableql'
-import './../styles/Profile.css';
+import { gql } from '@apollo/client';
+/* import { Loader, ApolloTableQL  } from 'react-tableql'
+ */import './../styles/Profile.css';
 import {Link, useNavigate} from 'react-router-dom';
 import { useLazyQuery } from '@apollo/client';
 import { Table } from 'react-bootstrap';

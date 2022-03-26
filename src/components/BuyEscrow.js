@@ -1,9 +1,9 @@
 import axios from "axios";
-import React, { useEffect, useCallback, useMemo, useState } from "react";
-import { useGlobalFilter, useSortBy, useTable } from "react-table";
+import  { useEffect, useState } from "react";
+/* import { useGlobalFilter, useSortBy, useTable } from "react-table"; */
 import tw from "twin.macro";
 
-import { useLocation, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import API from './API';
 import './../styles/Buy.css';
 import {Link} from 'react-router-dom';

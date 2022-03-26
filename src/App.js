@@ -39,12 +39,10 @@ import Home from "./components/Home";
 import Navigation from "./components/Navigation";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
-import Account from "./components/Account";
 import Footer from "./components/Footer";
 import FourOhFour from "./components/FourOhFour";
 import Register from "./components/Register";
 import ProductItem from "./components/ProductItem";
-import Checkout from "./components/Checkout";
 import About from "./components/About";
 import Buy from "./components/Buy";
 import BuyIndex from "./components/BuyIndex";
@@ -56,20 +54,14 @@ import CreateBuy from "./components/CreateBuy";
 import CreateSell from "./components/CreateSell";
 import Profile from "./components/Profile";
 import Loading from "./components/Loading";
-import AboutIndex from "./components/AboutIndex";
 import ProfileCard from "./components/ProfileCard";
 import BuyUserInfo from "./components/BuyUserInfo";
 import Products from "./components/Products";
-import Dudu from "./components/users";
-import GetProfile from "./components/getProfile";
 import ExternalApi from "./components/ExternalApi";
-import ExternalApi2 from "./components/ExternalApi2";
 //PRofile above is for testing the use-api hook- https://github.com/auth0/auth0-react/blob/master/EXAMPLES.md#4-create-a-useapi-hook-for-accessing-protected-apis-with-an-access-token
 //import GetProfile3 from "./components/getProfile3";
 //import GetProfile3 from "./components/GetProfile3";
 //import useAccessToken from "./components/useAccessToken";
-import CreateTest from "./components/CreateTest";
-import CreateTest2 from "./components/CreateTest2";
 import CreateLink from "./components/CreateLink";
 import TrackCard from "./components/track-card";
 import TrackDetail from "./components/track-detail";
@@ -108,10 +100,7 @@ const App = () => {
                         <Route path="/profile/*" element={<ProtectedRoute component = {Profile} />} />
                         <Route path="productItem/:id" element={<ProductItem />} />
                         <Route path="register/*" element ={<Register />} />
-                        <Route path="checkout/*" element = {<Checkout />} /> 
-                        <Route path="/account" element = {<Account />} /> 
                         <Route path="/about" element = {<About />}  />  
-                             <Route path="/about/:about_id" element = {<AboutIndex />} />
                              
                         <Route path="/buy" element = {<Buy />} /> 
                             <Route path="/buy/:buyOfferId" element = {<BuyIndex />} />
@@ -128,12 +117,7 @@ const App = () => {
                         <Route path="/Loading" element = {<Loading />} />
                         <Route path="/ProfileCard" element = {<ProfileCard />} />
                         <Route path="/Products" element = {<Products />} />
-                        <Route path="/Dudu" element = {<Dudu />} />
-                        <Route path="/getProfile" element = {<GetProfile />} />
                         <Route path="/externalApi" element = {<ExternalApi/>} />
-                        <Route path="/externalApi2" element = {<ExternalApi2/>} />                       
-                        <Route path="/CreateTest" element = {<CreateTest />} />  
-                        <Route path="/CreateTest2" element = {<CreateTest2 />} /> 
                         <Route path="/CreateLink" element = {<CreateLink />} />  
                         <Route path="/trackCard" element = {<TrackCard />} />  
                         <Route path="/trackDetail" element = {<TrackDetail />} />  
