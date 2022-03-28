@@ -48,8 +48,8 @@ const Home = () => {
 
 
                 
-              
-                <div id="featuredId">
+               
+                <div id="featuredId" href={"/Sell"}>
                   
                 <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
       <Carousel.Item>
@@ -67,15 +67,29 @@ const Home = () => {
      <DetailRow>
      <h6 class="h6">Offer Details:</h6>  1 hr consultation on the state of the hydraulic fracturing and drilling market for onshore China <br></br>
      </DetailRow>
-      <CardFooter>
+     <DetailRow>
       <IconAndLabel>
         
       <h6 class="h6"> Location:</h6>  Videochat from Beijing
       </IconAndLabel>
       <IconAndLabel>
         <h6 class="h6"> Price:</h6>  $150/hr.
-        </IconAndLabel>    
-       
+        </IconAndLabel>   
+        </DetailRow>
+        
+        <CardFooter>
+        <div id='BuyButton'>
+                      <NavLink to="/Sell">
+              <button
+                color='pink'
+                size="large"
+              >
+                Click to view
+              </button>
+            </NavLink>
+             </div>
+          
+          
         
        
       </CardFooter>
@@ -116,6 +130,8 @@ const Home = () => {
                    
                 </div>
                 
+
+
               <div id='headline2'>
         <h1>
           What is DDRC?            

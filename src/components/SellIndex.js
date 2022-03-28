@@ -252,12 +252,8 @@ className="mb-3" >
               <button
                 color='pink'
                 size="large"
-                onClick={InputForm} 
                 id='buttonInput'
               >
-
-
-  
                 Click to here to send {user_data.users[0].first_name} a message
               </button>
 

@@ -105,13 +105,11 @@ const Navigation = () => {
     <NavDropdown class="nav-link" id="nav-links" title="Buy" id="collasible-nav-dropdown">
         <NavDropdown.Item  id="nav-links" href="/Buy">View buy offers</NavDropdown.Item>
         <NavDropdown.Item  id="nav-links" href="/CreateBuy">Create buy offers</NavDropdown.Item>
-        <NavDropdown.Divider />
        </NavDropdown>
       
        <NavDropdown class="nav-link" id="nav-links" title="Sell" id="collasible-nav-dropdown">
         <NavDropdown.Item  id="nav-links" href="/Sell">View sell offers</NavDropdown.Item>
         <NavDropdown.Item  id="nav-links" href="/CreateSell">Create sell offers</NavDropdown.Item>
-        <NavDropdown.Divider />
        </NavDropdown>
      
       <Nav.Link  id="nav-links" href="/About">About</Nav.Link>

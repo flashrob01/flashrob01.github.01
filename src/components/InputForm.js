@@ -10,20 +10,27 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 
 const InputForm = () => {
+  const [sent_message, setSent_message] = useState('');
+
+  const [status, setStatus] = useState("");
 
   
-
-
-
-
-
-
 //const [body, setBody] = useState('');
 
 //const [values, handleChange] = UseForm({industry:"", offer_type:"", offer_details:"", price:"10", qualifications:"", user_id:"", buy_offer_id:""});
 //const values = {industry, offer_type, offzer_details, price, qualifications, user_id, buy_offer_id};
 
 
+
+
+
+
+/* const [user_id, setUser_id] = useState('');
+ */
+
+const { user} = useAuth0();
+
+const user_id =user.sub;
 
 const ADD_MESSAGE = gql`
 mutation messages($object: messages_insert_input!) {
@@ -33,19 +40,7 @@ mutation messages($object: messages_insert_input!) {
     }
   }
 `;
-
-const [status, setStatus] = useState("");
-
-
-const [sent_message, setSent_message] = useState('');
-
-/* const [user_id, setUser_id] = useState('');
- */
-
-const { user} = useAuth0();
-
-const user_id =user.sub;
-
+   
 
 
 const [create_messages, {data, loading, error}] = useMutation(ADD_MESSAGE, {
@@ -54,7 +49,8 @@ const [create_messages, {data, loading, error}] = useMutation(ADD_MESSAGE, {
          sent_message: sent_message,
          user_id: user_id,
 
-    
+ 
+
         
 }}});
 

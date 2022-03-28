@@ -255,7 +255,6 @@ console.log('here is link', linky);
                                                         overlay={renderTooltip}
                                                         >
                                                         <button
-                                                            onClick={InputForm} 
 
                                                             color='pink'
                                                             size="large"

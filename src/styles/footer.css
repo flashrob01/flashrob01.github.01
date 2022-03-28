@@ -25,7 +25,7 @@ footer
  */}
 
 .N3logo {
-    height: 2rem;
+    height: 2.5rem;
     pointer-events: none;
     padding-left: 3vw;
     grid-template-columns: 1 fr span 1;
