@@ -196,7 +196,7 @@ const renderTooltip = (props) => (
 let linky = ("https://"+ user_data.users[0].linked_in);
 console.log('here is link', linky);
 
-
+let linky2= ('https://www.nekohit.com');
 
 
   return (
@@ -271,8 +271,8 @@ console.log('here is link', linky);
             <div id="section3_sellDetail">
 
                              
-            <h2>Please make an escrow payment to your DDR account now.</h2>
-    <p>  As DDRC is not responsible to enforce the quality or terms of the transaction, it is important that you confirm these terms with the seller before you decide to enter into the transaction.DDRC recommends that transaction between parties be performed using the Nekohit escrow system. For more information on how it works, see our FAQ  <StyledLink id="linky" to={`/About`}> here </StyledLink>. 
+            <h2>Please set up your transaction using the Nekohit escrow system.</h2>
+    <p>  As DDRC is not responsible to enforce the quality or terms of the transaction, it is important that you confirm the terms with the seller before you into the transaction. For more information on how escrow works, please see our FAQ  <StyledLink id="linky" to={`/About`}> here. </StyledLink>
     </p>
    
     
@@ -304,14 +304,14 @@ console.log('here is link', linky);
       )}
     </div> */}
 
-            <StyledLink to={`www.nekohit.com`}>
+            <a href={linky2} target="_blank" rel="noopener noreferrer">
               <button
                 color='pink'
                 size="large"
               >
                 Click to here to set up an escrow payment with Nekohit
                               </button>
-            </StyledLink>
+            </a>
 
             <Link to= {{
                pathname: `/Sell`}}>
