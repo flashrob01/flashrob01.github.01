@@ -1,8 +1,9 @@
 import {useState} from 'react';
 import styled from '@emotion/styled';
+import { useAuth0 } from "@auth0/auth0-react";
 
 import { useQuery } from "@apollo/client";
-import { gql} from '@apollo/client';
+import { InMemoryCache, ApolloClient, gql} from '@apollo/client';
 
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
@@ -25,11 +26,12 @@ export const mq = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
  * It provides access to the first module of the track.
  */
 const SellIndex = () => {
-  
+  const { user } = useAuth0();
+
 
   const GET_SELL_OFFERS_QUERY = gql`
-  query GetSellOffers {
-    sell_offers(where: {sell_offer_id: {_eq: "10"}}) {
+  query GetSellOffers($sell_offer_id: Int!){
+    sell_offers(where: {sell_offer_id: {_eq: $sell_offer_id}}){
       user_id
       price
       sell_offer_id
@@ -47,45 +49,97 @@ const SellIndex = () => {
 `;
 
 const GET_USERS = gql`
-  query GetUsers{
-    users(where: {user_id: {_eq: "linkedin|uiWV-hd6Jm"}}){
+  query GetUsers($userId: String){
+    users(where: {user_id: {_eq: $userId}}){
       user_id
       email
       picture
       first_name
       last_name
       linked_in
+      id
          }
   }
 `;
 
+const client = new ApolloClient({
+  // ...other arguments...
+  cache: new InMemoryCache(),
+  connectToDevTools: true,
+  uri: `https://bright-mullet-79.hasura.app/v1/graphql/`,
 
+});
 
-
-const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY);
 
 const [key, setKey] = useState('home');
 
-
-const {loading:user_loading, error:user_error, data:user_data } =  useQuery(GET_USERS);
-
 const {sell_offer_id} = useParams();
 
-var number = Number(sell_offer_id);
+var num = Number(sell_offer_id);
 
-  if(loading) return 'Loading...';
- if(error) return `Error! ${error.message}`;    
 
- const values = Object.values(data);
 
- const filteredItems = values.filter((item) => {
-  return (item.sell_offer_id === number); 
-}
-);
+/* const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY); */
+
+const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY, {
+  variables: {sell_offer_id: num},
+});
+
+const userId = user.sub;
+
+const {loading:user_loading, error:user_error, data:user_data } =  useQuery(GET_USERS, {
+  variables: {userId},
+  onCompleted: () => {
+    setVisible('true');
+  }
+});
+
+const [visible, setVisible] = useState('false');
+
+
+if(loading) return 'Loading...';
+if(error) return `Error! ${error.message}`;
+
+
 
 
 if(user_loading) return 'Loading...';
 if(user_error) return `Error! ${user_error.message}`;  
+
+
+
+ const values = Object.values(data);
+
+ const filteredItems = values.filter((item) => {
+  return (item.sell_offer_id === num); 
+}
+);
+
+
+//-----------------caching------------------
+
+
+
+/* const cache = new InMemoryCache({
+  typePolicies: {
+    User: {
+      // In an inventory management system, products might be identified
+      // by their UPC.
+      keyFields: ["user_id"],
+    },
+}});
+ */
+
+const get_user = client.readQuery({
+  query: GET_USERS,
+  variables: { // Provide any required variables here
+    user_id: userId,
+    id: userId,
+  },
+});
+
+
+//---caching to make pages load faster- from: https://www.apollographql.com/docs/react/caching/cache-configuration
 
 const users1 = Object.values(user_data);
 
@@ -93,6 +147,8 @@ const filteredUsers = users1.filter((item) => {
  return (item.user_id === 'linkedin|uiWV-hd6Jm'); 
 }
 );
+
+
 
 let linky = ("https://"+ user_data.users[0].linked_in);
 console.log('here is link', linky);
@@ -106,8 +162,9 @@ const renderTooltip = (props) => (
 
 
   return (
-   <div className='grid1'>
-      <div id="banner1">
+    (visible ==="true" && data) ? (
+   <div className='grid2'>
+      <div id="banner_sell">
         <h1 className='h1'>
             Connect with an Expert
         </h1>
@@ -119,7 +176,7 @@ const renderTooltip = (props) => (
 
                             <br></br>
                       <a href={linky} target="_blank"> 
-
+ 
                       <button
                         color='pink'
                         size="large"
@@ -216,7 +273,7 @@ className="mb-3" >
 
 <DetailRow id='DetailRow'></DetailRow>
 
-<NavLink to={`/Sell/SellDetail/{number}`}>
+<NavLink to={`/Sell/SellDetail/${data.sell_offers[0].sell_offer_id}`}>
               <button
 
                 color='pink'
@@ -226,10 +283,27 @@ className="mb-3" >
               </button>
             </NavLink>
 
+ <DetailRow id='DetailRow'></DetailRow>
+ <br></br>
+
+ <NavLink to={`/Sell`}>
+              <button
+
+                color='pink'
+                size="large"
+              >
+                Click to return to sell list
+              </button>
+            </NavLink>
+
+            
 
           </div>
 
       </div>
+       ) :(
+        ('')
+       )
   );
 };
 

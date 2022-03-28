@@ -14,23 +14,44 @@
   }
 
   .grid{
-    min-height: 1200px;
+    min-height: 1300px;
     min-width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 8px;
-    border: 1px rgb(38, 0, 255) solid;
+    border: 1px rgb(241, 240, 252) solid;
     justify-items: center;
     justify-content: center;
+    overflow-x: hidden;
+    align-items: center;
 
    
   
   }
- 
-  #section1 {
+
+  #banner_sellDetail {
+    background-image:url("../images/color-gradient-2.jpg");
       grid-row-start: 1; 
     grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    display: inherit;
+    background-position: center;
+     height: 18rem; 
+    width: 100%;
+     background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    background-size: cover;
+    margin-bottom: 10px;
+    
+  }
+ 
+  #section1_sellDetail {
+      grid-row-start: 2; 
+    grid-row-end: 3;
     grid-column-start: 1;
     grid-column-end: 2;
     background-position: center;
@@ -45,28 +66,34 @@
     
   }
 
-  #picture_area{
-    grid-row-start: 1; 
-    grid-row-end: 2;
-    grid-column-start: 2;
-    grid-column-end: 3; 
-  }
-
-  #section3{
+  #picture_area_sellDetail{
     grid-row-start: 2; 
     grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3; 
+    margin-left: 8px;
+    display: block;
+   
+    text-align: center;
+  }
+
+  #section3_sellDetail{
+    grid-row-start: 3; 
+    grid-row-end: 4;
     grid-column-start: 1;
     grid-column-end: 2;
     margin-left: 100px;
   }
 
   
-  #section4{
-    grid-row-start: 2; 
-    grid-row-end: 3;
+  #section4_sellDetail{
+    grid-row-start: 3; 
+    grid-row-end: 4;
     grid-column-start: 2;
     grid-column-end: 3;
-    background-position: center;
+    display: block;
+   
+    text-align: center;
   }
 
   .box{
@@ -92,7 +119,9 @@
     font-size: 2.5em;
   }
 
- 
+ .bold{
+   font-size: 20px;
+ }
 
   #coverImage{
   
@@ -105,10 +134,12 @@
     border-width: 1px;
     background-image:url("../images/LIProfile.jpg");
     overflow: hidden;
+    margin-top: 30px;
+    margin-right: 50px;
 
   }
 
-  #trackDetails{
+  #trackDetails_sellDetail{
     grid-row: 2 / span 1;
     grid-column: 1 /span 2;
     display: 'flex';
@@ -117,6 +148,7 @@
     padding: 20;
     border-Radius: 4;
     margin-Bottom: 5;
+    
     margin-left: 50px;
     border: 'solid 1px silver';
     background-Color: 'silver';
@@ -133,7 +165,7 @@
     
   }
 
-    #DetailRow{
+  #DetailRow_sellDetail{
     display: 'flex';
     flex-direction: 'row';
     justify-content: 'space-between';
@@ -141,10 +173,10 @@
     width: '100%';
     padding-Bottom: 20;
     margin-Bottom: 20;
-    border-Bottom: 'solid 1px silver';
+    border-Bottom: 'solid 1px red';
   };
   
-   #DetailItem{
+   #DetailItem_sellDetail{
     display: 'flex';
     flex-direction: 'column';
     align-Items: 'center';
@@ -213,9 +245,127 @@
     color: 'black';
   }
 
-  
+  #linky{
+    color:blue;
+  }
 
   @media only screen and (max-width: 700px){
+    .grid{
+      min-height: 2400px;
+      min-width: 0;
+      display: grid;
+      grid-template-columns: 1fr ;
+      grid-template-rows: repeat (7, 1fr);
+    }
 
+    .h1{
+ 
+      max-width: 350px;
+    }
+
+    #picture_area_sellDetail{
+      grid-row: 2 / span 1;
+      grid-column: 1 /span 1;
+      margin: 0% 15% 0% 15%;
+      width: 80%;
+    }
+
+    #coverImage_sellDetail{
+      display: grid;
+/*        height: 70vw;
+ */      
+      border-color: beige #1c87c9;
+      border-image: none;
+/*       border-radius: 50% 50% 50% 50%;
+ */      border-style: solid;
+      border-width: 1px;
+      background-image:url("../images/LIProfile.jpg");
+      overflow: hidden;
+      height: 80vw;
+      margin-bottom: 35px;
+      box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+
+
+     /*  margin-top: 30px;
+      margin-right: 100px; */
+      
+    }
+
+  
+ 
+
+    #section1_sellDetail {
+      grid-row-start: 3; 
+    grid-row-end: 4;
+    grid-column: 1 /span 1;
+    background-position: center;
+    /* height: 46rem; */
+    width: 80%;
+    }
+
+    
+  #section3_sellDetail{
+    grid-row-start: 4; 
+    grid-row-end: 5;
+    grid-column: 1 /span 1;
+    width: 80%;
+    margin-left: 0px;
+  }
+
+  
+  #section4_sellDetail{
+    grid-row-start: 5; 
+    grid-row-end: 6;
+    grid-column: 1 /span 1;
+    width: 80%;
+
+
+  }
+
+  .box{
+    grid-row-start: 6; 
+    grid-row-end: 7;
+    grid-column: 1 /span 1;
+
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+    height: 250px;
+    padding: 18;
+    display: 'flex';
+    flex-Direction: 'column';
+    align-Items: 'center';
+    text-align: center;
+    align-Self: 'center';
+    padding-top: 0px;
+
+  }
+
+
+   
+
+
+  
+
+    #linkedinButton{
+      margin: auto;
+  
+      }
+  
+
+    #trackDetails_sellDetail{
+      grid-row: 3 / span 1;
+      grid-column: 1 / span 1;
+      display: grid;
+
+      align-items: center;
+      justify-content: center; 
+      align-content: center;
+      margin: 35% 5% 5% 5%;
+
+    }
+
+   
+  
+      
+  
       
   }

@@ -59,7 +59,6 @@ import ExternalApi from "./components/ExternalApi";
 //import useAccessToken from "./components/useAccessToken";
 import CreateLink from "./components/CreateLink";
 import TrackCard from "./components/track-card";
-import TrackDetail from "./components/track-detail";
 import TrackCardFeatured from "./components/track-card-featured";
 import OrderDetail from "./components/OrderDetail";
 import NeolineConnect from "./components/NeolineConnect";
@@ -112,7 +111,6 @@ const App = () => {
                         <Route path="/externalApi" element = {<ExternalApi/>} />
                         <Route path="/CreateLink" element = {<CreateLink />} />  
                         <Route path="/trackCard" element = {<TrackCard />} />  
-                        <Route path="/trackDetail" element = {<TrackDetail />} />  
                         <Route path="/trackCardFeatured" element = {<TrackCardFeatured />} />  
                         <Route path="/OrderDetail" element = {<OrderDetail />} />  
                         <Route path="/NeolineConnect" element = {<NeolineConnect />} />  

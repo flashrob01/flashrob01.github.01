@@ -6,8 +6,11 @@ import reportWebVitals from './reportWebVitals';
 /* import {Provider} from 'react-redux';
  */import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import AuthorizedApolloProvider from './AuthorizedApolloProvider';
-
 import {Auth0Provider} from "@auth0/auth0-react";
+
+const cache = new InMemoryCache()
+
+
 /* import store from './store';
  */
 //wrapping with ApolloClient allows us to access top-level Apollo Client from anywhere within app...???
@@ -34,9 +37,6 @@ require('dotenv').config();
 
 
 
-require('dotenv').config();
-
-
 
 
 
@@ -55,7 +55,7 @@ ReactDOM.render(
 >
 
 
-<AuthorizedApolloProvider>
+<AuthorizedApolloProvider graphQLClientConfig={{ cache }}>
  
 
 

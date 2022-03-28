@@ -37,7 +37,7 @@
     text-align: center;
     background-size: cover;
     padding: 5% 5% 5% 5% ;
-
+    
     position: relative;
 
   
@@ -267,20 +267,24 @@
 
       #banner{
         display: inline block;
-        max-width: 90%;
+        max-width: 100%;
         height: 400px;   
 
       }
 
       #banner h1{
         font-size: 2em;
+        
       }
 
       #winner{
+       margin-top: 30px;
         background-image:url("../images/ExcellenceAward.png");
        max-width: 100%;
-       margin-left: 20px;
-
+       margin-left: 0x;
+       margin-bottom: 10px;
+       background-repeat: repeat;
+      height: 36vw;
              
     
       }

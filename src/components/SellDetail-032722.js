@@ -1,6 +1,3 @@
-import {useState} from 'react';
-import { useAuth0 } from "@auth0/auth0-react";
-
 import styled from '@emotion/styled';
 import {Link, useParams} from 'react-router-dom';
 
@@ -35,7 +32,6 @@ import Tooltip from 'react-bootstrap/Tooltip';
  * It provides access to the first module of the track.
  */
 const TrackDetail = () => {
-  const { user} = useAuth0();
 
 /* 
     let neolineN3 = new window.NEOLineN3.Init();
@@ -77,8 +73,8 @@ const TrackDetail = () => {
   
 
   const GET_SELL_OFFERS_QUERY = gql`
-  query GetSellOffers($sell_offer_id: Int!){
-    sell_offers(where: {sell_offer_id: {_eq: $sell_offer_id}}){
+  query GetSellOffers {
+    sell_offers(where: {sell_offer_id: {_eq: "10"}}) {
       user_id
       price
       sell_offer_id
@@ -95,40 +91,28 @@ const TrackDetail = () => {
   }
 `;
 
-
 const GET_USERS = gql`
-  query GetUsers($userId: String){
-    users(where: {user_id: {_eq: $userId}}){
+  query GetUsers{
+    users(where: {user_id: {_eq: "linkedin|uiWV-hd6Jm"}}){
       user_id
       email
       picture
       first_name
       last_name
       linked_in
-      id
          }
   }
 `;
 
-const [visible, setVisible] = useState('false');
-
-const {sell_offer_id} = useParams();
-
-
-var num = Number(sell_offer_id);
-
-const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY, {
-  variables: {sell_offer_id: num},
-});
-
-const userId = user.sub;
-
+const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY);
 
 /* useEffect(()=>{
   initDapi();
 })
  */
 
+const {sell_offer_id} = useParams();
+var number = Number(sell_offer_id);
 
 /* 
 const [key, setKey] = useState('home'); */
@@ -138,12 +122,8 @@ const [key, setKey] = useState('home'); */
   const [account, setAccount] = useState("");
   const [error2, setError2] = useState(""); */
 
-  const {loading:user_loading, error:user_error, data:user_data } =  useQuery(GET_USERS, {
-    variables: {userId},
-    onCompleted: () => {
-      setVisible('true');
-    }
-  });/* 
+const {loading:user_loading, error:user_error, data:user_data } =  useQuery(GET_USERS);
+/* 
 useEffect(() => {
   window.addEventListener("NEOLine.NEO.EVENT.READY", () => {
     setNeoLine(new window.NEOLineN3.Init());
@@ -171,7 +151,7 @@ useEffect(() => {
  const values = Object.values(data);
 
  const filteredItems = values.filter((item) => {
-  return (item.sell_offer_id === num); 
+  return (item.sell_offer_id === number); 
 }
 );
 
@@ -200,40 +180,33 @@ console.log('here is link', linky);
 
 
   return (
-    (visible ==="true" && data) ? (
    <div className='grid'>
-          <div id="banner_sellDetail">
-        <h1 className='h1'>
-            Complete your order
-        </h1>
-    
-                </div>
-     <div id='section1_sellDetail'>
-      <TrackDetails id='trackDetails_sellDetail'>
+     <div id='section1'>
+      <TrackDetails id='trackDetails'>
       
  <h2>Order Summary  </h2>
- You selected to purchase: <DetailRow id='DetailRow'><b class="bold">  {data.sell_offers[0].headline} </b></DetailRow>
-  
+ You selected to purchase:  {data.sell_offers[0].headline}
+    with
       <DetailRow id='DetailRow'>
-      Offeror:  <b class="bold"> {user_data.users[0].first_name}  {user_data.users[0].last_name} </b> 
+            <AuthorName id='AuthorName' >{user_data.users[0].first_name} {user_data.users[0].last_name}</AuthorName>
       </DetailRow>
       
       <DetailRow id='DetailRow'>
-        Offer Type: <b class="bold"> {data.sell_offers[0].offer_type}  </b> 
+        <div id="viewCount">Offer Type: <h6> {data.sell_offers[0].offer_type}  </h6> </div>
         </DetailRow> 
 
         <DetailRow id='DetailRow'>
-        Industry:<b class="bold"> {data.sell_offers[0].industry} </b> 
+        <div id="viewCount">Industry:<h6> {data.sell_offers[0].industry} </h6> </div>
         </DetailRow> 
         <DetailRow id='DetailRow'>            
-            Region: <b class="bold"> {data.sell_offers[0].region} </b> 
+            <div id="viewCount">Region: <h3> {data.sell_offers[0].region} </h3> </div>
             </DetailRow>
 
             <DetailRow id='DetailRow'>           
              
-                Price: $<b class="bold"> {data.sell_offers[0].price} </b> 
+              <div id="viewCount"> <h6> Price: {data.sell_offers[0].price} </h6> </div>
               </DetailRow>
-              <DetailRow id='DetailRow'>           Rate type: <b class="bold">  {data.sell_offers[0].rate_type} </b>  
+              <DetailRow id='DetailRow'>              <div id="viewCount">Rate type: <h3>  {data.sell_offers[0].rate_type} </h3>  </div>
 
               
 
@@ -244,8 +217,8 @@ console.log('here is link', linky);
             </div>
 
 
-                                      <div id='picture_area_sellDetail'>
-                            <CoverImage id='coverImage_sellDetail' src={user_data.users[0].picture} alt="" />
+                                      <div id='picture_area'>
+                            <CoverImage id='coverImage' src={user_data.users[0].picture} alt="" />
 
                                                         <StyledLink to={`/InputForm`}>
 
@@ -269,11 +242,11 @@ console.log('here is link', linky);
                           </div>
      
 
-            <div id="section3_sellDetail">
+            <div id="section3">
 
                              
             <h2>Please make an escrow payment to your DDR account now.</h2>
-    <p>  As DDRC is not responsible to enforce the quality or terms of the transaction, it is important that you confirm these terms with the seller before you decide to enter into the transaction.DDRC recommends that transaction between parties be performed using the Nekohit escrow system. For more information on how it works, see our FAQ  <StyledLink id="linky" to={`/About`}> here </StyledLink>. 
+    <p>  As DDRC is not responsible to enforce the quality or terms of the transaction, it is important that you confirm these terms with the seller before you decide to enter into the transaction.DDRC recommends that transaction between parties be performed using the Nekohit escrow system. For more information on how it works, see our FAQ here. 
     </p>
    
     
@@ -281,7 +254,7 @@ console.log('here is link', linky);
       </div>
  
 
-          <div id='section4_sellDetail'> 
+          <div id='section4'> 
 
            
 
@@ -305,7 +278,7 @@ console.log('here is link', linky);
       )}
     </div> */}
 
-            <StyledLink to={`www.nekohit.com`}>
+            <StyledLink to={`www.linkedin.com`}>
               <button
                 color='pink'
                 size="large"
@@ -315,11 +288,9 @@ console.log('here is link', linky);
             </StyledLink>
 
             <Link to= {{
-               pathname: `/Sell`}}>
-
-                 <br></br>
+               pathname: `/`}}>
              
-              <Button onClick={() => alert("Selecting: " )}> Go back
+              <Button onClick={() => alert("Selecting: " )}> Cancel
                 </Button>
            </Link>
         </div>
@@ -327,9 +298,6 @@ console.log('here is link', linky);
         
 
       </div>
-        ) :(
-          ('')
-         )
   );
 };
 
@@ -352,7 +320,6 @@ const TrackDetails = styled.div({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-
   padding: 20,
   borderRadius: 4,
   marginBottom: 30,
@@ -378,7 +345,7 @@ const DetailRow = styled.div({
   width: '100%',
   paddingBottom: 20,
   marginBottom: 20,
-  borderBottom: 'solid 1px grey',
+  borderBottom: 'solid 1px silver',
 });
 
 const DetailItem = styled.div({

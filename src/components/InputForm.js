@@ -2,6 +2,8 @@ import {useState} from 'react';
 //import {fetchingOffers, gotOffers, fetchingOffersFailed} from '../slice_reducers/offersSlice.js';
 import './../styles/CreateSell.css';
 //const axios = require('axios');
+import {NavLink} from 'react-router-dom'
+import '../styles/InputForm.css';
 
 import { gql, useMutation } from '@apollo/client';
 import { useAuth0 } from "@auth0/auth0-react";
@@ -9,17 +11,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const InputForm = () => {
 
-  const [status, setStatus] = useState("");
+  
 
-
-const [sent_message, setSent_message] = useState('');
-
-/* const [user_id, setUser_id] = useState('');
- */
-
-const { user} = useAuth0();
-
-const user_id =user.sub;
 
 
 
@@ -41,7 +34,18 @@ mutation messages($object: messages_insert_input!) {
   }
 `;
 
-   
+const [status, setStatus] = useState("");
+
+
+const [sent_message, setSent_message] = useState('');
+
+/* const [user_id, setUser_id] = useState('');
+ */
+
+const { user} = useAuth0();
+
+const user_id =user.sub;
+
 
 
 const [create_messages, {data, loading, error}] = useMutation(ADD_MESSAGE, {
@@ -84,15 +88,25 @@ if (error) {
                 
                 
                 <li>
-                  <label for="message">Write your message here:</label>
-                  <textarea rows="6"  placeholder="Enter your message here" input class="string" name="sent_message" value={sent_message} onChange={(e) => setSent_message(e.target.value)} required></textarea>
+                  <label for="message">Inquire directly about the transaction details and the seller's background </label>
+                  <br></br>
+                  <textarea id="form" rows="6"  placeholder="Enter your message here" input class="string" name="sent_message" value={sent_message} onChange={(e) => setSent_message(e.target.value)} required></textarea>
                 </li>  
                  
                
-              
-                <li>
+                <div id="buttons">
+                <li >
                   <button type="submit">Submit</button>
+                  <NavLink to="/Sell">
+                  <button type="back" id="">Go back</button>
+                  </NavLink>
                 </li>
+                </div>
+           
+                <li>
+   
+                </li>
+            
               </ul>
             </form>
           </div>

@@ -98,10 +98,11 @@ const onClick = (event) => {
   return (
     
     <Container>
-      <h5>Consulting and Data Offers </h5>
+      <h5>Research, Consulting and Data Offers </h5>
+      <h2>Click for details</h2>
      <ApolloTableQL
   query={SellOffersQuery}
-  columns={['headline', 'industry','offer_type', 'price'  ]}
+  columns={['headline', 'industry','offer_type'  ]}
   sort
   onRowClick={data => redirectTo(data.sell_offer_id)} />
   
