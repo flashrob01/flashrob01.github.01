@@ -49,7 +49,7 @@ ReactDOM.render(
  /*  redirectUri='http://localhost:3000'*/
  
 //Note- unfreeze above and freeze below when going from production to local testing!
- redirectUri='https://ddrc-app.herokuapp.com/'
+ redirectUri='https://ddrc-store.herokuapp.com/'
  
   audience='hasura'
 >
