@@ -282,7 +282,7 @@ className="mb-3" >
  <DetailRow id='DetailRow'></DetailRow>
  <br></br>
 
- <NavLink to={`/Sell`}>
+ <NavLink to={`/`}>
               <button
 
                 color='pink'

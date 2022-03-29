@@ -200,7 +200,7 @@ let linky2= ('https://www.nekohit.com');
 
           <DetailRow>
             <Link to= {{
-               pathname: `/Buy`}}>
+               pathname: `/`}}>
 
                 
              
