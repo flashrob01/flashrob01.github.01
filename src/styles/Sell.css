@@ -1,7 +1,7 @@
 table, td, tr, th {
  
     table-layout: fixed; 
-    border-color: rgb(165, 233, 97); 
+    border-color: #dee2e6; 
      border-collapse: collapse;
     color: #111827; 
     font-size: 1rem;
@@ -10,13 +10,13 @@ table, td, tr, th {
 
 td {
     border-width: 1px; 
-    border-color: rgb(165, 233, 97); 
+    border-color: #dee2e6; 
 }
 
 tr{
     
     border-width: 1px; 
-    border-color: rgb(165, 233, 97); 
+    border-color: #dee2e6; 
 }
 
 tr:nth-child(even){

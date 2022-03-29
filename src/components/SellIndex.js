@@ -228,7 +228,7 @@ const renderTooltip = (props) => (
 className="mb-3" >
         <Tab eventKey="home" title="Details" id="tab1">
         <DetailRow>
-        <div id="qualifications">Qualifications: {data.sell_offers[0].qualifications} </div>
+        <div id="qualifications">Biography/Qualifications: {data.sell_offers[0].qualifications} </div>
         </DetailRow>
         <DetailRow>
          <div id="offer_details"> Offer Details: {data.sell_offers[0].offer_details}</div>
@@ -257,7 +257,7 @@ className="mb-3" >
                 Click to here to send {user_data.users[0].first_name} a message
               </button>
 
-              </OverlayTrigger>,
+              </OverlayTrigger>
               </NavLink>
         </div>
 
@@ -408,7 +408,7 @@ const DetailRow = styled.div({
   width: '100%',
   paddingBottom: 20,
   marginBottom: 20,
-  borderBottom: 'solid 1px grey',
+  borderBottom: 'solid 1px lightgrey',
 });
 
 const DetailItem = styled.div({

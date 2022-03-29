@@ -150,12 +150,12 @@ else{
   
      <button class="buttonProfile" onClick={() => getUser({ variables: { userId } })
     }>
-        My Sell Offers
+        My Requests
       </button> 
      
       <button class="buttonProfile" onClick={() => getUserBuy({ variables: { userId } })
     }>
-        My Buy Offers
+        My Offers
       </button>
      
       <button class="buttonProfile" onClick={() => getReviews({ variables: { userId } })

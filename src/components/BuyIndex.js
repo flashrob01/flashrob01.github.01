@@ -400,7 +400,7 @@ const DetailRow = styled.div({
   width: '100%',
   paddingBottom: 20,
   marginBottom: 20,
-  borderBottom: 'solid 1px grey',
+  borderBottom: 'solid 1px lightgrey',
 });
 
 const DetailItem = styled.div({

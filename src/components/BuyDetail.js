@@ -6,7 +6,7 @@ import {Link, useParams} from 'react-router-dom';
 
 import { useQuery } from "@apollo/client";
 import { gql} from '@apollo/client';
-import './../styles/SellDetail.css';
+import './../styles/BuyDetail.css';
 
 import Button from 'react-bootstrap/Button';
 import InputForm from './InputForm';
@@ -116,8 +116,8 @@ let linky2= ('https://www.nekohit.com');
         </h1>
     
                 </div>
-     <div id='section1_sellDetail'>
-      <TrackDetails id='trackDetails_sellDetail'>
+     <div id='section1_buyDetail'>
+      <TrackDetails id='trackDetails_buyDetail'>
       
  <h2>Order Summary  </h2>
  You selected to sell: <DetailRow id='DetailRow'><b class="bold">  {data.buy_offers[0].headline} </b></DetailRow>
@@ -152,7 +152,7 @@ let linky2= ('https://www.nekohit.com');
             </div>
 
 
-                                      <div id='picture_area_sellDetail'>
+                                      <div id='picture_area_buyDetail'>
                             <CoverImage id='coverImage_sellDetail' src={user_data.users[0].picture} alt="" />
 
                                                         <StyledLink to={`/InputForm`}>
@@ -176,7 +176,7 @@ let linky2= ('https://www.nekohit.com');
                           </div>
      
 
-            <div id="section3_sellDetail">
+            <div id="section3_buyDetail">
             <DetailRow id='DetailRow'>
 
                              
@@ -193,7 +193,7 @@ let linky2= ('https://www.nekohit.com');
       </div>
  
 
-          <div id='section4_sellDetail'>         
+          <div id='section4_buyDetail'>         
           <DetailRow id='DetailRow'>
 
 
@@ -203,7 +203,7 @@ let linky2= ('https://www.nekohit.com');
                 color='pink'
                 size="large"
               >
-                Click to here to set up an escrow payment with Nekohit
+                Click to here to set up an escrow payment receipt with Nekohit
                               </button>
             </a>
             </DetailRow>
@@ -273,7 +273,7 @@ const DetailRow = styled.div({
   width: '100%',
   paddingBottom: 20,
   marginBottom: 20,
-  borderBottom: 'solid 1px grey',
+  borderBottom: 'solid 1px lightgrey',
 });
 
 const DetailItem = styled.div({

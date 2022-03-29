@@ -30,7 +30,7 @@
   
   }
 
-  #banner_sellDetail {
+  #banner_buyDetail {
     background-image:url("../images/color-gradient-2.jpg");
       grid-row-start: 1; 
     grid-row-end: 2;
@@ -49,7 +49,7 @@
     
   }
  
-  #section1_sellDetail {
+  #section1_buyDetail {
       grid-row-start: 2; 
     grid-row-end: 3;
     grid-column-start: 1;
@@ -66,7 +66,7 @@
     
   }
 
-  #picture_area_sellDetail{
+  #picture_area_buyDetail{
     grid-row-start: 2; 
     grid-row-end: 3;
     grid-column-start: 2;
@@ -77,7 +77,7 @@
     text-align: center;
   }
 
-  #section3_sellDetail{
+  #section3_buyDetail{
     grid-row-start: 3; 
     grid-row-end: 4;
     grid-column-start: 1;
@@ -86,7 +86,7 @@
   }
 
   
-  #section4_sellDetail{
+  #section4_buyDetail{
     grid-row-start: 3; 
     grid-row-end: 4;
     grid-column-start: 2;
@@ -95,8 +95,12 @@
     margin: 0 auto;
     justify-items: center;
     justify-items: center;
+    justify-content: center;
+    align-Items: 'center';
+    align-Self: 'center';
     text-align: center; 
-    
+    margin: 15% 15% 15% 15%;
+    text-align: center;
   }
 
 
@@ -144,7 +148,7 @@
 
   }
 
-  #trackDetails_sellDetail{
+  #trackDetails_buyDetail{
     grid-row: 2 / span 1;
     grid-column: 1 /span 2;
     display: 'flex';
@@ -170,7 +174,7 @@
     
   }
 
-  #DetailRow_sellDetail{
+  #DetailRow_buyDetail{
     display: 'flex';
     flex-direction: 'row';
     justify-content: 'space-between';
@@ -181,7 +185,7 @@
     border-Bottom: 'solid 1px red';
   };
   
-   #DetailItem_sellDetail{
+   #DetailItem_buyDetail{
     display: 'flex';
     flex-direction: 'column';
     align-Items: 'center';
@@ -268,14 +272,14 @@
       max-width: 350px;
     }
 
-    #picture_area_sellDetail{
+    #picture_area_buyDetail{
       grid-row: 2 / span 1;
       grid-column: 1 /span 1;
       margin: 0% 15% 0% 15%;
       width: 80%;
     }
 
-    #coverImage_sellDetail{
+    #coverImage_buyDetail{
       display: grid;
 /*        height: 70vw;
  */      
@@ -299,26 +303,33 @@
   
  
 
-    #section1_sellDetail {
+    #section1_buyDetail {
       grid-row-start: 3; 
     grid-row-end: 4;
     grid-column: 1 /span 1;
     background-position: center;
     /* height: 46rem; */
     width: 80%;
+    background-repeat: no-repeat;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
     }
 
     
-  #section3_sellDetail{
+  #section3_buyDetail{
     grid-row-start: 4; 
     grid-row-end: 5;
     grid-column: 1 /span 1;
     width: 80%;
     margin-left: 0px;
+    text-align: center;
   }
 
   
-  #section4_sellDetail{
+  #section4_buyDetail{
     grid-row-start: 5; 
     grid-row-end: 6;
     grid-column: 1 /span 1;
@@ -361,7 +372,7 @@
       }
   
 
-    #trackDetails_sellDetail{
+    #trackDetails_buyDetail{
       grid-row: 3 / span 1;
       grid-column: 1 / span 1;
       display: grid;
@@ -369,7 +380,7 @@
       align-items: center;
       justify-content: center; 
       align-content: center;
-      margin: 35% 5% 5% 5%;
+      margin: 5% 5% 5% 5%;
 
     }
 

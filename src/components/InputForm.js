@@ -93,7 +93,7 @@ if (error) {
                 <div id="buttons">
                 <li >
                   <button type="submit">Submit</button>
-                  <NavLink to="/Sell">
+                  <NavLink to="/">
                   <button type="back" id="">Go back</button>
                   </NavLink>
                 </li>

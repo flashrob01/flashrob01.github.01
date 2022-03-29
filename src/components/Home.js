@@ -78,7 +78,7 @@ const Home = () => {
         </DetailRow>
         
         <CardFooter>
-        <div id='BuyButton'>
+        <div id='BuyButton2'>
                       <NavLink to="/Sell">
               <button
                 color='pink'
