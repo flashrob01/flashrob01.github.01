@@ -9,3 +9,21 @@
 
     "@emotion/styled": "^11.8.1",
 
+
+    "isomorphic-fetch": "^3.0.0",
+    lodash
+    react-icons
+    @emotion/core
+    @auth0/auth0-spa-js
+    @graphql-codegen/typescript-react-query
+    @types/node
+    @types/react
+    @types/react-dom
+    apollo-link-batch-http
+    apollo-link-retry
+    gh-pages
+    react-hook-form
+    subscriptions-transport-ws
+    todomvc-app-css
+    
+

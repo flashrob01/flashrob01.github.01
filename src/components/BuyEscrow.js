@@ -58,18 +58,6 @@ const fetchOffer = async() => {
 
   //Have to convert buy_offer_id to num in order to be recognized by filter/ find functions!!
 
-  const filteredItems = buyOffer.filter((item) => {
-    return (item.buy_offer_id === number); 
-  }
-  );
-
-   
-  console.log('Filtered items are:',  filteredItems);
-
- 
- console.log('the buyofferid is:', buy_offer_id);
-       
-
 
 return(
     <div>

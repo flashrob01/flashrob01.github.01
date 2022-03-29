@@ -55,7 +55,6 @@ import ProfileCard from "./components/ProfileCard";
 //import GetProfile3 from "./components/getProfile3";
 //import GetProfile3 from "./components/GetProfile3";
 //import useAccessToken from "./components/useAccessToken";
-import CreateLink from "./components/CreateLink";
 
 import OrderDetail from "./components/OrderDetail";
 import InputForm from "./components/InputForm";
@@ -102,7 +101,6 @@ const App = () => {
                         <Route path="/CreateSell" element = {<ProtectedRoute component = {CreateSell} />} />
                         <Route path="/Loading" element = {<Loading />} />
                         <Route path="/ProfileCard" element = {<ProfileCard />} />
-                        <Route path="/CreateLink" element = {<CreateLink />} />  
                
                         <Route path="/OrderDetail" element = {<OrderDetail />} />  
                         <Route path="/InputForm" element = {<ProtectedRoute component = {InputForm} />} />  

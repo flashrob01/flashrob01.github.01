@@ -76,23 +76,13 @@ const userId = user.sub;
   if(loading) return 'Loading...';
  if(error) return `Error! ${error.message}`;    
 
- const values = Object.values(data);
 
- const filteredItems = values.filter((item) => {
-  return (item.sell_offer_id === num); 
-}
-);
 
 
 if(user_loading) return 'Loading...';
 if(user_error) return `Error! ${user_error.message}`;  
 
-const users1 = Object.values(user_data);
 
-const filteredUsers = users1.filter((item) => {
- return (item.user_id === 'linkedin|uiWV-hd6Jm'); 
-}
-);
 
 const renderTooltip = (props) => (
   <Tooltip id="button-tooltip" {...props}>
