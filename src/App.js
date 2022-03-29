@@ -51,8 +51,6 @@ import CreateSell from "./components/CreateSell";
 import Profile from "./components/Profile";
 import Loading from "./components/Loading";
 import ProfileCard from "./components/ProfileCard";
-import BuyUserInfo from "./components/BuyUserInfo";
-import ExternalApi from "./components/ExternalApi";
 //PRofile above is for testing the use-api hook- https://github.com/auth0/auth0-react/blob/master/EXAMPLES.md#4-create-a-useapi-hook-for-accessing-protected-apis-with-an-access-token
 //import GetProfile3 from "./components/getProfile3";
 //import GetProfile3 from "./components/GetProfile3";
@@ -60,7 +58,6 @@ import ExternalApi from "./components/ExternalApi";
 import CreateLink from "./components/CreateLink";
 
 import OrderDetail from "./components/OrderDetail";
-import NeolineConnect from "./components/NeolineConnect";
 import InputForm from "./components/InputForm";
 import EditSellOffer from './components/EditSellOffer';
 import EditBuyOffer from './components/EditBuyOffer';
@@ -105,11 +102,9 @@ const App = () => {
                         <Route path="/CreateSell" element = {<ProtectedRoute component = {CreateSell} />} />
                         <Route path="/Loading" element = {<Loading />} />
                         <Route path="/ProfileCard" element = {<ProfileCard />} />
-                        <Route path="/externalApi" element = {<ExternalApi/>} />
                         <Route path="/CreateLink" element = {<CreateLink />} />  
                
                         <Route path="/OrderDetail" element = {<OrderDetail />} />  
-                        <Route path="/NeolineConnect" element = {<NeolineConnect />} />  
                         <Route path="/InputForm" element = {<ProtectedRoute component = {InputForm} />} />  
                         <Route path="/EditSellOffer/:sell_offer_id" element = {<ProtectedRoute component = {EditSellOffer}/>} />  
                         <Route path="/EditBuyOffer/:buyOfferId" element = {<ProtectedRoute component = {EditBuyOffer}/>} />  
