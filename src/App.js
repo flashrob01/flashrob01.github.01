@@ -58,8 +58,7 @@ import ExternalApi from "./components/ExternalApi";
 //import GetProfile3 from "./components/GetProfile3";
 //import useAccessToken from "./components/useAccessToken";
 import CreateLink from "./components/CreateLink";
-import TrackCard from "./components/track-card";
-import TrackCardFeatured from "./components/track-card-featured";
+
 import OrderDetail from "./components/OrderDetail";
 import NeolineConnect from "./components/NeolineConnect";
 import InputForm from "./components/InputForm";
@@ -108,8 +107,7 @@ const App = () => {
                         <Route path="/ProfileCard" element = {<ProfileCard />} />
                         <Route path="/externalApi" element = {<ExternalApi/>} />
                         <Route path="/CreateLink" element = {<CreateLink />} />  
-                        <Route path="/trackCard" element = {<TrackCard />} />  
-                        <Route path="/trackCardFeatured" element = {<TrackCardFeatured />} />  
+               
                         <Route path="/OrderDetail" element = {<OrderDetail />} />  
                         <Route path="/NeolineConnect" element = {<NeolineConnect />} />  
                         <Route path="/InputForm" element = {<ProtectedRoute component = {InputForm} />} />  

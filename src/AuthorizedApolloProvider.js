@@ -2,8 +2,9 @@ import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@ap
 import { setContext } from '@apollo/client/link/context';
 import { ApolloLink } from 'apollo-link';
 import { BatchHttpLink } from 'apollo-link-batch-http';
-import LogRocket from 'logrocket';
-import { onError } from 'apollo-link-error';
+/* import LogRocket from 'logrocket';
+//disabled any references to logrocket
+ */import { onError } from 'apollo-link-error';
 import { RetryLink } from 'apollo-link-retry';
 import React from 'react';
 
@@ -43,18 +44,9 @@ const AuthorizedApolloProvider = ({ children }) => {
 	const client = new ApolloClient({
 		link: ApolloLink.from([
 			onError(({ graphQLErrors, networkError }) => {
-				if (graphQLErrors) {
-					LogRocket.captureException(graphQLErrors);
-					graphQLErrors.forEach(({ message, locations, path }) =>
-						console.error(
-							`[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
-						)
-					);
+				if (graphQLErrors) {console.log('graphql error')
 				}
-				if (networkError) {
-					// localStorage.removeItem('token');
-					LogRocket.captureException(networkError);
-					console.error(`[Network error]:`, networkError);
+				if (networkError) {console.log('networkerror')
 				}
 			}),
 			authMiddleware,

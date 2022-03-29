@@ -235,7 +235,7 @@ console.log('here is link', linky);
                                                         >
                                                             Click to here to begin a conversation with {user_data.users[0].first_name} 
                                                         </button>
-                                                        </OverlayTrigger>,
+                                                        </OverlayTrigger>
 
                                                         </StyledLink>
                                                     
