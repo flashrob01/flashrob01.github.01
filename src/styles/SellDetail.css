@@ -92,10 +92,18 @@
     grid-column-start: 2;
     grid-column-end: 3;
     display: block;
-   
+    margin: 0 auto;
+    justify-items: center;
+    justify-content: center;
+    align-Items: 'center';
+    align-Self: 'center';
+    text-align: center; 
+    margin: 15% 15% 15% 15%;
     text-align: center;
   }
 
+
+  
   .box{
     grid-row-start: 3; 
     grid-row-end: 4;
@@ -320,6 +328,11 @@
     width: 80%;
 
 
+  }
+
+  #GoBack{
+    grid-row-start: 6; 
+    grid-row-end: 7;
   }
 
   .box{

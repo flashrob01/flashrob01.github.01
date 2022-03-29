@@ -34,7 +34,7 @@ import Tooltip from 'react-bootstrap/Tooltip';
  * author, length, number of views, modules list, among other things.
  * It provides access to the first module of the track.
  */
-const SellDetail = () => {
+const BuyDetail = () => {
   const { user} = useAuth0();
 
 /* 
@@ -76,20 +76,18 @@ const SellDetail = () => {
   }; */
   
 
-  const GET_SELL_OFFERS_QUERY = gql`
-  query GetSellOffers($sell_offer_id: Int!){
-    sell_offers(where: {sell_offer_id: {_eq: $sell_offer_id}}){
+  const GET_BUY_OFFERS_QUERY = gql`
+  query GetBuyOffers($buyOfferId: Int!){
+    buy_offers(where: {buyOfferId: {_eq: $buyOfferId}}){
       user_id
       price
-      sell_offer_id
+      buyOfferId
       industry
       offer_type
       headline
       offer_details
       languages
       rate_type
-      target_audience
-      region
       qualifications
     }
   }
@@ -112,13 +110,13 @@ const GET_USERS = gql`
 
 const [visible, setVisible] = useState('false');
 
-const {sell_offer_id} = useParams();
+const {buyOfferId} = useParams();
 
 
-var num = Number(sell_offer_id);
+var num = Number(buyOfferId);
 
-const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY, {
-  variables: {sell_offer_id: num},
+const {loading, error, data } =  useQuery(GET_BUY_OFFERS_QUERY, {
+  variables: {buyOfferId: num},
 });
 
 const userId = user.sub;
@@ -204,7 +202,7 @@ let linky2= ('https://www.nekohit.com');
    <div className='grid'>
           <div id="banner_sellDetail">
         <h1 className='h1'>
-            Complete your order
+            Begin your transaction
         </h1>
     
                 </div>
@@ -212,28 +210,28 @@ let linky2= ('https://www.nekohit.com');
       <TrackDetails id='trackDetails_sellDetail'>
       
  <h2>Order Summary  </h2>
- You selected to purchase: <DetailRow id='DetailRow'><b class="bold">  {data.sell_offers[0].headline} </b></DetailRow>
+ You selected to sell: <DetailRow id='DetailRow'><b class="bold">  {data.buy_offers[0].headline} </b></DetailRow>
   
       <DetailRow id='DetailRow'>
-      Offeror:  <b class="bold"> {user_data.users[0].first_name}  {user_data.users[0].last_name} </b> 
+      Buyer:  <b class="bold"> {user_data.users[0].first_name}  {user_data.users[0].last_name} </b> 
       </DetailRow>
       
       <DetailRow id='DetailRow'>
-        Offer Type: <b class="bold"> {data.sell_offers[0].offer_type}  </b> 
+        Offer Type (data/ consulting): <b class="bold"> {data.buy_offers[0].offer_type}  </b> 
         </DetailRow> 
 
         <DetailRow id='DetailRow'>
-        Industry:<b class="bold"> {data.sell_offers[0].industry} </b> 
+        Industry:<b class="bold"> {data.buy_offers[0].industry} </b> 
         </DetailRow> 
         <DetailRow id='DetailRow'>            
-            Region: <b class="bold"> {data.sell_offers[0].region} </b> 
+            Region: <b class="bold"> {data.buy_offers[0].region} </b> 
             </DetailRow>
 
             <DetailRow id='DetailRow'>           
              
-                Price: $<b class="bold"> {data.sell_offers[0].price} </b> 
+                Price: $<b class="bold"> {data.buy_offers[0].price} </b> 
               </DetailRow>
-              <DetailRow id='DetailRow'>           Rate type: <b class="bold">  {data.sell_offers[0].rate_type} </b>  
+              <DetailRow id='DetailRow'>           Rate type (hourly/ flat rate): <b class="bold">  {data.buy_offers[0].rate_type} </b>  
 
               
 
@@ -269,40 +267,26 @@ let linky2= ('https://www.nekohit.com');
      
 
             <div id="section3_sellDetail">
+            <DetailRow id='DetailRow'>
 
                              
             <h2>Please set up your transaction using the Nekohit escrow system.</h2>
+            </DetailRow>
+            <DetailRow id='DetailRow'>
+
     <p>  As DDRC is not responsible to enforce the quality or terms of the transaction, it is important that you confirm the terms with the seller before you into the transaction. For more information on how escrow works, please see our FAQ  <StyledLink id="linky" to={`/About`}> here. </StyledLink>
+             
     </p>
-   
+          </DetailRow>
     
   
       </div>
  
 
-          <div id='section4_sellDetail'> 
+          <div id='section4_sellDetail'>         
+          <DetailRow id='DetailRow'>
 
-           
 
-{/* Note- the below Neoline initiation didn't work, likely cuz didn't use correct initiators?//
-
-              <button
-              onClick={NeolineConnect} 
-                color='pink'
-                size="large"
-              >
-                Click to here to make a payment with your Neoline wallet
-              </button>  */}
-
-{/* Turned off Neoline button, because it's tacky and confusing and not going to be used anyway
- */}              {/* <div className="App">
-      {neoline === undefined && <p>Loading neoline</p>}
-      {neoline && (
-        <button onClick={initNeolineAccount} color="pink" size="large">
-          Click to here connect to neoline
-        </button>
-      )}
-    </div> */}
 
             <a href={linky2} target="_blank" rel="noopener noreferrer">
               <button
@@ -312,18 +296,20 @@ let linky2= ('https://www.nekohit.com');
                 Click to here to set up an escrow payment with Nekohit
                               </button>
             </a>
+            </DetailRow>
 
+          <DetailRow>
             <Link to= {{
-               pathname: `/Sell`}}>
+               pathname: `/Buy`}}>
 
-                 <br></br>
+                
              
               <Button onClick={() => alert("Selecting: " )}> Go back
                 </Button>
            </Link>
-        </div>
+       </DetailRow>
+       </div>    
 
-        
 
       </div>
         ) :(
@@ -332,7 +318,7 @@ let linky2= ('https://www.nekohit.com');
   );
 };
 
-export default SellDetail;
+export default BuyDetail;
 
 /** Track detail styled components */
 const CoverImage = styled.img({

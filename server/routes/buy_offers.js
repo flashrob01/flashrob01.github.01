@@ -22,7 +22,7 @@ ssl: {
 client.connect();
 
 
-const allowedOrigins = ['https://ddrc-app.herokuapp.com'];
+const allowedOrigins = ['https://ddrc-store.herokuapp.com'];
 buyOffersRouter.use(cors({
     credentials: true,
     origin: (origin, callback) => {

@@ -42,7 +42,7 @@ import FourOhFour from "./components/FourOhFour";
 import About from "./components/About";
 import Buy from "./components/Buy";
 import BuyIndex from "./components/BuyIndex";
-import BuyEscrow from "./components/BuyEscrow";
+import BuyDetail from "./components/BuyDetail";
 import Sell from "./components/Sell";
 import SellDetail from "./components/SellDetail";
 import SellIndex from "./components/SellIndex";
@@ -96,9 +96,7 @@ const App = () => {
                              
                         <Route path="/buy" element = {<Buy />} /> 
                             <Route path="/buy/:buyOfferId" element = {<BuyIndex />} />
-                            <Route path="/buy/BuyUserInfo/:buyOfferId" element = {<BuyUserInfo />} />
-                            <Route path="/buy/:buyOfferId/escrow" element = {<BuyEscrow />} />
-                            
+                            <Route path="/buy/BuyDetail/:buyOfferId" element = {<BuyDetail />} />                            
                             
                         <Route path="/sell" element = {<Sell />} />
                             <Route path="/sell/:sell_offer_id" element = {<SellIndex />}  />
