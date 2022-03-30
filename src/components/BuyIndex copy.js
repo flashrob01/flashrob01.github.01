@@ -30,8 +30,8 @@ const BuyIndex = () => {
 
 
   const BUY_OFFERS_QUERY = gql`
-  query GetBuyOffers($buyOfferId: Int!) {
-    buy_offers(where: {buyOfferId: {_eq: $buyOfferId}}) {
+  query GetBuyOffers ($buyOfferId: Int!){
+    buy_offers(where: {buyOfferId: {_eq: $buyOfferId}}){
       user_id
       price
       buyOfferId
@@ -43,29 +43,31 @@ const BuyIndex = () => {
       rate_type
       qualifications
     }
-    users(where: {buy_offers: {buyOfferId: {_eq: $buyOfferId}}}) {
-      email
-      first_name
-      picture
-      email
-      last_name
-      linked_in
-
-    }
   }
 `;
 
+const GET_USERS = gql`
+  query GetUsers($userId: String){
+    users(where: {user_id: {_eq: $userId}}){
+      user_id
+      email
+      picture
+      first_name
+      last_name
+      linked_in
+      id
+         }
+  }
+`;
 
-
-
-/* const client = new ApolloClient({
-   ...other arguments...
+const client = new ApolloClient({
+  // ...other arguments...
   cache: new InMemoryCache(),
   connectToDevTools: true,
   uri: `https://bright-mullet-79.hasura.app/v1/graphql/`,
 
 });
- */
+
 
 const [key, setKey] = useState('home');
 
@@ -79,19 +81,16 @@ var num = Number(buyOfferId);
 
 const {loading, error, data } =  useQuery(BUY_OFFERS_QUERY, {
   variables: {buyOfferId: num},
-  onCompleted: () => {
-    setVisible('true');
-  }
 });
 
-/* const userId = user.sub; */
+const userId = user.sub;
 
-/* const {loading:user_loading, error:user_error, data:user_data } =  useQuery(GET_USERS, {
+const {loading:user_loading, error:user_error, data:user_data } =  useQuery(GET_USERS, {
   variables: {userId},
   onCompleted: () => {
     setVisible('true');
   }
-}); */
+});
 
 const [visible, setVisible] = useState('false');
 
@@ -102,12 +101,17 @@ if(error) return `Error! ${error.message}`;
 
 
 
-/* if(user_loading) return 'Loading...';
+if(user_loading) return 'Loading...';
 if(user_error) return `Error! ${user_error.message}`;  
 
- */
+
 
  const values = Object.values(data);
+
+ const filteredItems = values.filter((item) => {
+  return (item.buy_offer_id === num); 
+}
+);
 
 
 //-----------------caching------------------
@@ -124,27 +128,27 @@ if(user_error) return `Error! ${user_error.message}`;
 }});
  */
 
-/* const get_user = client.readQuery({
+const get_user = client.readQuery({
   query: GET_USERS,
   variables: { // Provide any required variables here
     user_id: userId,
     id: userId,
   },
-}); */
+});
 
 
 //---caching to make pages load faster- from: https://www.apollographql.com/docs/react/caching/cache-configuration
 
-/* const users1 = Object.values(user_data);
+const users1 = Object.values(user_data);
 
 const filteredUsers = users1.filter((item) => {
  return (item.user_id === 'linkedin|uiWV-hd6Jm'); 
 }
 );
 
- */
 
-let linky = ("https://"+ data.users[0].linked_in);
+
+let linky = ("https://"+ user_data.users[0].linked_in);
 console.log('here is link', linky);
 
 const renderTooltip = (props) => (
@@ -164,10 +168,11 @@ const renderTooltip = (props) => (
         </h1>
     
                 </div>
-                                      <div id='picture_area_track_buyIndex'>
-                            <CoverImage id='coverImage' src={data.users[0].picture} alt="" />
-                            <DetailItem id="linkedinButton_buyIndex">
+                                      <div id='picture_area_track'>
+                            <CoverImage id='coverImage' src={user_data.users[0].picture} alt="" />
+                            <DetailItem id="linkedinButton">
 
+                            <br></br>
                       <a href={linky} target="_blank"> 
  
                       <button
@@ -175,7 +180,7 @@ const renderTooltip = (props) => (
                         size="large"
                         
                       >
-                        Click to see {data.users[0].first_name}'s LinkedIn Profile
+                        Click to see {user_data.users[0].first_name}'s LinkedIn Profile
                       </button>
                       </a>
                       </DetailItem>
@@ -185,7 +190,7 @@ const renderTooltip = (props) => (
   <CardContent>
 
   <CardBody>
-      <CardTitle>{data.users[0].first_name} {data.users[0].last_name}</CardTitle>
+      <CardTitle>{user_data.users[0].first_name} {user_data.users[0].last_name}</CardTitle>
       <DetailRow>
       <div id='headline'>Research/Services desired: {data.buy_offers[0].headline}</div>
      </DetailRow>
@@ -207,7 +212,7 @@ const renderTooltip = (props) => (
      
             </TrackDetails>
 
-            <div id="BottomDetail_buyIndex" >
+            <div id="BottomDetail" >
 
                   <Tabs   id="controlled-tab-example"
       activeKey={key}
@@ -241,7 +246,7 @@ className="mb-3" >
                 size="large"
                 id='buttonInput'
               >
-                Click to here to send {data.users[0].first_name} a message
+                Click to here to send {user_data.users[0].first_name} a message
               </button>
 
               </OverlayTrigger>

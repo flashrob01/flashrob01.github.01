@@ -1,4 +1,3 @@
-import tw from "twin.macro";
 import './../styles/Sell.css';
 import { useNavigate} from 'react-router-dom';
 import { gql, useQuery } from '@apollo/client';
@@ -10,48 +9,7 @@ import { Loader, ApolloTableQL } from 'react-tableql'
 
 
 //Note - all Buy table stuff is taken care of in this file, not buy.css! 
-const Table = tw.table`
-  table-fixed
-  text-base
-  text-gray-900
-`;
 
-const TableHead = tw.thead`
-`;
-
-const TableRow = tw.tr`
-border
-border-yellow-300
-hover:bg-yellow-300
-`;
-
-const TableHeader = tw.th`
-border
-border-yellow-300
-p-2
-`;
-
-const TableBody = tw.tbody`
-`;
-
-//TableData is where the borders of the table are set!
-const TableData = tw.td`
-border-0
-
-p-5
-`;
-
-const Button = tw.button`
-  pl-4
-  pr-4
-  pt-2
-  pb-2
-  text-black
-  rounded-md
-  bg-green-300
-  hover:bg-green-200
-  transition-colors
-`;
 
 function Sell ( props ) {
 

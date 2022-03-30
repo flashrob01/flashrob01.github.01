@@ -20,8 +20,8 @@ const BuyDetail = () => {
   
 
   const GET_BUY_OFFERS_QUERY = gql`
-  query GetBuyOffers($buyOfferId: Int!){
-    buy_offers(where: {buyOfferId: {_eq: $buyOfferId}}){
+  query GetBuyOffers($buyOfferId: Int!) {
+    buy_offers(where: {buyOfferId: {_eq: $buyOfferId}}) {
       user_id
       price
       buyOfferId
@@ -33,21 +33,15 @@ const BuyDetail = () => {
       rate_type
       qualifications
     }
-  }
-`;
-
-
-const GET_USERS = gql`
-  query GetUsers($userId: String){
-    users(where: {user_id: {_eq: $userId}}){
-      user_id
+    users(where: {buy_offers: {buyOfferId: {_eq: $buyOfferId}}}) {
       email
-      picture
       first_name
+      picture
+      email
       last_name
       linked_in
-      id
-         }
+
+    }
   }
 `;
 
@@ -60,17 +54,18 @@ var num = Number(buyOfferId);
 
 const {loading, error, data } =  useQuery(GET_BUY_OFFERS_QUERY, {
   variables: {buyOfferId: num},
+  onCompleted: () => {
+    setVisible('true');
+  }
 });
 
-const userId = user.sub;
+/* const userId = user.sub;
 
  
   const {loading:user_loading, error:user_error, data:user_data } =  useQuery(GET_USERS, {
     variables: {userId},
-    onCompleted: () => {
-      setVisible('true');
-    }
-  }); 
+    
+  });  */
 
 
   if(loading) return 'Loading...';
@@ -79,10 +74,10 @@ const userId = user.sub;
 
 
 
-if(user_loading) return 'Loading...';
+/* if(user_loading) return 'Loading...';
 if(user_error) return `Error! ${user_error.message}`;  
 
-
+ */
 
 const renderTooltip = (props) => (
   <Tooltip id="button-tooltip" {...props}>
@@ -91,7 +86,7 @@ const renderTooltip = (props) => (
 );
 
 
-let linky = ("https://"+ user_data.users[0].linked_in);
+let linky = ("https://"+ data.users[0].linked_in);
 console.log('here is link', linky);
 
 let linky2= ('https://www.nekohit.com');
@@ -113,7 +108,7 @@ let linky2= ('https://www.nekohit.com');
  You selected to sell: <DetailRow id='DetailRow'><b class="bold">  {data.buy_offers[0].headline} </b></DetailRow>
   
       <DetailRow id='DetailRow'>
-      Buyer:  <b class="bold"> {user_data.users[0].first_name}  {user_data.users[0].last_name} </b> 
+      Buyer:  <b class="bold"> {data.users[0].first_name}  {data.users[0].last_name} </b> 
       </DetailRow>
       
       <DetailRow id='DetailRow'>
@@ -123,10 +118,7 @@ let linky2= ('https://www.nekohit.com');
         <DetailRow id='DetailRow'>
         Industry:<b class="bold"> {data.buy_offers[0].industry} </b> 
         </DetailRow> 
-        <DetailRow id='DetailRow'>            
-            Region: <b class="bold"> {data.buy_offers[0].region} </b> 
-            </DetailRow>
-
+    
             <DetailRow id='DetailRow'>           
              
                 Price: $<b class="bold"> {data.buy_offers[0].price} </b> 
@@ -143,7 +135,7 @@ let linky2= ('https://www.nekohit.com');
 
 
                                       <div id='picture_area_buyDetail'>
-                            <CoverImage id='coverImage_sellDetail' src={user_data.users[0].picture} alt="" />
+                            <CoverImage id='coverImage_sellDetail' src={data.users[0].picture} alt="" />
 
                                                         <StyledLink to={`/InputForm`}>
 
@@ -157,7 +149,7 @@ let linky2= ('https://www.nekohit.com');
                                                             color='pink'
                                                             size="large"
                                                         >
-                                                            Click to here to begin a conversation with {user_data.users[0].first_name} 
+                                                            Click to here to begin a conversation with {data.users[0].first_name} 
                                                         </button>
                                                         </OverlayTrigger>,
 

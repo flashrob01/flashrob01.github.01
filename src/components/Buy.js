@@ -11,51 +11,8 @@ import { Container } from 'react-bootstrap';
 import { Loader, ApolloTableQL } from 'react-tableql'
 //Updated React Table to use this very helpful module! https://github.com/Danilo-Zekovic/react-tableql-example-app
 
-import tw from "twin.macro";
 
 
-const Table = tw.table`
-  table-fixed
-  text-base
-  text-gray-900
-`;
-
-const TableHead = tw.thead`
-`;
-
-const TableRow = tw.tr`
-border
-border-yellow-300
-hover:bg-yellow-300
-`;
-
-const TableHeader = tw.th`
-border
-border-yellow-300
-p-2
-`;
-
-const TableBody = tw.tbody`
-`;
-
-//TableData is where the borders of the table are set!
-const TableData = tw.td`
-border-0
-
-p-5
-`;
-
-const Button = tw.button`
-  pl-4
-  pr-4
-  pt-2
-  pb-2
-  text-black
-  rounded-md
-  bg-green-300
-  hover:bg-green-200
-  transition-colors
-`;
 
 
 
