@@ -185,7 +185,7 @@ const renderTooltip = (props) => (
                       </a>
                       </DetailItem>
                           </div>
-      <TrackDetails id='trackDetails'>
+      <TrackDetails id='trackDetails_buyIndex'>
       <CardContainer>
   <CardContent>
 
@@ -195,10 +195,10 @@ const renderTooltip = (props) => (
       <div id='headline'>Research/Services desired: {data.buy_offers[0].headline}</div>
      </DetailRow>
      <DetailRow>
-     <div id="headline">Industry:<h6> {data.buy_offers[0].industry} </h6> </div>
+     <div id="headline">Industry: {data.buy_offers[0].industry}  </div>
      </DetailRow>
      <DetailRow>
-     <div id="headline">Languages: <h6> {data.buy_offers[0].languages} </h6>  </div>     </DetailRow>
+     <div id="headline">Languages: {data.buy_offers[0].languages}  </div>     </DetailRow>
       <CardFooter>
       
         

@@ -87,7 +87,7 @@ const Home = () => {
         
         <CardFooter>
         <div id='BuyButton2'>
-                      <NavLink to="/Sell">
+                      <NavLink to="/Sell/44">
               <button
                 color='pink'
                 size="large"
@@ -136,7 +136,7 @@ const Home = () => {
         
         <CardFooter>
         <div id='BuyButton2'>
-                      <NavLink to="/Sell">
+                      <NavLink to="/Sell/42">
               <button
                 color='pink'
                 size="large"

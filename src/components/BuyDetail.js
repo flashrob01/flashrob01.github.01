@@ -102,7 +102,7 @@ let linky2= ('https://www.nekohit.com');
    <div className='grid'>
           <div id="banner_sellDetail">
         <h1 className='h1'>
-            Begin your transaction
+            Begin your transaction now
         </h1>
     
                 </div>
@@ -193,7 +193,7 @@ let linky2= ('https://www.nekohit.com');
                 color='pink'
                 size="large"
               >
-                Click to here to set up an escrow payment receipt with Nekohit
+                Click to here to set up an escrow payment receipt with Nekohit now
                               </button>
             </a>
             </DetailRow>
