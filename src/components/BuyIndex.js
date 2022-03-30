@@ -30,7 +30,7 @@ const BuyIndex = () => {
 
 
   const BUY_OFFERS_QUERY = gql`
-  query GetBuyOffers($buyOfferId: Int!) {
+  query GetBuyOffers($buyOfferId: Int!) @cached(ttl: 300)  {
     buy_offers(where: {buyOfferId: {_eq: $buyOfferId}}) {
       user_id
       price

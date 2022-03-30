@@ -15,7 +15,7 @@ function Sell ( props ) {
 
   const SellOffersQuery = gql`
      {
-      sell_offers{   
+      sell_offers  {   
         industry
         offer_type
         offer_details

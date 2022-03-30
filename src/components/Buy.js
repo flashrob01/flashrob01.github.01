@@ -24,7 +24,7 @@ function Buy ( props ) {
 
   const BuyOffersQuery = gql`
      {
-      buy_offers{   
+      buy_offers {   
          headline 
          industry
          price 
