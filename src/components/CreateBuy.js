@@ -148,9 +148,9 @@ const handleSubmit = (e) => {
          onSelect={handleSelect}
          value={offer_type} 
          >
-               <Dropdown.Item eventKey="data">Dataset/ Report</Dropdown.Item>
-               <Dropdown.Item eventKey="consulting- live discussion">One-on-One Consultation ( Phone/ videochat)</Dropdown.Item>
-               <Dropdown.Item eventKey="both">Both</Dropdown.Item>
+               <Dropdown.Item eventKey="Data">Dataset/ Report</Dropdown.Item>
+               <Dropdown.Item eventKey="Consulting- live discussion">One-on-One Consultation ( Phone/ videochat)</Dropdown.Item>
+               <Dropdown.Item eventKey="Both">Both</Dropdown.Item>
 
                
          </DropdownButton>
@@ -178,8 +178,8 @@ const handleSubmit = (e) => {
          onSelect={handleSelect2}
          value={rate_type} 
          >
-               <Dropdown.Item eventKey="flat rate">Flat rate</Dropdown.Item>
-               <Dropdown.Item eventKey="per/hour">Per hour</Dropdown.Item>
+               <Dropdown.Item eventKey="Flat rate">Flat rate</Dropdown.Item>
+               <Dropdown.Item eventKey="Per/hour">Per hour</Dropdown.Item>
                
                <Dropdown.Divider />
                

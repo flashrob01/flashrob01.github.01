@@ -51,7 +51,7 @@ const SellIndex = () => {
       picture
       email
       last_name
-      
+
     }
   }
   
@@ -284,7 +284,7 @@ className="mb-3" >
  <DetailRow id='DetailRow'></DetailRow>
  <br></br>
 
- <NavLink to={`/`}>
+ <NavLink to={`/Sell`}>
               <button
 
                 color='pink'

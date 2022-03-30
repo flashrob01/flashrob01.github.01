@@ -204,7 +204,7 @@ let linky2= ('https://www.nekohit.com');
             </a>
 
             <Link to= {{
-               pathname: `/`}}>
+               pathname: `/sell/:sell_offer_id`}}>
 
                  <br></br>
              

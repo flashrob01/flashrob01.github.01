@@ -213,7 +213,8 @@
     background-position: center;
     width: 100%;
     background-repeat: no-repeat;
-    
+    margin-right: 10px;
+
     justify-content: center;
     align-items: center;
     text-align: center;

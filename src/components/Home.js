@@ -3,6 +3,8 @@ import '../styles/Home.css';
 /* import Testing from './Testing';
  */import styled from '@emotion/styled';
 import LIProfile from '../images/LIProfile.jpg';
+import LIProfile2 from '../images/LIProfile2.jpg';
+
 import Carousel from 'react-bootstrap/Carousel';
 import {useState} from 'react';
 import {NavLink} from 'react-router-dom'
@@ -51,9 +53,61 @@ const Home = () => {
                
                 <div id="featuredId" href={"/Sell"}>
                   
-                <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
+                <Carousel activeIndex={index} onSelect={handleSelect} interval={4000} fade>
       <Carousel.Item>
                
+      <CardContainer>
+  <CardContent>
+    <CardImageContainer>
+      <CardImage src={LIProfile2} />
+    </CardImageContainer>
+    <CardBody>
+      <CardTitle>Zachary Blake Kim </CardTitle>
+      <DetailRow>
+     <h6 class="h6"> Qualifications:</h6> 12 years+ of college counseling experience, over 8 million RMB ($1,250,000 million) in successful scholarship grants, more than 2,000 total acceptance letters to all Top-100 schools in the USA and Top-20 schools in Canada. 超过 12 年的大学咨询经验，超过 800 万元人民币（125万美元）的奖学金，超过 2,000 封美国前 100 名学校和加拿大前 20 名学校的录取通知书。<br></br>
+
+     </DetailRow>
+     <DetailRow>
+     <h6 class="h6">Offer Details:</h6>  College selection, college essay inquiry, college application guidance. 大学选择、大学论文查询、大学申请指导。
+ <br></br>
+     </DetailRow>
+     <DetailRow>
+      <IconAndLabel>
+        
+      <h6 class="h6"> Location:</h6>  consulting- live discussion
+
+      </IconAndLabel>
+ 
+      </DetailRow>
+      <DetailRow>
+      <IconAndLabel>
+        <h6 class="h6"> Price:</h6>  TBD
+        </IconAndLabel>   
+        </DetailRow>
+        
+        <CardFooter>
+        <div id='BuyButton2'>
+                      <NavLink to="/Sell">
+              <button
+                color='pink'
+                size="large"
+              >
+                Click to view
+              </button>
+            </NavLink>
+             </div>
+          
+          
+        
+       
+      </CardFooter>
+     
+    </CardBody>
+  </CardContent>
+</CardContainer>
+
+      </Carousel.Item>
+      <Carousel.Item>
       <CardContainer>
   <CardContent>
     <CardImageContainer>
@@ -72,7 +126,7 @@ const Home = () => {
         
       <h6 class="h6"> Location:</h6>  Videochat from Beijing
       </IconAndLabel>
-
+ 
       </DetailRow>
       <DetailRow>
       <IconAndLabel>
@@ -100,34 +154,8 @@ const Home = () => {
     </CardBody>
   </CardContent>
 </CardContainer>
-
       </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Second slide&bg=282c34"
-          alt="Second slide"
-        />
-
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
-          alt="Third slide"
-        />
-
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
+     
     </Carousel> 
                
                    
