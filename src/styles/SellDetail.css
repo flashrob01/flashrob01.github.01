@@ -317,6 +317,7 @@
     grid-column: 1 /span 1;
     width: 80%;
     margin-left: 0px;
+    margin-top: 5px;
   }
 
   
@@ -325,7 +326,7 @@
     grid-row-end: 6;
     grid-column: 1 /span 1;
     width: 80%;
-
+    height: 60vw;
 
   }
 

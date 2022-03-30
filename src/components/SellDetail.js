@@ -202,13 +202,15 @@ let linky2= ('https://www.nekohit.com');
                 Click to here to set up an escrow payment with Nekohit
                               </button>
             </a>
-
+            <br></br>
+            
             <Link to= {{
-               pathname: `/sell/:sell_offer_id`}}>
+               pathname: `/`}}>
 
                  <br></br>
+
              
-              <Button onClick={() => alert("Selecting: " )}> Go back
+              <Button> Go back
                 </Button>
            </Link>
         </div>

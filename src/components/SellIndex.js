@@ -199,16 +199,16 @@ const renderTooltip = (props) => (
       <div id='headline'>{data.sell_offers[0].headline}</div>
      </DetailRow>
      <DetailRow>
-     <div id="viewCount">Industry:<h6> {data.sell_offers[0].industry} </h6> </div>
+     <div id="viewCount">Industry: {data.sell_offers[0].industry}  </div>
      </DetailRow>
      <DetailRow>
-     <div id="viewCount">Region: <h3> {data.sell_offers[0].region} </h3> </div>
+     <div id="viewCount">Region:  {data.sell_offers[0].region}  </div>
      </DetailRow>
      <DetailRow>
-     <div id="viewCount"> Target Audience: <h6> {data.sell_offers[0].target_audience} </h6> </div>
+     <div id="viewCount"> Target Audience:  {data.sell_offers[0].target_audience} </div>
      </DetailRow>
      <DetailRow>
-     <div id="viewCount">Languages: <h3> {data.sell_offers[0].languages} </h3>  </div>     </DetailRow>
+     <div id="viewCount">Languages:  {data.sell_offers[0].languages}   </div>     </DetailRow>
       <CardFooter>
       
         

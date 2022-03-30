@@ -100,7 +100,6 @@
     align-Self: 'center';
     text-align: center; 
     margin: 15% 15% 15% 15%;
-    text-align: center;
   }
 
 
@@ -334,7 +333,7 @@
     grid-row-end: 6;
     grid-column: 1 /span 1;
     width: 80%;
-
+    
 
   }
 

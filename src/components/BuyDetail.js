@@ -200,11 +200,11 @@ let linky2= ('https://www.nekohit.com');
 
           <DetailRow>
             <Link to= {{
-               pathname: `/buy/:buyOfferId`}}>
+               pathname: `/`}}>
 
                 
              
-              <Button onClick={() => alert("Selecting: " )}> Go back
+              <Button > Go back
                 </Button>
            </Link>
        </DetailRow>
