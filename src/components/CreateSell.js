@@ -6,6 +6,8 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'   
 import { gql, useMutation } from '@apollo/client';
 import { useAuth0 } from "@auth0/auth0-react";
+import { useNavigate} from 'react-router-dom';
+
 
 
 const CreateSell = () => {
@@ -93,6 +95,8 @@ const handleSelect2=(e)=>{
   setRate_type(e)
 }
 
+let navigate = useNavigate();
+
 
 const [create_sell_offers, {data, loading, error}] = useMutation(ADD_SELL_OFFER, {
    variables: {
@@ -119,12 +123,16 @@ if (error) {
 
 }
 
+function redirectTo(props) {
+  navigate(`/${props}`);
+}
 
 
     const handleSubmit = (e) => {
     e.preventDefault();
     create_sell_offers({industry, offer_type, offer_details, price, qualifications, headline, rate_type, target_audience, region, languages, user_id});
- 
+    alert('Thank you for submitting the form. You can always examine or edit it under the tab "My Profile"');
+    redirectTo('Home');
    }
 
    const handleRate = (event) => {

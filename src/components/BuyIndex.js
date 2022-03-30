@@ -195,10 +195,10 @@ const renderTooltip = (props) => (
       <div id='headline'>Research/Services desired: {data.buy_offers[0].headline}</div>
      </DetailRow>
      <DetailRow>
-     <div id="viewCount">Industry:<h6> {data.buy_offers[0].industry} </h6> </div>
+     <div id="headline">Industry:<h6> {data.buy_offers[0].industry} </h6> </div>
      </DetailRow>
      <DetailRow>
-     <div id="viewCount">Languages: <h6> {data.buy_offers[0].languages} </h6>  </div>     </DetailRow>
+     <div id="headline">Languages: <h6> {data.buy_offers[0].languages} </h6>  </div>     </DetailRow>
       <CardFooter>
       
         
@@ -253,11 +253,11 @@ className="mb-3" >
               </NavLink>
         </div>
 
-        <div className='box_track'>
-          <div id="viewCount">Rate type: {data.buy_offers[0].rate_type} </div>
+        <div className='box_track_buyIndex'>
+          <div id="headline">Rate type: {data.buy_offers[0].rate_type} </div>
 
-<div id="viewCount"> Price: {data.buy_offers[0].price} </div>
-<div id="viewCount"> Offer Type: {data.buy_offers[0].offer_type}  </div>
+<div id="headline"> Price: {data.buy_offers[0].price} </div>
+<div id="headline"> Offer Type: {data.buy_offers[0].offer_type}  </div>
 
 <DetailRow id='DetailRow'></DetailRow>
 

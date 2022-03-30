@@ -103,12 +103,12 @@ const Navigation = () => {
     <Nav.Link  class="nav-link" id="nav-links" href="/home">Home</Nav.Link>
     
     <NavDropdown class="nav-link" id="nav-links" title="Requests" id="collasible-nav-dropdown">
-        <NavDropdown.Item  id="nav-links" href="/Buy">View research and consulting requests</NavDropdown.Item>
+        <NavDropdown.Item  id="nav-links" href="/Buy">View requests</NavDropdown.Item>
         <NavDropdown.Item  id="nav-links" href="/CreateBuy">Create a research or consulting request </NavDropdown.Item>
        </NavDropdown>
       
        <NavDropdown class="nav-link" id="nav-links" title="Offers" id="collasible-nav-dropdown">
-        <NavDropdown.Item  id="nav-links" href="/Sell">View research and consulting offers</NavDropdown.Item>
+        <NavDropdown.Item  id="nav-links" href="/Sell">View offers</NavDropdown.Item>
         <NavDropdown.Item  id="nav-links" href="/CreateSell">Create a research or consulting offer</NavDropdown.Item>
        </NavDropdown>
      

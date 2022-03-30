@@ -6,6 +6,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'   
 import { gql, useMutation } from '@apollo/client';
 import { useAuth0 } from "@auth0/auth0-react";
+import { useNavigate} from 'react-router-dom';
 
 
 const CreateBuy = () => {
@@ -23,6 +24,7 @@ const CreateBuy = () => {
  */
 
 const { user} = useAuth0();
+let navigate = useNavigate();
 
 
 const user_id =user.sub;
@@ -110,11 +112,16 @@ if (error) {
 
 }
 
+function redirectTo(props) {
+  navigate(`/${props}`);
+}
 
 const handleSubmit = (e) => {
   e.preventDefault();
   create_buy_offers({industry, offer_type, offer_details, price, qualifications, headline, rate_type, languages, user_id});
-
+  alert('Thank you for submitting the form. You can always examine or edit it under the tab "My Profile"');
+  redirectTo('Home');
+  
  
  }
    
