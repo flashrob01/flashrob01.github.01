@@ -28,10 +28,10 @@
     grid-row-start: 1; 
     grid-row-end: span 1;
     grid-column-start: 1;
-    grid-column-end: span 5;
+    grid-column-end: span 2;
     background-position: center;
       height: 600px;   
-    min-width: 100vw;
+    width: 100%;
     background-repeat: repeat;
     align-items: center;
     text-align: center;
@@ -53,13 +53,12 @@
   #winner{
     background-image:url("../images/Launchpad-gif1.png");
     height: 150px;
-
     grid-row-start: 2; 
     grid-row-end: span 1;
     grid-column-start: 1;
-    grid-column-end: span 4;
-    min-width: 100vw;
-    background-repeat: repeat;
+    grid-column-end: span 2;
+    width: 100%;
+    background-repeat: no-repeat;
 
 
   }
@@ -81,7 +80,7 @@
  */    width: 65%;
    display: grid;
    position: relative;
-   text-align: center;
+   text-align:center;
 
  /*    margin-left: auto;
   margin-right: auto; */
@@ -190,8 +189,7 @@
     background-position: center;
     width: 100%;
     background-repeat: no-repeat;
-    margin-left: 20px;
-   
+    margin-left: 10px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -279,8 +277,6 @@
 
       }
 
-    
-
       #banner{
         display: inline block;
         max-width: 100%;
@@ -301,13 +297,12 @@
        margin-bottom: 10px;
        background-repeat: repeat;
       height: 36vw;
-      min-width:390px;
              
     
       }
 
       #featuredId{
-          width: 100%;
+          width: 90%;
       display: grid;
       position: relative;
    
