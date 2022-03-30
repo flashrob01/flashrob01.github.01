@@ -293,11 +293,11 @@
       #winner{
        margin-top: 30px;
         background-image:url("../images/ExcellenceAward.png");
-       max-width: 100%;
+       min-width: 100%;
        margin-left: 0x;
        margin-bottom: 10px;
-       background-repeat: no-repeat;
-      height: 36vw;
+       background-repeat: repeat;
+      height: 34vw;
              
     
       }
