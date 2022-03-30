@@ -19,8 +19,6 @@
     @types/node
     @types/react
     @types/react-dom
-    apollo-link-batch-http
-    apollo-link-retry
     gh-pages
     react-hook-form
     subscriptions-transport-ws

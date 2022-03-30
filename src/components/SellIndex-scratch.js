@@ -29,9 +29,9 @@ const SellIndex = () => {
   const { user } = useAuth0();
 
 
-  const GET_SELL_OFFERS_QUERY = gql`
-  query GetSellOffers($sell_offer_id: Int!) {
-    sell_offers(where: {sell_offer_id: {_eq: $sell_offer_id}}) {
+/*   const GET_SELL_OFFERS_QUERY = gql`
+  query GetSellOffers($sellOfferId: Int!){
+    sell_offers(where: {sell_offer_id: {_eq: $sellOfferId}}){
       user_id
       price
       sell_offer_id
@@ -45,21 +45,12 @@ const SellIndex = () => {
       region
       qualifications
     }
-    users(where: {sell_offers: {sell_offer_id: {_eq: $sell_offer_id}}}) {
-      email
-      first_name
-      picture
-      email
-      last_name
-      
-    }
   }
-  
-`;
+`; */
 
-/* const GET_USERS = gql`
-  query GetUsers($sell_offer_id: Int!){
-    users(where: {sell_offers: {sell_offer_id: {_eq: $sell_offer_id}}}){
+const GET_USERS = gql`
+  query GetUsers($sellOfferId: Int!){
+    users(where: {sell_offers: {sell_offer_id: {_eq: $sellOfferId}}}){
       user_id
       email
       picture
@@ -69,56 +60,55 @@ const SellIndex = () => {
       
          }
   }
-`; */
+`;
 
-/* const client = new ApolloClient({
+const client = new ApolloClient({
   // ...other arguments...
   cache: new InMemoryCache(),
   connectToDevTools: true,
   uri: `https://bright-mullet-79.hasura.app/v1/graphql/`,
 
-}); */
+});
 
 
 const [key, setKey] = useState('home');
 
-const {sell_offer_id} = useParams();
+const {sellOfferId} = useParams();
 
-var num = Number(sell_offer_id);
+var num = Number(sellOfferId);
 
 
 
 /* const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY); */
 
-const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY, {
-  variables: {sell_offer_id: num},
+/* const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY, {
+  variables: {sellOfferId: num},
+  onCompleted: () => {
+    setVisible('true');
+  }
+}); */
+
+/* const userId = user.sub; */
+
+const {loading:user_loading, error:user_error, data:user_data } =  useQuery(GET_USERS, {
+  /* variables: {userId}, */
+  variables: {sellOfferId: num},
   onCompleted: () => {
     setVisible('true');
   }
 });
 
-/* const userId = user.sub; */
-
-/* const {loading:user_loading, error:user_error, data:user_data } =  useQuery(GET_USERS, {
-   variables: {userId}, 
-  variables: {sell_offer_id: num},
-  onCompleted: () => {
-    setVisible2('true');
-  }
-});
- */
-
-const [visible, setVisible] = useState('false');
-/* const [visible2, setVisible2] = useState('false'); */
-
+/* const [visible, setVisible] = useState('false'); */
+const [visible2, setVisible2] = useState('false');
+/* 
 if(loading) return 'Loading...';
 if(error) return `Error! ${error.message}`;
+ */
 
 
-/* 
 
 if(user_loading) return 'Loading...';
-if(user_error) return `Error! ${user_error.message}`;   */
+if(user_error) return `Error! ${user_error.message}`;  
 
 
 
@@ -152,7 +142,7 @@ if(user_error) return `Error! ${user_error.message}`;   */
 //---caching to make pages load faster- from: https://www.apollographql.com/docs/react/caching/cache-configuration
 
 
-let linky = ("https://"+ data.users[0].linked_in);
+let linky = ("https://"+ user_data.users.linked_in);
 console.log('here is link', linky);
 
 const renderTooltip = (props) => (
@@ -164,7 +154,7 @@ const renderTooltip = (props) => (
 
 
   return (
-    (visible ==="true"  && data) ?  (
+    ( visible2 === "true") ? (
    <div className='grid2'>
       <div id="banner_sell">
         <h1 className='h1'>
@@ -173,7 +163,7 @@ const renderTooltip = (props) => (
     
                 </div>
                                       <div id='picture_area_track'>
-                            <CoverImage id='coverImage' src={data.users[0].picture} alt="" />
+                            <CoverImage id='coverImage' src={user_data.users.picture} alt="" />
                             <DetailItem id="linkedinButton">
 
                             <br></br>
@@ -184,7 +174,7 @@ const renderTooltip = (props) => (
                         size="large"
                         
                       >
-                        Click to see {data.users[0].first_name}'s LinkedIn Profile
+                        Click to see {user_data.users.first_name}'s LinkedIn Profile
                       </button>
                       </a>
                       </DetailItem>
@@ -194,8 +184,8 @@ const renderTooltip = (props) => (
   <CardContent>
 
   <CardBody>
-      <CardTitle>{data.users[0].first_name} {data.users[0].last_name}</CardTitle>
-      <DetailRow>
+      <CardTitle>{user_data.users.first_name} {user_data.users.last_name}</CardTitle>
+    {/*   <DetailRow>
       <div id='headline'>{data.sell_offers[0].headline}</div>
      </DetailRow>
      <DetailRow>
@@ -208,7 +198,7 @@ const renderTooltip = (props) => (
      <div id="viewCount"> Target Audience: <h6> {data.sell_offers[0].target_audience} </h6> </div>
      </DetailRow>
      <DetailRow>
-     <div id="viewCount">Languages: <h3> {data.sell_offers[0].languages} </h3>  </div>     </DetailRow>
+     <div id="viewCount">Languages: <h3> {data.sell_offers[0].languages} </h3>  </div>     </DetailRow> */}
       <CardFooter>
       
         
@@ -229,12 +219,12 @@ const renderTooltip = (props) => (
       onSelect={(k) => setKey(k)}   transition={false}
 className="mb-3" >
         <Tab eventKey="home" title="Details" id="tab1">
-        <DetailRow>
-        <div id="qualifications">Biography/Qualifications: {data.sell_offers[0].qualifications} </div>
+       {/*  <DetailRow> */}
+{/*         <div id="qualifications">Biography/Qualifications: {data.sell_offers[0].qualifications} </div>
         </DetailRow>
         <DetailRow>
          <div id="offer_details"> Offer Details: {data.sell_offers[0].offer_details}</div>
-         </DetailRow>
+         </DetailRow> */}
         </Tab>
         <Tab eventKey="research" title="Research">
           <h3> Research and Media </h3>
@@ -256,7 +246,7 @@ className="mb-3" >
                 size="large"
                 id='buttonInput'
               >
-                Click to here to send {data.users[0].first_name} a message
+                Click to here to send {user_data.users.first_name} a message
               </button>
 
               </OverlayTrigger>
@@ -264,14 +254,14 @@ className="mb-3" >
         </div>
 
         <div className='box_track'>
-          <div id="viewCount">Rate type: {data.sell_offers[0].rate_type} </div>
+          <div id="viewCount">Rate type: </div>
 
-<div id="viewCount"> Price: {data.sell_offers[0].price} </div>
-<div id="viewCount"> Offer Type: {data.sell_offers[0].offer_type}  </div>
+<div id="viewCount"> Price: </div>
+<div id="viewCount"> Offer Type:  </div>
 
 <DetailRow id='DetailRow'></DetailRow>
 
-<NavLink to={`/Sell/SellDetail/${data.sell_offers[0].sell_offer_id}`}>
+
               <button
 
                 color='pink'
@@ -279,7 +269,7 @@ className="mb-3" >
               >
                 Click to here to continue order
               </button>
-            </NavLink>
+           
 
  <DetailRow id='DetailRow'></DetailRow>
  <br></br>

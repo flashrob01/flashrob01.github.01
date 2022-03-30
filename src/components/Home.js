@@ -72,6 +72,9 @@ const Home = () => {
         
       <h6 class="h6"> Location:</h6>  Videochat from Beijing
       </IconAndLabel>
+
+      </DetailRow>
+      <DetailRow>
       <IconAndLabel>
         <h6 class="h6"> Price:</h6>  $150/hr.
         </IconAndLabel>   

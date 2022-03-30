@@ -14,16 +14,71 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 
 
+/* import {
+  NeoLineAccount,
+  NeoLineInit,
+  NeoLineInterface,
+  NeoLineN3Init,
+  NeoLineN3Interface,
+  NeoLineNetworks,
+  NeoLineReadInvocationResult,
+  NeoLineSignMessageInvocationResult,
+  NeoLineWriteInvocationResult,
+} from './utils/neoline'; */
 
+
+
+
+/**
+ * Track Detail component renders the main content of a given track:
+ * author, length, number of views, modules list, among other things.
+ * It provides access to the first module of the track.
+ */
 const SellDetail = () => {
   const { user} = useAuth0();
 
+/* 
+    let neolineN3 = new window.NEOLineN3.Init();
 
+    let hoho = function(){
+    neolineN3.getAccount();
+    } */
+
+  /* function initDapi() {
+    neoline.getAccount()
+    .then(account => {
+        const {
+            address,
+            label
+        } = account;
+    
+        console.log('Provider address: ' + address);
+        console.log('Provider account label (Optional): ' + label);
+    })
+    .catch((error) => {
+        const {type, description, data} = error;
+        switch(type) {
+            case 'NO_PROVIDER':
+                console.log('No provider available.');
+                break;
+            case 'CONNECTION_DENIED':
+                console.log('The user rejected the request to connect with your dApp');
+                break;
+            case 'CHAIN_NOT_MATCH':
+                console.log('The currently opened chain does not match the type of the call chain, please switch the chain.');
+                break;
+            default:
+                // Not an expected error object.  Just write the error to the console.
+                console.error(error);
+                break;
+        }
+    });
+  }; */
   
 
   const GET_SELL_OFFERS_QUERY = gql`
-  query GetSellOffers($sell_offer_id: Int!) {
-    sell_offers(where: {sell_offer_id: {_eq: $sell_offer_id}}) {
+  query GetSellOffers($sell_offer_id: Int!){
+    sell_offers(where: {sell_offer_id: {_eq: $sell_offer_id}}){
       user_id
       price
       sell_offer_id
@@ -37,19 +92,23 @@ const SellDetail = () => {
       region
       qualifications
     }
-    users(where: {sell_offers: {sell_offer_id: {_eq: $sell_offer_id}}}) {
-      email
-      first_name
-      picture
-      email
-      last_name
-      
-    }
   }
 `;
 
 
-
+const GET_USERS = gql`
+  query GetUsers($userId: String){
+    users(where: {user_id: {_eq: $userId}}){
+      user_id
+      email
+      picture
+      first_name
+      last_name
+      linked_in
+      id
+         }
+  }
+`;
 
 const [visible, setVisible] = useState('false');
 
@@ -60,21 +119,72 @@ var num = Number(sell_offer_id);
 
 const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY, {
   variables: {sell_offer_id: num},
-  onCompleted: () => {
-    setVisible('true');
-  }
 });
 
 const userId = user.sub;
 
 
+/* useEffect(()=>{
+  initDapi();
+})
+ */
 
 
+/* 
+const [key, setKey] = useState('home'); */
+
+/* const [neoline, setNeoLine] = useState();
+  const [neolineN3, setNeoLineN3] = useState();
+  const [account, setAccount] = useState("");
+  const [error2, setError2] = useState(""); */
+
+  const {loading:user_loading, error:user_error, data:user_data } =  useQuery(GET_USERS, {
+    variables: {userId},
+    onCompleted: () => {
+      setVisible('true');
+    }
+  });/* 
+useEffect(() => {
+  window.addEventListener("NEOLine.NEO.EVENT.READY", () => {
+    setNeoLine(new window.NEOLineN3.Init());
+  });
+  window.addEventListener("NEOLine.N3.EVENT.READY", () => {
+    setNeoLineN3(new window.NEOLineN3.Init());
+  });
+}, []); */
+
+/* const initNeolineAccount = async () => {
+  try {
+    const { address } = await neoline.getAccount();
+    setAccount(address);
+  } catch (error2) {
+    setError2("Neoline not ready");
+    console.log(error2);
+  }
+};
+ */
 
 
   if(loading) return 'Loading...';
  if(error) return `Error! ${error.message}`;    
 
+ const values = Object.values(data);
+
+ const filteredItems = values.filter((item) => {
+  return (item.sell_offer_id === num); 
+}
+);
+
+
+if(user_loading) return 'Loading...';
+if(user_error) return `Error! ${user_error.message}`;  
+
+const users1 = Object.values(user_data);
+
+const filteredUsers = users1.filter((item) => {
+ return (item.user_id === 'linkedin|uiWV-hd6Jm'); 
+}
+);
 
 const renderTooltip = (props) => (
   <Tooltip id="button-tooltip" {...props}>
@@ -83,7 +193,7 @@ const renderTooltip = (props) => (
 );
 
 
-let linky = ("https://"+ data.users[0].linked_in);
+let linky = ("https://"+ user_data.users[0].linked_in);
 console.log('here is link', linky);
 
 let linky2= ('https://www.nekohit.com');
@@ -105,7 +215,7 @@ let linky2= ('https://www.nekohit.com');
  You selected to purchase: <DetailRow id='DetailRow'><b class="bold">  {data.sell_offers[0].headline} </b></DetailRow>
   
       <DetailRow id='DetailRow'>
-      Offeror:  <b class="bold"> {data.users[0].first_name}  {data.users[0].last_name} </b> 
+      Offeror:  <b class="bold"> {user_data.users[0].first_name}  {user_data.users[0].last_name} </b> 
       </DetailRow>
       
       <DetailRow id='DetailRow'>
@@ -135,7 +245,7 @@ let linky2= ('https://www.nekohit.com');
 
 
                                       <div id='picture_area_sellDetail'>
-                            <CoverImage id='coverImage_sellDetail' src={data.users[0].picture} alt="" />
+                            <CoverImage id='coverImage_sellDetail' src={user_data.users[0].picture} alt="" />
 
                                                         <StyledLink to={`/InputForm`}>
 
@@ -149,7 +259,7 @@ let linky2= ('https://www.nekohit.com');
                                                             color='pink'
                                                             size="large"
                                                         >
-                                                            Click to here to begin a conversation with {data.users[0].first_name} 
+                                                            Click to here to begin a conversation with {user_data.users[0].first_name} 
                                                         </button>
                                                         </OverlayTrigger>,
 

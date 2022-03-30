@@ -83,6 +83,7 @@
     grid-column-start: 1;
     grid-column-end: 2;
     margin-left: 100px;
+    text-align: center; 
   }
 
   
@@ -96,6 +97,7 @@
     justify-items: center;
     justify-items: center;
     text-align: center; 
+
     
   }
 

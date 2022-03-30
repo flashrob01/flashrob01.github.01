@@ -74,12 +74,15 @@
   #picture_area_track{
     grid-row: 2 / span 1;
     grid-column: 3 /span 1;
+    text-align: center;
+    
   }
 
   #BottomDetail{
     grid-row: 3 / span 1;
     grid-column: 1 /span 1;
     margin-left: 150px;
+    text-align: center;
     
   }
   .box_track{
