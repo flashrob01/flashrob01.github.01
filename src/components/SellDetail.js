@@ -22,7 +22,7 @@ const SellDetail = () => {
   
 
   const GET_SELL_OFFERS_QUERY = gql`
-  query GetSellOffers($sell_offer_id: Int!) @cached(ttl: 300)  {
+  query GetSellOffers($sell_offer_id: Int!) @cached  {
     sell_offers(where: {sell_offer_id: {_eq: $sell_offer_id}}) {
       user_id
       price

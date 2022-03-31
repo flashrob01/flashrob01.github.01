@@ -14,7 +14,7 @@ import { Loader, ApolloTableQL } from 'react-tableql'
 function Sell ( props ) {
 
   const SellOffersQuery = gql`
-     {
+  query GetSellOffers @cached {
       sell_offers  {   
         industry
         offer_type

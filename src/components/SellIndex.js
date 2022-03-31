@@ -12,6 +12,9 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import { Link, NavLink, useParams } from 'react-router-dom';
 import './../styles/SellIndex.css';
+/* import {client} from './../AuthorizedApolloProvider';
+ */
+import AuthorizedApolloProvider from '../AuthorizedApolloProvider';
 
 //NOTE- FOR SOME STRANGE REASON, SELLINDEX.JS IS STILL PULLING SOME CSS PROPERTIES FROM ORDERINDEX.JS; DUNNO WHY???
 //REASON is because - never give a className "grid"... it confuses the JS!
@@ -30,7 +33,7 @@ const SellIndex = () => {
 
 
   const GET_SELL_OFFERS_QUERY = gql`
-  query GetSellOffers($sell_offer_id: Int!) @cached(ttl: 300) {
+  query GetSellOffers($sell_offer_id: Int!) @cached {
     sell_offers(where: {sell_offer_id: {_eq: $sell_offer_id}}) {
       user_id
       price
@@ -71,13 +74,13 @@ const SellIndex = () => {
   }
 `; */
 
-/* const client = new ApolloClient({
+/*  const client = new ApolloClient({
   // ...other arguments...
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache().restore(JSON.parse(window.__APOLLO_STATE__)),
   connectToDevTools: true,
   uri: `https://bright-mullet-79.hasura.app/v1/graphql/`,
 
-}); */
+});  */
 
 
 const [key, setKey] = useState('home');
@@ -86,11 +89,17 @@ const {sell_offer_id} = useParams();
 
 var num = Number(sell_offer_id);
 
+const client = new ApolloClient({
+  uri:'https://bright-mullet-79.hasura.app/v1/graphql/',
+  cache: new InMemoryCache(),
+  connectToDevTools: true,
+});
 
 
 /* const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY); */
 
 const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY, {
+  
   variables: {sell_offer_id: num},
   onCompleted: () => {
     setVisible('true');
@@ -130,7 +139,7 @@ if(user_error) return `Error! ${user_error.message}`;   */
 
 
 
-/* const cache = new InMemoryCache({
+ /*const cache = new InMemoryCache({
   typePolicies: {
     User: {
       // In an inventory management system, products might be identified
@@ -140,13 +149,13 @@ if(user_error) return `Error! ${user_error.message}`;   */
 }});
  */
 
-/* const get_user = client.readQuery({
-  query: GET_USERS,
+ const get_sell_offer = client.readQuery({
+  query: GET_SELL_OFFERS_QUERY,
   variables: { // Provide any required variables here
-    user_id: userId,
-    id: userId,
+    sell_offer_id: sell_offer_id,
+    id: num,
   },
-}); */
+}); 
 
 
 //---caching to make pages load faster- from: https://www.apollographql.com/docs/react/caching/cache-configuration
@@ -165,6 +174,7 @@ const renderTooltip = (props) => (
 
   return (
     (visible ==="true"  && data) ?  (
+      <AuthorizedApolloProvider >
    <div className='grid2'>
       <div id="banner_sell">
         <h1 className='h1'>
@@ -299,6 +309,7 @@ className="mb-3" >
           </div>
 
       </div>
+      </AuthorizedApolloProvider>
        ) :(
         ('')
        )

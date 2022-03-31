@@ -23,7 +23,7 @@ function Buy ( props ) {
 
 
   const BuyOffersQuery = gql`
-     {
+  query GetBuyOffers @cached {
       buy_offers {   
          headline 
          industry
@@ -61,6 +61,7 @@ function redirectTo(props) {
   else{
 
   return (
+    ( data) ? (
     <Container>
       <h5>Research, Consulting and Data Requests </h5>
       <h2>Click for details</h2>
@@ -75,7 +76,10 @@ function redirectTo(props) {
   
  
     </Container>
-  )
+  ) :(
+    ('')
+   )
+);
         }
       }
 export default Buy;
