@@ -62,9 +62,11 @@ function redirectTo(props) {
 
   return (
     <Container>
+      <h5>Research, Consulting and Data Requests </h5>
+      <h2>Click for details</h2>
      <ApolloTableQL
   query={BuyOffersQuery}
-  columns={['headline', 'industry',  'offer_type']}
+  columns={['headline', 'industry']}
   sort
   onRowClick={data => redirectTo(data.buyOfferId)} 
   id='ApolloTable'
