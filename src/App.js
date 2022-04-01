@@ -65,7 +65,6 @@ import EditBuyOffer from './components/EditBuyOffer';
 
 
 
-
 const App = () => {
 
  //   const apolloClient = useAppApolloClient();
@@ -106,7 +105,6 @@ const App = () => {
                         <Route path="/InputForm" element = {<ProtectedRoute component = {InputForm} />} />  
                         <Route path="/EditSellOffer/:sell_offer_id" element = {<ProtectedRoute component = {EditSellOffer}/>} />  
                         <Route path="/EditBuyOffer/:buyOfferId" element = {<ProtectedRoute component = {EditBuyOffer}/>} />  
-
 
                        
 

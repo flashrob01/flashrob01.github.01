@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect,  useState} from 'react';
 import styled from '@emotion/styled';
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -15,6 +15,9 @@ import './../styles/SellIndex.css';
 /* import {client} from './../AuthorizedApolloProvider';
  */
 import AuthorizedApolloProvider from '../AuthorizedApolloProvider';
+
+import { registerRoute, Route } from 'workbox-routing';
+import { CacheFirst } from 'workbox-strategies';
 
 //NOTE- FOR SOME STRANGE REASON, SELLINDEX.JS IS STILL PULLING SOME CSS PROPERTIES FROM ORDERINDEX.JS; DUNNO WHY???
 //REASON is because - never give a className "grid"... it confuses the JS!
@@ -87,7 +90,13 @@ const [key, setKey] = useState('home');
 
 const {sell_offer_id} = useParams();
 
+/* const navigate = useNavigate();
+ */
+
 var num = Number(sell_offer_id);
+
+
+
 
 const client = new ApolloClient({
   uri:'https://bright-mullet-79.hasura.app/v1/graphql/',
@@ -149,11 +158,19 @@ if(user_error) return `Error! ${user_error.message}`;   */
 }});
  */
 
+const imageRoute = new Route(({ request, sameOrigin }) => {
+  return sameOrigin && request.destination === 'image'
+}, new CacheFirst());
+
+registerRoute(imageRoute);
+
+
  const get_sell_offer = client.readQuery({
   query: GET_SELL_OFFERS_QUERY,
   variables: { // Provide any required variables here
     sell_offer_id: sell_offer_id,
     id: num,
+    
   },
 }); 
 
@@ -172,8 +189,9 @@ const renderTooltip = (props) => (
 
 
 
+
   return (
-    (visible ==="true"  && data) ?  (
+    (/* visible ==="true"  &&  */data) ?  (
       <AuthorizedApolloProvider >
    <div className='grid2'>
       <div id="banner_sell">

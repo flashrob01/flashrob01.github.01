@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState} from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 
 import styled from '@emotion/styled';
@@ -13,7 +13,8 @@ import InputForm from './InputForm';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 
-
+import { registerRoute, Route } from 'workbox-routing';
+import { CacheFirst } from 'workbox-strategies';
 
 const SellDetail = () => {
   const { user} = useAuth0();
@@ -67,13 +68,37 @@ const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY, {
 
 const userId = user.sub;
 
+/* const navigate = useNavigate();
+ */
 
+/* function useBackListener (callback) {
+  const navigator = useContext(UNSAFE_NavigationContext).navigator;
+
+  useEffect(() => {
+    const listener = ({ location, action }) => {
+      console.log("listener", { location, action });
+      if (action === "POP") {
+        callback({ location, action });
+        navigate(window.history.go(-1), { replace: true });
+
+      }
+    };
+
+    const unlisten = navigator.listen(listener);
+    return unlisten;
+  }, [callback, navigator]);
+
+};
+
+useBackListener(); */
 
 
 
 
   if(loading) return 'Loading...';
- if(error) return `Error! ${error.message}`;    
+ if(error) return `Error! ${error.message}`;   
+ 
+
 
 
 const renderTooltip = (props) => (
@@ -81,6 +106,13 @@ const renderTooltip = (props) => (
     Pre-communication with the seller is very important prior to reserving a request with him or her!
   </Tooltip>
 );
+
+const imageRoute = new Route(({ request, sameOrigin }) => {
+  return sameOrigin && request.destination === 'image'
+}, new CacheFirst());
+
+// Register the new route
+registerRoute(imageRoute);
 
 
 let linky = ("https://"+ data.users[0].linked_in);
