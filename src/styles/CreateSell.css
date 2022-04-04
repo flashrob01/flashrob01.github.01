@@ -173,7 +173,7 @@
   }
 
   
-  @media only screen and (max-width: 700px){
+  @media only screen and (max-width: 768px){
 
     .flex-outer li input:not([type='checkbox']), .flex-outer li textarea{
       width: 220px;

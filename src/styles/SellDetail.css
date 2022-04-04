@@ -14,13 +14,13 @@
   }
 
   .grid{
-    min-height: 1300px;
+    min-height: 0px;
     min-width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 8px;
-    border: 1px rgb(241, 240, 252) solid;
+    border-bottom: 1px rgb(241, 240, 252) solid;
     justify-items: center;
     justify-content: center;
     overflow-x: hidden;
@@ -35,10 +35,10 @@
       grid-row-start: 1; 
     grid-row-end: 2;
     grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column-end: 3;
     display: inherit;
     background-position: center;
-     height: 18rem; 
+     height: 18vw; 
     width: 100%;
      background-repeat: no-repeat;
     justify-content: center;
@@ -48,6 +48,10 @@
     margin-bottom: 10px;
     
   }
+
+  
+ 
+
  
   #section1_sellDetail {
       grid-row-start: 2; 
@@ -56,13 +60,23 @@
     grid-column-end: 2;
     background-position: center;
     /* height: 46rem; */
-    width: 100%;
+    width: 80%;
     background-repeat: no-repeat;
     display: grid;
     justify-content: center;
     align-items: center;
     text-align: center;
     background-size: cover;
+    margin-left: 50px;
+    margin-top: 5vw;
+    border: 'solid 1px silver';
+    background-Color: 'silver';
+    display: 'flex';
+    flex-direction: 'column';
+    align-Items: 'center';
+    padding: 20;
+    border-Radius: 4;
+    margin-Bottom: 5;
     
   }
 
@@ -71,10 +85,15 @@
     grid-row-end: 3;
     grid-column-start: 2;
     grid-column-end: 3; 
-    margin-left: 8px;
+    margin-left: 5vw;
     display: block;
    
     text-align: center;
+  }
+
+  #messageButton{
+  
+    margin-right: 5vw;
   }
 
   #section3_sellDetail{
@@ -83,6 +102,7 @@
     grid-column-start: 1;
     grid-column-end: 2;
     margin-left: 100px;
+    margin-top: 5vw;
     text-align: center; 
   }
 
@@ -92,9 +112,8 @@
     grid-row-end: 4;
     grid-column-start: 2;
     grid-column-end: 3;
-    display: block;
+    display: flex;
     margin: 0 auto;
-    justify-items: center;
     justify-items: center;
     text-align: center; 
 
@@ -130,7 +149,7 @@
    font-size: 20px;
  }
 
-  #coverImage{
+  #coverImage_sellDetail{
   
     align-items: center;
     justify-content: center; 
@@ -139,38 +158,14 @@
     border-radius: 50% 50% 50% 50%;
     border-style: solid;
     border-width: 1px;
-    background-image:url("../images/LIProfile.jpg");
     overflow: hidden;
     margin-top: 30px;
     margin-right: 50px;
 
   }
 
-  #trackDetails_sellDetail{
-    grid-row: 2 / span 1;
-    grid-column: 1 /span 2;
-    display: 'flex';
-    flex-direction: 'column';
-    align-Items: 'center';
-    padding: 20;
-    border-Radius: 4;
-    margin-Bottom: 5;
-    
-    margin-left: 50px;
-    border: 'solid 1px silver';
-    background-Color: 'silver';
-    
-  }
 
-
-
-
-  #BottomDetail{
-    grid-row: 3 / span 1;
-    grid-column: 1 /span 2;
-    margin-left: 150px;
-    
-  }
+ 
 
   #DetailRow_sellDetail{
     display: 'flex';
@@ -256,7 +251,9 @@
     color:blue;
   }
 
-  @media only screen and (max-width: 700px){
+
+
+  @media only screen and (max-width: 768px){
     .grid{
       min-height: 2400px;
       min-width: 0;
@@ -265,9 +262,13 @@
       grid-template-rows: repeat (7, 1fr);
     }
 
+    #banner_sellDetail{
+      height: 50vw
+    }
+
     .h1{
  
-      max-width: 350px;
+      max-width: 300px;
     }
 
     #picture_area_sellDetail{
@@ -276,6 +277,12 @@
       margin: 0% 15% 0% 15%;
       width: 80%;
     }
+
+    #messageButton{
+  
+      margin-right: 0vw;
+    }
+  
 
     #coverImage_sellDetail{
       display: grid;
@@ -308,6 +315,7 @@
     background-position: center;
     /* height: 46rem; */
     width: 80%;
+    margin-right: 7vw;
     }
 
     
@@ -336,8 +344,8 @@
   }
 
   .box{
-    grid-row-start: 6; 
-    grid-row-end: 7;
+    grid-row-start: 7; 
+    grid-row-end: 8;
     grid-column: 1 /span 1;
 
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
@@ -378,7 +386,138 @@
 
    
   
-      
+  }
   
       
+  
+
+  @media only screen and (min-width: 769px) and (max-width:1024px){
+
+    .grid{
+      min-width: 0;
+      display: grid;
+      grid-template-columns: 1fr ;
+      grid-template-rows: repeat (7, 1fr);
+      min-height:2500px;
+      height: 500px;
+
+    }
+
+    #banner_sellDetail{
+      height: 30vw
+    }
+
+    .h1{
+ 
+      max-width: 350px;
+    }
+
+    #picture_area_sellDetail{
+      grid-row: 2 / span 1;
+      grid-column: 1 /span 1;
+      margin-left: 10%;
+      display: block;
+      text-align: center;
+    }
+
+    #coverImage_sellDetail{
+      display: grid;
+/*        height: 70vw;
+ */      
+      border-color: beige #1c87c9;
+      border-image: none;
+/*       border-radius: 50% 50% 50% 50%;
+ */      border-style: solid;
+      border-width: 1px;
+      background-image:url("../images/LIProfile.jpg");
+      overflow: hidden;
+      height: 80vw;
+      margin-bottom: 35px;
+      box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+      
+
+
+     /*  margin-top: 30px;
+      margin-right: 100px; */
+      
+    }
+
+  
+ 
+
+    #section1_sellDetail {
+      grid-row-start: 3; 
+    grid-row-end: 4;
+    grid-column: 1 /span 1;
+    background-position: center;
+    /* height: 46rem; */
+    width: 60%;
+    }
+
+    
+  #section3_sellDetail{
+    grid-row-start: 4; 
+    grid-row-end: 5;
+    grid-column: 1 /span 1;
+    width: 60%;
+    margin-left: 0px;
+    margin-top: 5px;
+  }
+
+  
+  #section4_sellDetail{
+    grid-row-start: 5; 
+    grid-row-end: 6;
+    grid-column: 1 /span 1;
+    width: 80%;
+    height: 60vw;
+
+  }
+
+  #goBack{
+    grid-row-start: 6; 
+    grid-row-end: 7;
+    margin-left: 1vw;
+  }
+
+  .box{
+    grid-row-start: 6; 
+    grid-row-end: 7;
+    grid-column: 1 /span 1;
+
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+    height: 250px;
+    padding: 18;
+    display: 'flex';
+    flex-Direction: 'column';
+    align-Items: 'center';
+    text-align: center;
+    align-Self: 'center';
+    padding-top: 0px;
+
+  }
+
+
+   
+
+
+  
+
+    #linkedinButton{
+      margin: auto;
+  
+      }
+  
+
+    #trackDetails_sellDetail{
+      grid-row: 3 / span 1;
+      grid-column: 1 / span 1;
+      display: grid;
+
+      align-items: center;
+      justify-content: center; 
+      align-content: center;
+      margin: 5% 5% 5% 5%;
+
+    }
   }

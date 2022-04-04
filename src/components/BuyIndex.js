@@ -159,7 +159,7 @@ const renderTooltip = (props) => (
 
   return (
     (visible ==="true" && data) ? (
-   <div className='grid2'>
+   <div id='grid'>
       <div id="banner_sell">
         <h1 className='h1'>
             Connect with a Buyer
@@ -167,7 +167,7 @@ const renderTooltip = (props) => (
     
                 </div>
                                       <div id='picture_area_track_buyIndex'>
-                            <CoverImage id='coverImage' src={data.users[0].picture} alt="" />
+                            <CoverImage id='coverImage_buy' src={data.users[0].picture} alt="" />
                             <DetailItem id="linkedinButton_buyIndex">
 
                       <a href={linky} target="_blank"> 
@@ -189,13 +189,13 @@ const renderTooltip = (props) => (
   <CardBody>
       <CardTitle>{data.users[0].first_name} {data.users[0].last_name}</CardTitle>
       <DetailRow>
-      <div id='headline'>Research/Services desired: {data.buy_offers[0].headline}</div>
+      <div id='headline'>Research/Services desired: <b> {data.buy_offers[0].headline} </b></div>
      </DetailRow>
      <DetailRow>
-     <div id="headline">Industry: {data.buy_offers[0].industry}  </div>
+     <div id="industry">Industry: <b> {data.buy_offers[0].industry} </b> </div>
      </DetailRow>
      <DetailRow>
-     <div id="headline">Languages: {data.buy_offers[0].languages}  </div>     </DetailRow>
+     <div id="languages">Languages: <b> {data.buy_offers[0].languages} </b> </div>     </DetailRow>
       <CardFooter>
       
         
@@ -217,10 +217,10 @@ const renderTooltip = (props) => (
 className="mb-3" >
         <Tab eventKey="home" title="Details" id="tab1">
         <DetailRow>
-        <div id="qualifications">Qualifications: {data.buy_offers[0].qualifications} </div>
+        <div id="qualifications">Qualifications:  <b>{data.buy_offers[0].qualifications} </b> </div>
         </DetailRow>
         <DetailRow>
-         <div id="offer_details"> Offer Details: {data.buy_offers[0].offer_details}</div>
+         <div id="offer_details"> Offer Details:  <b>{data.buy_offers[0].offer_details} </b></div>
          </DetailRow>
         </Tab>
         <Tab eventKey="background" title="Background">
@@ -250,13 +250,17 @@ className="mb-3" >
               </NavLink>
         </div>
 
-        <div className='box_track_buyIndex'>
-          <div id="headline">Rate type: {data.buy_offers[0].rate_type} </div>
+        <div id='box_track_buyIndex'>
+        <DetailRow id='DetailRow'>
+          <div id="rate_type">Rate type: <b>{data.buy_offers[0].rate_type} </b></div>
+          </DetailRow>
+          <DetailRow id='DetailRow'>  
+<div id="price" > Price: <b>{data.buy_offers[0].price}</b> </div>
+</DetailRow>
+<DetailRow id='DetailRow'>
+<div id="offerType" > Offer Type: <b>{data.buy_offers[0].offer_type} </b> </div>
+</DetailRow>
 
-<div id="headline"> Price: {data.buy_offers[0].price} </div>
-<div id="headline"> Offer Type: {data.buy_offers[0].offer_type}  </div>
-
-<DetailRow id='DetailRow'></DetailRow>
 
 <NavLink to={`/Buy/BuyDetail/${data.buy_offers[0].buyOfferId}`}>
               <button
@@ -268,7 +272,6 @@ className="mb-3" >
               </button>
             </NavLink>
 
- <DetailRow id='DetailRow'></DetailRow>
  <br></br>
 
  <NavLink to={`/Buy`}>
@@ -392,8 +395,9 @@ const TrackDetails = styled.div({
 const DetailRow = styled.div({
   display: 'flex',
   flexDirection: 'row',
-  justifyContent: 'space-between',
+  justifyContent: 'center',
   alignItems: 'center',
+  textalign: 'center',
   width: '100%',
   paddingBottom: 20,
   marginBottom: 20,
@@ -407,6 +411,8 @@ const DetailItem = styled.div({
   justifyContent: 'space-between',
   color: 'grey',
   alignSelf: 'center',
+  textalign: 'center',
+
 });
 
 const AuthorImage = styled.img({

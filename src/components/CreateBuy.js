@@ -1,6 +1,6 @@
 import  {useState} from 'react';
 //import {fetchingOffers, gotOffers, fetchingOffersFailed} from '../slice_reducers/offersSlice.js';
-import './../styles/CreateSell.css';
+import './../styles/CreateBuy.css';
 //const axios = require('axios');
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'   
@@ -134,7 +134,7 @@ const handleSubmit = (e) => {
 
            return (
             
-            <div class="container-Sell">
+            <div id="container_Buy">
                <h2 class='Headline'> 
                CREATE AN OFFER TO BUY
            </h2>         

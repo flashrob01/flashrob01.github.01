@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext} from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
-import {useNavigate, Outlet} from 'react-router-dom';
 
 import styled from '@emotion/styled';
 import {Link, useParams} from 'react-router-dom';
@@ -10,14 +9,13 @@ import { gql} from '@apollo/client';
 import './../styles/SellDetail.css';
 
 import Button from 'react-bootstrap/Button';
-import InputForm from './InputForm';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 
-import { registerRoute, Route } from 'workbox-routing';
+/* import { registerRoute, Route } from 'workbox-routing';
 import { CacheFirst } from 'workbox-strategies';
 
-import { UNSAFE_NavigationContext } from "react-router-dom";
+import { UNSAFE_NavigationContext } from "react-router-dom"; */
 
 
 const SellDetail = () => {
@@ -60,33 +58,12 @@ const [visible, setVisible] = useState('false');
 
 const {sell_offer_id} = useParams();
 
-const navigate = useNavigate();
 
 
 var num = Number(sell_offer_id);
 
-const useBackListener = (callback) => {
-  const navigator = useContext(UNSAFE_NavigationContext).navigator;
 
-  useBackListener(({ location }) =>
-  console.log("Navigated Back", { location })
-);
-
-
-  useEffect(() => {
-    const listener = ({ location, action }) => {
-      console.log("listener", { location, action });
-      if (action === "POP") {
-        callback({ location, action });
-        navigate(window.history.go(-1), { replace: true });
-
-      }
-    };
-
-    const unlisten = navigator.listen(listener);
-    return unlisten;
-  }, [callback, navigator]);
-};
+ 
 
 const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY, {
   variables: {sell_offer_id: num},
@@ -136,13 +113,13 @@ const renderTooltip = (props) => (
     Pre-communication with the seller is very important prior to reserving a request with him or her!
   </Tooltip>
 );
-
+/* 
 const imageRoute = new Route(({ request, sameOrigin }) => {
   return sameOrigin && request.destination === 'image'
 }, new CacheFirst());
 
 // Register the new route
-registerRoute(imageRoute);
+registerRoute(imageRoute); */
 
 
 let linky = ("https://"+ data.users[0].linked_in);
@@ -154,7 +131,6 @@ let linky2= ('https://www.nekohit.com');
   return (
     (visible ==="true" && data) ? (
    <div className='grid'>
-     <Outlet />
           <div id="banner_sellDetail">
           
         <h1 className='h1'>
@@ -163,7 +139,7 @@ let linky2= ('https://www.nekohit.com');
     
                 </div>
      <div id='section1_sellDetail'>
-      <TrackDetails id='trackDetails_sellDetail'>
+     
       
  <h2>Order Summary  </h2>
  You selected to purchase: <DetailRow id='DetailRow'><b class="bold">  {data.sell_offers[0].headline} </b></DetailRow>
@@ -193,14 +169,13 @@ let linky2= ('https://www.nekohit.com');
 
               </DetailRow>
         
-            </TrackDetails>
 
             </div>
 
 
                                       <div id='picture_area_sellDetail'>
                             <CoverImage id='coverImage_sellDetail' src={data.users[0].picture} alt="" />
-
+                                   <DetailItem id="messageButton">
                                                         <StyledLink to={`/InputForm`}>
 
                                                         <OverlayTrigger
@@ -213,12 +188,12 @@ let linky2= ('https://www.nekohit.com');
                                                             color='pink'
                                                             size="large"
                                                         >
-                                                            Click to here to begin a conversation with {data.users[0].first_name} 
+                                                            Click here to begin a conversation with {data.users[0].first_name} 
                                                         </button>
                                                         </OverlayTrigger>,
 
                                                         </StyledLink>
-                                                    
+                                    </DetailItem>                         
                           </div>
      
 
@@ -274,7 +249,7 @@ let linky2= ('https://www.nekohit.com');
                  <br></br>
 
              
-              <Button> Go back
+              <Button id="goBack"> Go back
                 </Button>
            </Link>
         </div>

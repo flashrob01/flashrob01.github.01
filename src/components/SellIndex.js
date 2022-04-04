@@ -233,7 +233,7 @@ const renderTooltip = (props) => (
                             <CoverImage id='coverImage' src={data.users[0].picture} alt="" />
                             <DetailItem id="linkedinButton">
 
-                            <br></br>
+                        
                       <a href={linky} target="_blank"> 
  
                       <button

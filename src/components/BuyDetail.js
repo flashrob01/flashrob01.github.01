@@ -137,8 +137,8 @@ let linky2= ('https://www.nekohit.com');
 
 
                                       <div id='picture_area_buyDetail'>
-                            <CoverImage id='coverImage_sellDetail' src={data.users[0].picture} alt="" />
-
+                            <CoverImage id='coverImage_buyDetail' src={data.users[0].picture} alt="" />
+                            <DetailItem id="messageButton_buy">
                                                         <StyledLink to={`/InputForm`}>
 
                                                         <OverlayTrigger
@@ -156,7 +156,7 @@ let linky2= ('https://www.nekohit.com');
                                                         </OverlayTrigger>,
 
                                                         </StyledLink>
-                                                    
+                            </DetailItem>                        
                           </div>
      
 
@@ -198,7 +198,7 @@ let linky2= ('https://www.nekohit.com');
 
                 
              
-              <Button > Go back
+              <Button id="backButton" > Go back
                 </Button>
            </Link>
        </DetailRow>
