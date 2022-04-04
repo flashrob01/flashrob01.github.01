@@ -334,7 +334,7 @@ className="mb-3" >
                 color='pink'
                 size="large"
               >
-                Click to here to continue order
+                Click to here to talk to connect with {data.users[0].first_name}
               </button>
             </NavLink>
 
