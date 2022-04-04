@@ -78,6 +78,8 @@ var num = Number(buyOfferId);
 /* const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY); */
 
 const {loading, error, data } =  useQuery(BUY_OFFERS_QUERY, {
+  fetchPolicy: "cache-and-network",
+
   variables: {buyOfferId: num},
   onCompleted: () => {
     setVisible('true');

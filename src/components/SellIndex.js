@@ -1,6 +1,7 @@
-import {useEffect,  useState} from 'react';
+import {useEffect, useContext, useState} from 'react';
 import styled from '@emotion/styled';
 import { useAuth0 } from "@auth0/auth0-react";
+import {useNavigate} from 'react-router-dom';
 
 import { useQuery } from "@apollo/client";
 import { InMemoryCache, ApolloClient, gql} from '@apollo/client';
@@ -18,6 +19,9 @@ import AuthorizedApolloProvider from '../AuthorizedApolloProvider';
 
 import { registerRoute, Route } from 'workbox-routing';
 import { CacheFirst } from 'workbox-strategies';
+
+import { UNSAFE_NavigationContext } from "react-router-dom";
+
 
 //NOTE- FOR SOME STRANGE REASON, SELLINDEX.JS IS STILL PULLING SOME CSS PROPERTIES FROM ORDERINDEX.JS; DUNNO WHY???
 //REASON is because - never give a className "grid"... it confuses the JS!
@@ -90,13 +94,34 @@ const [key, setKey] = useState('home');
 
 const {sell_offer_id} = useParams();
 
-/* const navigate = useNavigate();
- */
+ const navigate = useNavigate();
+ 
 
 var num = Number(sell_offer_id);
 
 
+/* const useBackListener = (callback) => {
+  const navigator = useContext(UNSAFE_NavigationContext).navigator;
 
+  useBackListener(({ location }) =>
+  console.log("Navigated Back", { location })
+);
+
+
+  useEffect(() => {
+    const listener = ({ location, action }) => {
+      console.log("listener", { location, action });
+      if (action === "POP") {
+        callback({ location, action });
+        navigate(window.history.go(-1), { replace: true });
+
+      }
+    };
+
+    const unlisten = navigator.listen(listener);
+    return unlisten;
+  }, [callback, navigator]);
+}; */
 
 const client = new ApolloClient({
   uri:'https://bright-mullet-79.hasura.app/v1/graphql/',
@@ -108,7 +133,7 @@ const client = new ApolloClient({
 /* const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY); */
 
 const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY, {
-  
+  fetchPolicy: "cache-and-network",
   variables: {sell_offer_id: num},
   onCompleted: () => {
     setVisible('true');
@@ -158,12 +183,15 @@ if(user_error) return `Error! ${user_error.message}`;   */
 }});
  */
 
-const imageRoute = new Route(({ request, sameOrigin }) => {
+/* const imageRoute = new Route(({ request, sameOrigin }) => {
   return sameOrigin && request.destination === 'image'
 }, new CacheFirst());
 
-registerRoute(imageRoute);
+registerRoute(imageRoute); */
 
+/* function redirectTo() {
+  navigate(`"https://"+ data.users[0].linked_in`);
+}
 
  const get_sell_offer = client.readQuery({
   query: GET_SELL_OFFERS_QUERY,
@@ -173,7 +201,7 @@ registerRoute(imageRoute);
     
   },
 }); 
-
+ */
 
 //---caching to make pages load faster- from: https://www.apollographql.com/docs/react/caching/cache-configuration
 
@@ -186,6 +214,7 @@ const renderTooltip = (props) => (
     Pre-communication with the seller is very important prior to reserving a request with him or her!
   </Tooltip>
 );
+
 
 
 

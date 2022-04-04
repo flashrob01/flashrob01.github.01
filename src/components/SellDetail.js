@@ -1,5 +1,6 @@
-import { useState} from 'react';
+import { useState, useEffect, useContext} from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
+import {useNavigate, Outlet} from 'react-router-dom';
 
 import styled from '@emotion/styled';
 import {Link, useParams} from 'react-router-dom';
@@ -15,6 +16,9 @@ import Tooltip from 'react-bootstrap/Tooltip';
 
 import { registerRoute, Route } from 'workbox-routing';
 import { CacheFirst } from 'workbox-strategies';
+
+import { UNSAFE_NavigationContext } from "react-router-dom";
+
 
 const SellDetail = () => {
   const { user} = useAuth0();
@@ -56,11 +60,37 @@ const [visible, setVisible] = useState('false');
 
 const {sell_offer_id} = useParams();
 
+const navigate = useNavigate();
+
 
 var num = Number(sell_offer_id);
 
+const useBackListener = (callback) => {
+  const navigator = useContext(UNSAFE_NavigationContext).navigator;
+
+  useBackListener(({ location }) =>
+  console.log("Navigated Back", { location })
+);
+
+
+  useEffect(() => {
+    const listener = ({ location, action }) => {
+      console.log("listener", { location, action });
+      if (action === "POP") {
+        callback({ location, action });
+        navigate(window.history.go(-1), { replace: true });
+
+      }
+    };
+
+    const unlisten = navigator.listen(listener);
+    return unlisten;
+  }, [callback, navigator]);
+};
+
 const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY, {
   variables: {sell_offer_id: num},
+  fetchPolicy: "cache-and-network",
   onCompleted: () => {
     setVisible('true');
   }
@@ -124,7 +154,9 @@ let linky2= ('https://www.nekohit.com');
   return (
     (visible ==="true" && data) ? (
    <div className='grid'>
+     <Outlet />
           <div id="banner_sellDetail">
+          
         <h1 className='h1'>
             Complete your order
         </h1>

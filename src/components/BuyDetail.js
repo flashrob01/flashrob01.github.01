@@ -53,6 +53,8 @@ const {buyOfferId} = useParams();
 var num = Number(buyOfferId);
 
 const {loading, error, data } =  useQuery(GET_BUY_OFFERS_QUERY, {
+  fetchPolicy: "cache-and-network",
+
   variables: {buyOfferId: num},
   onCompleted: () => {
     setVisible('true');

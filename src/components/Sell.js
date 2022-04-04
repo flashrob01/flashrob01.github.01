@@ -43,7 +43,9 @@ const onClick = (event) => {
   return event.sell_offer_id;
 }
 
-  const { loading, error, data } = useQuery( SellOffersQuery);  
+  const { loading, error, data } = useQuery( SellOffersQuery, {
+    fetchPolicy: "cache-and-network"
+  });  
 
   if(loading){
     return(<Container>

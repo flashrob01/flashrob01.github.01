@@ -8,7 +8,8 @@ import LIProfile2 from '../images/LIProfile2.jpg';
 import Carousel from 'react-bootstrap/Carousel';
 import {useState} from 'react';
 import {NavLink} from 'react-router-dom'
-
+/* import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+ */
 
 const breakpoints = [480, 768, 992, 1200];
 export const mq = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
@@ -22,6 +23,9 @@ const Home = () => {
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
+
+
+
 
     return (
      
@@ -204,7 +208,7 @@ const Home = () => {
              </div>
               </div>
    
-   
+
         
     </div>    
     )

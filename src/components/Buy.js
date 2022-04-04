@@ -50,6 +50,8 @@ function redirectTo(props) {
   }
 
   const { loading, error, data } = useQuery( BuyOffersQuery, {
+    fetchPolicy: "cache-and-network",
+
   });  
 
   if(loading){
