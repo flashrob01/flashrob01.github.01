@@ -241,7 +241,7 @@ const renderTooltip = (props) => (
                         size="large"
                         
                       >
-                        Click to see {data.users[0].first_name}'s LinkedIn Profile
+                        See {data.users[0].first_name}'s LinkedIn Profile
                       </button>
                       </a>
                       </DetailItem>
@@ -313,7 +313,7 @@ className="mb-3" >
                 size="large"
                 id='buttonInput'
               >
-                Click to here to send {data.users[0].first_name} a message
+                Send {data.users[0].first_name} a message
               </button>
 
               </OverlayTrigger>
@@ -334,7 +334,7 @@ className="mb-3" >
                 color='pink'
                 size="large"
               >
-                Click to connect with {data.users[0].first_name}
+                Connect with {data.users[0].first_name}
               </button>
             </NavLink>
 

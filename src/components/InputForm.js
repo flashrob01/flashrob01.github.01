@@ -84,9 +84,9 @@ if (error) {
                 
                 
                 <li>
-                  <label for="message">Inquire directly about the transaction details and the seller's background </label>
+                  <label for="message">Send a message to the seller  </label>
                   <br></br>
-                  <textarea id="form" rows="6"  placeholder="Enter your message here" input class="string" name="sent_message" value={sent_message} onChange={(e) => setSent_message(e.target.value)} required></textarea>
+                  <textarea id="form" rows="6"  placeholder="'Hi! I'd like to know more about your background as well as the transaction details..." input class="string" name="sent_message" value={sent_message} onChange={(e) => setSent_message(e.target.value)} required></textarea>
                 </li>  
                  
                

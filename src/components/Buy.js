@@ -65,7 +65,7 @@ function redirectTo(props) {
   return (
     ( data) ? (
     <Container>
-      <h5>Research, Consulting and Data Requests </h5>
+      <h5>Research, Market Intelligence and Data Requests </h5>
       <h2>Click for details</h2>
      <ApolloTableQL
   query={BuyOffersQuery}

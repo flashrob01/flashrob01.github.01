@@ -37,17 +37,36 @@
     text-align: center;
     background-size: cover;
     padding: 5% 5% 5% 5% ;
-    
-    position: relative;
+    color: rgb(235, 175, 175);
+    font-weight: 300;
+/*     font-style: inherit;
+ */   /*  font-size: x-large;
+    position: relative; */
 
   
     
   }
 
+  #banner h1 {
+    /*     font-family: 'Roboto', sans-serif;
+     */    font-weight: 400;
+        color: rgb(238, 141, 117);
+          font-size: 3.75em;
+        /*   position: absolute;
+          top: 50%;
+          transform: translateY(-50%); */
+          display: flex;
+          text-align: center;
+          justify-content: space-around;
+          
+      }
+
+  
+
   #h1{
-    position: absolute;
-   top: 50%;
-   transform: translateY(-50%);
+    color: red;
+    width: 40vw;
+
   }
 
   #winner{
@@ -237,13 +256,7 @@
   font-weight: bold;
   }
 
-  #banner h1 {
-/*     font-family: 'Roboto', sans-serif;
- */    font-weight: 300;
-    color: white;
-      font-size: 3.75em;
-  
-  }
+
   
   .headline{
     text-align: center;
@@ -270,7 +283,7 @@
    }
    
 
-  @media only screen and (max-width: 768px){
+  @media only screen and (max-width: 767px){
 
       .DDRLogo{
         display: inline block;
@@ -287,7 +300,10 @@
 
       #banner h1{
         font-size: 2em;
-        
+        display: flex;
+        text-align: center;
+        justify-content: space-around;
+               
       }
 
       #winner{
@@ -327,7 +343,7 @@
       }
   }
 
-  @media only screen and (min-width: 769px) and (max-width: 1024px)
+  @media only screen and (min-width: 768px) and (max-width: 1024px)
   {
 
     
@@ -348,6 +364,18 @@
  /*     display: inline-block; */
    margin: 0% 5% 0% 45%;
   }
+
+  #winner{
+    margin-top: 30px;
+     background-image:url("../images/ExcellenceAward.png");
+    min-width: 100%;
+    margin-left: 0x;
+    margin-bottom: 10px;
+    background-repeat: repeat;
+   height: 17vw;
+          
+ 
+   }
 
 
   }

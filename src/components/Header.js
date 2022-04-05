@@ -20,7 +20,7 @@ const Header = () => {
 
         <div id = "DDRlogo" >
     
-    <img src={require("../images/ddrc-logo.png").default} className="App-logo" />
+    <img src={require("../images/ddr_Logo2_040522.png").default} className="App-logo" />
    
     </div>
         

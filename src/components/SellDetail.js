@@ -134,7 +134,7 @@ let linky2= ('https://www.nekohit.com');
           <div id="banner_sellDetail">
           
         <h1 className='h1'>
-            Complete your order
+            Connect with an expert
         </h1>
     
                 </div>
@@ -142,7 +142,7 @@ let linky2= ('https://www.nekohit.com');
      
       
  <h2>Order Summary  </h2>
- You selected to purchase: <DetailRow id='DetailRow'><b class="bold">  {data.sell_offers[0].headline} </b></DetailRow>
+ You selected: <DetailRow id='DetailRow'><b class="bold">  {data.sell_offers[0].headline} </b></DetailRow>
   
       <DetailRow id='DetailRow'>
       Offeror:  <b class="bold"> {data.users[0].first_name}  {data.users[0].last_name} </b> 
@@ -188,7 +188,7 @@ let linky2= ('https://www.nekohit.com');
                                                             color='pink'
                                                             size="large"
                                                         >
-                                                            Click here to begin a conversation with {data.users[0].first_name} 
+                                                            Begin a conversation with {data.users[0].first_name} 
                                                         </button>
                                                         </OverlayTrigger>,
 
@@ -201,7 +201,7 @@ let linky2= ('https://www.nekohit.com');
 
                              
             <h2>Please set up your transaction using the Nekohit escrow system.</h2>
-    <p>  As DDRC is not responsible to enforce the quality or terms of the transaction, it is important that you confirm the terms with the seller before you into the transaction. For more information on how escrow works, please see our FAQ  <StyledLink id="linky" to={`/About`}> here. </StyledLink>
+    <p>  As DDR is not responsible to enforce the quality or terms of the transaction, it is important that you confirm the terms with the seller before you into the transaction. For more information on how escrow works, please see our FAQ  <StyledLink id="linky" to={`/About`}> here. </StyledLink>
     </p>
    
     

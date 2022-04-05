@@ -48,6 +48,7 @@
     margin-bottom: 10px;
     
   }
+  
  
   #section1_buyDetail {
       grid-row-start: 2; 
@@ -290,7 +291,7 @@
     color:blue;
   }
 
-  @media only all and (max-width: 768px){
+  @media all and (max-width: 768px){
     .grid{
       min-height: 2400px;
       min-width: 0;
@@ -316,7 +317,7 @@
       text-align: center;
       align-Self: center;
       padding: 12px 12px 12px 12px;
-  
+      margin-left: 25%;
 
     }
 
@@ -388,14 +389,18 @@
     text-align: center;
    align-items: center;
    margin: 12px 12px 12px 12px;
-   margin-bottom: 1vw;
+   margin-bottom: 2vw;
 
 
   }
 
-  #GoBack{
-    grid-row-start: 6; 
-    grid-row-end: 7;
+  #convoButton{
+    margin-right: 15px;
+  }
+
+  #backButton{
+ 
+    margin-left: 25vw;
   }
 
   .box{
@@ -423,7 +428,7 @@
 
     #linkedinButton{
       margin: auto;
-  
+      margin-bottom: 1vw;
       }
   
 
@@ -446,139 +451,9 @@
       
   }
 
-  @media only screen and (max-width: 768px){
-    .grid{
-      min-height: 2400px;
-      min-width: 0;
-      display: grid;
-      grid-template-columns: 1fr ;
-      grid-template-rows: repeat (7, 1fr);
-      align-items: center;
-
-    }
-
-    #banner_sellDetail{
-      height: 50vw
-    }
-
-    .h1{
- 
-      max-width: 300px;
-    }
-
-    #picture_area_buyDetail{
-      grid-row: 2 / span 1;
-      grid-column: 1 /span 1;
-      margin: 0% 15% 0% 15%;
-      width: 80%;
-    }
-
-    #messageButton{
   
-      margin-right: 0vw;
-    }
   
-
-    #coverImage_buyDetail{
-      display: grid;
-/*        height: 70vw;
- */      
-      border-color: beige #1c87c9;
-      border-image: none;
-/*       border-radius: 50% 50% 50% 50%;
- */      border-style: solid;
-      border-width: 1px;
-      background-image:url("../images/LIProfile.jpg");
-      overflow: hidden;
-      height: 80vw;
-      margin-bottom: 35px;
-      box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-     align-items: center;
-
-     /*  margin-top: 30px;
-      margin-right: 100px; */
-      
-    }
-
-  
- 
-
-    #section1_buyDetail {
-      grid-row-start: 3; 
-    grid-row-end: 4;
-    grid-column: 1 /span 1;
-    background-position: center;
-    /* height: 46rem; */
-    width: 80%;
-    margin-right: 5vw;
-    }
-
-    
-  #section3_buyDetail{
-    grid-row-start: 4; 
-    grid-row-end: 5;
-    grid-column: 1 /span 1;
-    width: 80%;
-    margin-left: 0px;
-    margin-top: 5px;
-  }
-
-  
-  #section4_buyDetail{
-    grid-row-start: 5; 
-    grid-row-end: 6;
-    grid-column: 1 /span 1;
-    width: 80%;
-    height: 60vw;
-    display: flex;
-
-  }
-
-  #backButton{
-    grid-row-start: 6; 
-    grid-row-end: 7;
-    margin-left: 25vw;
-  }
-
-  .box{
-    grid-row-start: 7; 
-    grid-row-end: 8;
-    grid-column: 1 /span 1;
-
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
-    height: 250px;
-    padding: 18;
-    display: 'flex';
-    flex-Direction: 'column';
-    align-Items: 'center';
-    text-align: center;
-    align-Self: 'center';
-    padding-top: 0px;
-    margin-bottom: 1vw;
-
-  }
-
-
-   
-
-
-  
-
-    #linkedinButton{
-      margin: auto;
-  
-      }
-  
-
-
-   
-  
-  }
-  
-      
+       
   
 
   @media only screen and (min-width: 769px) and (max-width:1024px){

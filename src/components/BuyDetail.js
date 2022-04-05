@@ -146,12 +146,12 @@ let linky2= ('https://www.nekohit.com');
                                                         delay={{ show: 250, hide: 400 }}
                                                         overlay={renderTooltip}
                                                         >
-                                                        <button
+                                                        <button id="convoButton"
 
                                                             color='pink'
                                                             size="large"
                                                         >
-                                                            Click to here to begin a conversation with {data.users[0].first_name} 
+                                                            Begin a conversation with {data.users[0].first_name} 
                                                         </button>
                                                         </OverlayTrigger>,
 
@@ -168,7 +168,7 @@ let linky2= ('https://www.nekohit.com');
             </DetailRow>
             <DetailRow id='DetailRow'>
 
-    <p>  As DDRC is not responsible to enforce the quality or terms of the transaction, it is important that you confirm the terms with the seller before you into the transaction. For more information on how escrow works, please see our FAQ  <StyledLink id="linky" to={`/About`}> here. </StyledLink>
+    <p>  As DDR is not responsible to enforce the quality or terms of the transaction, it is important that you confirm the terms with the seller before you into the transaction. For more information on how escrow works, please see our FAQ  <StyledLink id="linky" to={`/About`}> here. </StyledLink>
              
     </p>
           </DetailRow>
@@ -187,7 +187,7 @@ let linky2= ('https://www.nekohit.com');
                 color='pink'
                 size="large"
               >
-                Click to here to set up an escrow payment receipt with Nekohit now
+                Set up an escrow payment receipt with Nekohit now
                               </button>
             </a>
             </DetailRow>

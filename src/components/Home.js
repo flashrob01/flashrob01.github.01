@@ -32,9 +32,9 @@ const Home = () => {
         <div className="wrapper">
  
                <div id="banner">
-        <h1>
-            Welcome to Decentralized Data, Research,  <br />
-            and Consulting Store
+        <h1 id="h1prop"> 
+            Welcome to <br></br> Decentralized Data and <br></br>Research  <br />
+              
         </h1>    
         
                 </div>
@@ -46,10 +46,10 @@ const Home = () => {
            
 
             
-            <h3 div id="h3">
+            <h1 div id="h3">
                 Featured Consultants    
 
-                </h3>
+                </h1>
              
 
 
@@ -169,14 +169,14 @@ const Home = () => {
 
               <div id='headline2'>
         <h1>
-          What is DDRC?            
+          What is DDR?            
         </h1>    
         
         </div>  
               
               <div id='About'>
                 
-             <p>   DDR (Decentralized Data and Research) is an exchange where professionals and organizations can find each other and pay for high-quality, customized, strategic, legally-gathered information directly, skipping the middleman, that is, the expensive research and consulting firm.
+             <p>   DDR (Decentralized Data and Research) is an exchange where professionals and organizations can find each other and pay for high-quality, customized, research and market intelligence directly, skipping the middleman.
               </p>
               <p> Identities are verified through LinkedIn, thus giving both buyers and sellers confidence regarding who they are contracting with on the other side.</p>
               <p> Payments are done through a customized escrow system utilizing the NEO blockchain, thus reducing the need for an expensive intermediary and passing the cost savings on directly to buyers and sellers.</p>                
@@ -189,7 +189,7 @@ const Home = () => {
                 color='pink'
                 size="large"
               >
-               I am looking for specific market intelligence, data, or consulting services
+               I am looking for specific market intelligence or data
               </button>
             </NavLink>
              </div>
@@ -202,7 +202,7 @@ const Home = () => {
                 color='pink'
                 size="large"
               >
-                I would like to offer my knowledge, data, or consulting services
+                I would like to offer my knowledge or research services
               </button>
             </NavLink>
              </div>
