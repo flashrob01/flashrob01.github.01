@@ -137,6 +137,7 @@
     text-align: center; 
     flex-direction: column;
     margin-top: 6vw;
+    align-items: center;
     
   }
 
@@ -330,7 +331,7 @@
     grid-column: 1 /span 1;
     background-position: center;
     /* height: 46rem; */
-    width: 80%;
+    width: 70%;
     margin-right: 7vw;
     }
 
@@ -339,7 +340,7 @@
     grid-row-start: 4; 
     grid-row-end: 5;
     grid-column: 1 /span 1;
-    width: 80%;
+    width: 70%;
     margin-left: 0px;
     margin-top: 5px;
   }

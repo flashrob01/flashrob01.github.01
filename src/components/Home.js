@@ -33,7 +33,7 @@ const Home = () => {
  
                <div id="banner">
         <h1 id="h1prop"> 
-            Welcome to <br></br> Decentralized Data and <br></br>Research  <br />
+          <strong>  Welcome to <br></br> Decentralized Data and <br></br>Research Store <br /> </strong>
               
         </h1>    
         

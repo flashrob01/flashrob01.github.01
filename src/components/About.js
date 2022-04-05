@@ -181,7 +181,7 @@ If the seller has already marked the milestones as completed, and there are cont
     </Accordion.Body>
   </Accordion.Item>
   <Accordion.Item eventKey="9">
-    <Accordion.Header>Does DDR plan to develop its own escrow system so that buyers and sellers will not have to also register with Nekohit??</Accordion.Header>
+    <Accordion.Header>Does DDR plan to develop its own escrow system?</Accordion.Header>
     <Accordion.Body>
     Yes, DDR plans to integrate its own escrow functionality (still based off of Nekohit's smart contract) in Q2 2022.
 

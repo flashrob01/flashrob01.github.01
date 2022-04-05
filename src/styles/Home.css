@@ -37,7 +37,7 @@
     text-align: center;
     background-size: cover;
     padding: 5% 5% 5% 5% ;
-    color: rgb(235, 175, 175);
+    color: rgb(241, 234, 234);
     font-weight: 300;
 /*     font-style: inherit;
  */   /*  font-size: x-large;
@@ -50,7 +50,7 @@
   #banner h1 {
     /*     font-family: 'Roboto', sans-serif;
      */    font-weight: 400;
-        color: rgb(238, 141, 117);
+        color: rgb(243, 133, 106);
           font-size: 3.75em;
         /*   position: absolute;
           top: 50%;
