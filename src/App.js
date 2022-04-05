@@ -89,12 +89,12 @@ const App = () => {
                         <Route path="/about" element = {<About />}  />  
                              
                         <Route path="/buy" element = {<Buy />} /> 
-                            <Route path="/buy/:buyOfferId" element = {<BuyIndex />} />
-                            <Route path="/buy/BuyDetail/:buyOfferId" element = {<BuyDetail />} />                            
+                            <Route path="/buy/:buyOfferId" element = {<ProtectedRoute component ={BuyIndex} />} />
+                            <Route path="/buy/BuyDetail/:buyOfferId" element = {<ProtectedRoute component = {BuyDetail} />} />                            
                             
                         <Route path="/sell" element = {<Sell />} />
-                            <Route path="/sell/:sell_offer_id" element = {<SellIndex />}  />
-                            <Route path="/sell/SellDetail/:sell_offer_id" element = {<SellDetail />} />
+                            <Route path="/sell/:sell_offer_id" element = {<ProtectedRoute component ={SellIndex} />}  />
+                            <Route path="/sell/SellDetail/:sell_offer_id" element = {<ProtectedRoute component={SellDetail} />} />
                             
                         <Route path="/CreateBuy" element = {<ProtectedRoute component = {CreateBuy} />} />
                         <Route path="/CreateSell" element = {<ProtectedRoute component = {CreateSell} />} />
