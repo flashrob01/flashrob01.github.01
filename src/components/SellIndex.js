@@ -334,22 +334,22 @@ className="mb-3" >
                 color='pink'
                 size="large"
               >
-                Click to here to talk to connect with {data.users[0].first_name}
+                Click to connect with {data.users[0].first_name}
               </button>
             </NavLink>
 
  <DetailRow id='DetailRow'></DetailRow>
  <br></br>
-
+{/* 
  <NavLink to={`/Sell`}>
-              <button
+              <button id="sell_button"
 
                 color='pink'
                 size="large"
               >
                 Click to return to sell list
               </button>
-            </NavLink>
+            </NavLink> */}
 
             
 
