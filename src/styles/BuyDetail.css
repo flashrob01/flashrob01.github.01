@@ -292,7 +292,10 @@
     .grid{
       min-height: 2400px;
       min-width: 0;
-      display: grid;
+      display: flex;
+      flex-Direction: column;
+      text-align: center;
+      align-Self: center;
       grid-template-columns: 1fr ;
       grid-template-rows: repeat (7, 1fr);
       align-items: center
@@ -308,6 +311,14 @@
       grid-column: 1 /span 1;
       margin: 0% 15% 0% 15%;
       width: 80%;
+      display: flex;
+      flex-Direction: column;
+      align-Items: center;
+      text-align: center;
+      align-Self: center;
+      padding: 12px 12px 12px 12px;
+  
+
     }
 
     #coverImage_buyDetail{
