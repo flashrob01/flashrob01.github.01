@@ -134,7 +134,7 @@ const Home = () => {
       </DetailRow>
       <DetailRow>
       <IconAndLabel>
-        <h6 class="h6"> Price:</h6>  $150/hr.
+        <h6 class="h6"> Price:</h6>  $100/hr.
         </IconAndLabel>   
         </DetailRow>
         
