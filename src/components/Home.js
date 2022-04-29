@@ -58,7 +58,7 @@ const Home = () => {
                
                 <div id="featuredId" href={"/Sell"}>
                   
-                <Carousel activeIndex={index} onSelect={handleSelect} interval={2500} fade>
+                <Carousel activeIndex={index} onSelect={handleSelect} interval={3000} fade>
 
                 <Carousel.Item>
                
