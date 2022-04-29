@@ -58,7 +58,7 @@ const Home = () => {
                
                 <div id="featuredId" href={"/Sell"}>
                   
-                <Carousel activeIndex={index} onSelect={handleSelect} interval={3000} fade>
+                <Carousel activeIndex={index} onSelect={handleSelect} interval={2500} fade>
 
                 <Carousel.Item>
                
@@ -70,11 +70,11 @@ const Home = () => {
              <CardBody>
                <CardTitle>James Hsu </CardTitle>
                <DetailRow>
-              <h6 class="h6"> Qualifications:</h6> Currently the co-founder and Chief Product Officer of my own livestreaming platform and analytics startup.My work has taken me to Canada, the United States, and China (past 10 years). I specialize in working with geographically and culturally diverse teams to achieve great results.In the past, I built products for consumer and enterprise—with a mobile focus—for Yahoo, Amazon and Microsoft. I l<br></br>
+              <h6 class="h6"> Qualifications:</h6> Currently the co-founder and Chief Product Officer of my own livestreaming platform and analytics startup. I specialize in working with geographically and culturally diverse teams to achieve great results.In the past, I built products for consumer and enterprise—with a mobile focus—for Yahoo, Amazon and Microsoft. <br></br>
          
               </DetailRow>
               <DetailRow>
-              <h6 class="h6">Offer Details:</h6> I can provide perspective on:-	Starting companies from scratch – building high-performance teams, pitching your startup, fundraising, scaling processes, finding a co-founder.-	Building the right product – starting from zero, market research, talking to customers, iterating on feedback, finding product-market fit.-	Working at large companies – building relationships, optimizing for career growth, influencing across teams.-	Working across cultures – communication, expectation setting, cultural awareness, valuable lessons learned from the battlefield. :)
+              <h6 class="h6">Offer Details:</h6> I can provide perspective on:-	Starting companies from scratch – building high-performance teams, pitching your startup, fundraising, scaling processes, finding a co-founder.-	Building the right product – starting from zero, market research, talking to customers, iterating on feedback, finding product-market fit. – Building relationships, optimizing for career growth, influencing across teams.-	Working across cultures – communication, expectation setting, cultural awareness, valuable lessons learned from the battlefield. :)
           <br></br>
               </DetailRow>
               <DetailRow>
