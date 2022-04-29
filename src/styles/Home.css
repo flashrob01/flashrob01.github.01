@@ -184,7 +184,6 @@
 #About{
   text-align: center;
   display: inline block;
-  padding-right: 0%;
   grid-row-start: 6; 
   grid-row-end: span 1;
   grid-column-start: 1;
@@ -194,6 +193,19 @@
 
 }
 
+.box_track_home{
+
+  box-shadow: 3px 3px 3px 3px rgba(0.5, 0.5, 0.5, 0.5); 
+  display: flex;
+  flex-Direction: column;
+  align-Items: center;
+  text-align: center;
+  align-Self: center;
+  background-color: white;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 2% 2% 2% 2%;
+}
 
 
   #consulting1{

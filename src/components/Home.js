@@ -4,6 +4,7 @@ import '../styles/Home.css';
  */import styled from '@emotion/styled';
 import LIProfile from '../images/LIProfile.jpg';
 import LIProfile2 from '../images/LIProfile2.jpg';
+import james_hsu_pic from '../images/james_hsu_pic.jfif'
 
 import Carousel from 'react-bootstrap/Carousel';
 import {useState} from 'react';
@@ -58,6 +59,63 @@ const Home = () => {
                 <div id="featuredId" href={"/Sell"}>
                   
                 <Carousel activeIndex={index} onSelect={handleSelect} interval={3000} fade>
+
+                <Carousel.Item>
+               
+               <CardContainer>
+           <CardContent>
+             <CardImageContainer>
+               <CardImage src={james_hsu_pic} />
+             </CardImageContainer>
+             <CardBody>
+               <CardTitle>James Hsu </CardTitle>
+               <DetailRow>
+              <h6 class="h6"> Qualifications:</h6> Currently the co-founder and Chief Product Officer of my own livestreaming platform and analytics startup.My work has taken me to Canada, the United States, and China (past 10 years). I specialize in working with geographically and culturally diverse teams to achieve great results.In the past, I built products for consumer and enterprise—with a mobile focus—for Yahoo, Amazon and Microsoft. I l<br></br>
+         
+              </DetailRow>
+              <DetailRow>
+              <h6 class="h6">Offer Details:</h6> I can provide perspective on:-	Starting companies from scratch – building high-performance teams, pitching your startup, fundraising, scaling processes, finding a co-founder.-	Building the right product – starting from zero, market research, talking to customers, iterating on feedback, finding product-market fit.-	Working at large companies – building relationships, optimizing for career growth, influencing across teams.-	Working across cultures – communication, expectation setting, cultural awareness, valuable lessons learned from the battlefield. :)
+          <br></br>
+              </DetailRow>
+              <DetailRow>
+               <IconAndLabel>
+                 
+               <h6 class="h6"> Location:</h6>  consulting- live discussion
+         
+               </IconAndLabel>
+          
+               </DetailRow>
+               <DetailRow>
+               <IconAndLabel>
+                 <h6 class="h6"> Price:</h6>  $50/hr.
+                 </IconAndLabel>   
+                 </DetailRow>
+                 
+                 <CardFooter>
+                 <div id='BuyButton2'>
+                               <NavLink to="/Sell/49">
+                       <button
+                         color='pink'
+                         size="large"
+                       >
+                         Click to view
+                       </button>
+                     </NavLink>
+                      </div>
+                   
+                   
+                 
+                
+               </CardFooter>
+              
+             </CardBody>
+           </CardContent>
+         </CardContainer>
+         
+               </Carousel.Item>
+               
+   
+   
       <Carousel.Item>
                
       <CardContainer>
@@ -111,6 +169,7 @@ const Home = () => {
 </CardContainer>
 
       </Carousel.Item>
+
       <Carousel.Item>
       <CardContainer>
   <CardContent>
@@ -174,13 +233,15 @@ const Home = () => {
         
         </div>  
               
-              <div id='About'>
-                
+
+              <div id='About' className='box_track_home'>
+
              <p>   DDR (Decentralized Data and Research) is an exchange where professionals and organizations can find each other and pay for high-quality, customized, research and market intelligence directly, skipping the middleman.
               </p>
               <p> Identities are verified through LinkedIn, thus giving both buyers and sellers confidence regarding who they are contracting with on the other side.</p>
               <p> Payments are done through a customized escrow system utilizing the NEO blockchain, thus reducing the need for an expensive intermediary and passing the cost savings on directly to buyers and sellers.</p>                
                 </div>    
+       
 
                 <div id="consulting1">
            <div id='BuyButton'>
