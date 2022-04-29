@@ -80,6 +80,21 @@ main{
     
   }
 
+  .box_track_about{
+
+    box-shadow: 1px 1px 1px 1px rgba(0.1, 0.5, 0.5, 0.5); 
+    display: flex;
+    flex-Direction: column;
+    align-Items: center;
+    text-align: center;
+    align-Self: center;
+    background-color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 2% 2% 2% 2%;
+  }
+  
+
   #description{
     grid-row-start: 3; 
     grid-row-end: span 1;

@@ -68,7 +68,7 @@ const Home = () => {
                <CardImage src={james_hsu_pic} />
              </CardImageContainer>
              <CardBody>
-               <CardTitle>James Hsu </CardTitle>
+               <CardTitle>James H </CardTitle>
                <DetailRow>
               <h6 class="h6"> Qualifications:</h6> Currently the co-founder and Chief Product Officer of my own livestreaming platform and analytics startup. I specialize in working with geographically and culturally diverse teams to achieve great results.In the past, I built products for consumer and enterprise—with a mobile focus—for Yahoo, Amazon and Microsoft. <br></br>
          
@@ -124,7 +124,7 @@ const Home = () => {
       <CardImage src={LIProfile2} />
     </CardImageContainer>
     <CardBody>
-      <CardTitle>Zachary Blake Kim </CardTitle>
+      <CardTitle>Zachary K </CardTitle>
       <DetailRow>
      <h6 class="h6"> Qualifications:</h6> 12 years+ of college counseling experience, over 8 million RMB ($1,250,000 million) in successful scholarship grants, more than 2,000 total acceptance letters to all Top-100 schools in the USA and Top-20 schools in Canada. 超过 12 年的大学咨询经验，超过 800 万元人民币（125万美元）的奖学金，超过 2,000 封美国前 100 名学校和加拿大前 20 名学校的录取通知书。<br></br>
 
@@ -177,7 +177,7 @@ const Home = () => {
       <CardImage src={LIProfile} />
     </CardImageContainer>
     <CardBody>
-      <CardTitle>Robert LIOU</CardTitle>
+      <CardTitle>Robert L</CardTitle>
       <DetailRow>
      <h6 class="h6"> Qualifications:</h6> Former CFO of Shengli Oilfield (IT division of Sinopec), 4 years consulting with IHS Energy/ S&P Global
      </DetailRow>
