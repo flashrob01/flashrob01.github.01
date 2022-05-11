@@ -39,7 +39,7 @@ const About = () => {
          <br>
          </br>
 
-         <div id="description" className='box_track_about'  >
+         <div id="description" className='box_track_about'>
           <p>
             DDR (Decentralized Data and Research) is an exchange where professionals and organizations can find each other and pay for high-quality, 
             customized, strategic, legally-gathered information directly. 
