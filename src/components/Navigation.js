@@ -100,7 +100,7 @@ const Navigation = () => {
     <Container>
     <Nav className="justify-content-end flex-grow-1 pe-3" justify="true" >
   
-    <Nav.Link  class="nav-link" id="nav-links" href="/home">Home</Nav.Link>
+    
     
     <NavDropdown class="nav-link" id="nav-links" title="Buy" id="collasible-nav-dropdown">
         <NavDropdown.Item  id="nav-links" href="/Buy"> View research and consulting requests</NavDropdown.Item>
@@ -116,7 +116,7 @@ const Navigation = () => {
 
       <Nav.Link  id="nav-links" href="/Profile">My Profile</Nav.Link>
 
-  
+      <Nav.Link  class="nav-link" id="nav-links" href="/Blog">Blog</Nav.Link>
 
     </Nav>
     </Container>

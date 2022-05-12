@@ -60,9 +60,10 @@ import OrderDetail from "./components/OrderDetail";
 import InputForm from "./components/InputForm";
 import EditSellOffer from './components/EditSellOffer';
 import EditBuyOffer from './components/EditBuyOffer';
-import PostList from './components/PostList';
-import PostView from './components/PostView';
-
+import Posts from './components/Posts';
+import Post from './components/Post';
+import FullPost from "./components/FullPost";
+import Blog from './components/Blog';
 
 
 
@@ -106,8 +107,11 @@ const App = () => {
                         <Route path="/InputForm" element = {<ProtectedRoute component = {InputForm} />} />  
                         <Route path="/EditSellOffer/:sell_offer_id" element = {<ProtectedRoute component = {EditSellOffer}/>} />  
                         <Route path="/EditBuyOffer/:buyOfferId" element = {<ProtectedRoute component = {EditBuyOffer}/>} />  
-                        <Route path="/postlist" element = {<PostList />}  />  
-                            <Route path="/postlist/:slug" element = {<PostView />}  />  
+                        <Route path="/Posts" element = {<Posts />}  /> 
+                        <Route path="/Post" element = {<Post />}  /> 
+                        <Route path="/FullPost" element = {<FullPost />}  /> 
+                        <Route path="/Blog" element = {<Blog />}  /> 
+
 
                        
 

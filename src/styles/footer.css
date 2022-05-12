@@ -8,17 +8,18 @@
 footer      
 
 {
-            bottom: 0;
+            padding-top: 2em;
+            padding-bottom: 2em;
             width: 100%;
             height: auto;
             
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(1fr);
          
             background-color: whitesmoke;
             
-            font-size: 80%;
+            font-size: 100%;
             
             align-items: center;
 /*             justify-content: space-between;
@@ -31,10 +32,16 @@ footer
     grid-template-columns: 1 fr span 1;
     
   }
+
+  .linkedInSignIn_footer{
+    grid-template-columns: 2 span 1;
+    padding-left:9vw;
+    size: 20rem;
+  }
   
   #secured{
     justify-self: end;
-    grid-template-columns: 2 fr span 1;
+    grid-template-columns: 3 fr span 1;
 
 
   }
@@ -50,6 +57,11 @@ footer
       margin-left: 50px;
   
   
+    }
+
+    .linkedInSignIn_footer{
+ 
+      height: 2.5em;
     }
 
   }

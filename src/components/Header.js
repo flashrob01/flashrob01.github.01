@@ -2,6 +2,7 @@
 import './../styles/header.css';
 import AuthNav from './auth-nav';
 import { useAuth0 } from "@auth0/auth0-react";
+import {NavLink} from 'react-router-dom'
 
 
 //below from https://auth0.com/docs/libraries/auth0-single-page-app-sdk#create-the-client
@@ -17,14 +18,15 @@ const Header = () => {
     return (
         <header>
       
-
+      <NavLink to="/Home">
         <div id = "DDRlogo" >
-    
-    <img src={require("../images/ddr_Logo2_040522.png").default} className="App-logo" />
-   
+
+ 
+    <img src={require("../images/ddr_Logo2_040522.png").default} className="App-logo"  />
+       
+
     </div>
-        
-    <img src={require("../images/linkedin.png").default} className="linkedInSignIn" onClick={() => loginWithRedirect()}/>
+    </ NavLink>
         
     <AuthNav className="authNav"/>
    

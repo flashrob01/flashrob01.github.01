@@ -1,6 +1,14 @@
 import './../styles/footer.css';
+import { useAuth0 } from "@auth0/auth0-react";
+
 
 const Footer = () => {
+
+
+
+    const { loginWithRedirect } = useAuth0();
+
+
     return (
         <footer>
 
@@ -11,6 +19,9 @@ const Footer = () => {
     </a>
     </div>
            
+    <img src={require("../images/linkedin.png").default} className="linkedInSignIn_footer" onClick={() => loginWithRedirect()}/>
+
+
 
             <div id="secured">
      Secured by escrow with Nekohit

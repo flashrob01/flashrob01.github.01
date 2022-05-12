@@ -8,7 +8,6 @@
 }
 
 header {
-  height: 15vh;
   width: 100vw;
   border-top-right-radius: var(--border-radius-outer);
   border-top-left-radius: var(--border-radius-outer);
@@ -38,18 +37,15 @@ h2 {
 }
 
 .App-logo {
-  height: 5rem;
+  height: 2rem;
   pointer-events: none;
-  padding-right: 5vw;
-  padding: 37px;
+  padding-left: 4vw;
+  padding-top: 1em;
+  padding-bottom: 1em;
   grid-template-columns: 1 span 1;
 }
 
-.linkedInSignIn{
-  grid-template-columns: 3 span 1;
-  justify-self: end;
-  size: 24rem;
-}
+
 
 .authNav{
   grid-template-columns: 3 span 1
@@ -76,10 +72,6 @@ h2 {
   padding: 0;
   height: 2rem;
   }
-}
-.linkedInSignIn{
- 
-  height: 2.5em;
 }
 
 
