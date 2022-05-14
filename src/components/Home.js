@@ -227,7 +227,7 @@ const Home = () => {
 
 
               <div id='headline2'>
-        <h1>
+        <h1 id='headline2'>
           What is DDR?            
         </h1>    
         

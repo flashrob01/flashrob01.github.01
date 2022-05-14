@@ -64,10 +64,20 @@
   
 
   #h1{
-    color: red;
+    color: rgb(243, 133, 106);
     width: 40vw;
 
   }
+
+  #h1prop{
+    background-color:black;
+    background: rgba(0, 0, 0, 0.6);
+      font-weight: bold;
+
+
+  }
+
+ 
 
   #winner{
     background-image:url("../images/Launchpad-gif1.png");
@@ -87,6 +97,9 @@
     grid-row-end: span 1;
     grid-column-start: 1;
     grid-column-end: 3;
+    color: rgb(243, 133, 106);
+
+    
   }
 
   #featuredId{
@@ -154,7 +167,8 @@
   grid-row-end: span 1;
   grid-column-start: 1;
   grid-column-end: 3;
- 
+  color: rgb(243, 133, 106);
+
 
  
 }

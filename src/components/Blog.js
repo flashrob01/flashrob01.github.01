@@ -24,7 +24,8 @@ const Posts = () => {
     console.log(posts);
 
     return (<div>
-        <Container>
+        <Container id='blogContainer'
+        >
             <Row className='mt-4'>
                 {data}
             </Row>
