@@ -17,8 +17,7 @@ import './../styles/SellIndex.css';
  */
 import AuthorizedApolloProvider from '../AuthorizedApolloProvider';
 
-import { registerRoute, Route } from 'workbox-routing';
-import { CacheFirst } from 'workbox-strategies';
+
 
 import { UNSAFE_NavigationContext } from "react-router-dom";
 
