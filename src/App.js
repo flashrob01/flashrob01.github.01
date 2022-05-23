@@ -64,8 +64,8 @@ import Posts from './components/Posts';
 import Post from './components/Post';
 import FullPost from "./components/FullPost";
 import Blog from './components/Blog';
-import RegTool from './components/RegTool';
-
+/* import RegTool from './components/RegTool';
+ */
 
 
 
@@ -113,8 +113,8 @@ const App = () => {
                         <Route path="/Post" element = {<Post />}  /> 
                         <Route path="/FullPost" element = {<FullPost />}  /> 
                         <Route path="/Blog" element = {<Blog />}  /> 
-                        <Route path="/RegTool" element = {<RegTool />}  /> 
-
+{/*                         <Route path="/RegTool" element = {<RegTool />}  /> 
+ */}
 
                        
 

@@ -12,7 +12,7 @@ const reviewsRouter = require('./routes/reviews')
 const cors = require('cors')
 
 //--https://betterprogramming.pub/build-a-send-me-a-message-component-for-your-site-229c2b8195e1
-creds=require("./config")
+/* creds=require("./config")
 nodemailer = require("nodemailer")
 app.use(express.json());
 
@@ -30,7 +30,7 @@ transporter.verify((err, success) => {
   } else {
     console.log("Successfully signed into Gmail account");
   }
-});
+}); */
 
 app.post("/send", (req, res) => {
   const { name } = req.body;
