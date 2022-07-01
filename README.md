@@ -1,6 +1,6 @@
-# This is the Central Repository for DDR Store, recipient of a NEO EcoBoost incubation Award and one of the Winners of the NEO Frontier Hackathon in 2021.
+# This is the Central Repository for DDR Store
 
-Please do not fork this repository without my (Robert Liou) express consent. This repository is for informational purposes only and will revert to private shortly.
+Recipient of a NEO EcoBoost incubation Award and one of the Winners of the NEO Frontier Hackathon in 2021. Please do not fork this repository without my (Robert Liou) express consent. This repository is for informational purposes only and will revert to private shortly.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
