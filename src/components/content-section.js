@@ -1,6 +1,6 @@
-import React from 'react';
-import { widths} from '../styles';
-import './../styles/content-section.css';
+import React from "react";
+import { widths } from "../styles";
+import "./../styles/content-section.css";
 
 /**
  * Content Section component renders content (mainly text/mdown based)

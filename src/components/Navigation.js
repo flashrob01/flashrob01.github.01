@@ -1,75 +1,66 @@
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 //import {MDBContainer} from 'mdb-react-ui-kit';
-import Container from 'react-bootstrap/Container'
-import {useState} from 'react'
+import Container from "react-bootstrap/Container";
+import { useState } from "react";
 
 /* import { useSelector, useDispatch} from 'react-redux';
 import { emptyCartForSale, selectCart } from '../slice_reducers/cartSlice';
 import { selectCustomer, loggedOutOfCustomerDb, talkingToCustomerDbFailed } from '../slice_reducers/customerSlice'; */
-import API_Endpoint from '../config/server';
-import './../styles/nav.css';
+import API_Endpoint from "../config/server";
+import "./../styles/nav.css";
 
-
-
-
-const axios = require('axios');
+const axios = require("axios");
 
 const Navigation = () => {
-
-/*     const cart = useSelector(selectCart)
- */  //  const cartCounter = cart.data.length;
-/*     const customerInfo = useSelector(selectCustomer);
+  /*     const cart = useSelector(selectCart)
+   */ //  const cartCounter = cart.data.length;
+  /*     const customerInfo = useSelector(selectCustomer);
     const loggedIndicator = customerInfo.isLoggedin; */
 
-    const[click, setClick] = useState(false);
-    const[dropdownbuy, setDropdownBuy] = useState(false);
-    const[dropdownsell, setDropdownSell] = useState(false);
+  const [click, setClick] = useState(false);
+  const [dropdownbuy, setDropdownBuy] = useState(false);
+  const [dropdownsell, setDropdownSell] = useState(false);
 
-    const handleClick = () => setClick(!click);
-    const closeMobileMenu= () => setClick(false);
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
 
-    const onMouseEnter = () => {
-      if(window.innerWidth < 960) {
-        setDropdownBuy(false);
-        } else {
-          setDropdownBuy(true);
-        }
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdownBuy(false);
+    } else {
+      setDropdownBuy(true);
     }
+  };
 
-    const onMouseLeave = () => {
-      if(window.innerWidth < 960) {
-        setDropdownBuy(false);
-        } else {
-          setDropdownBuy(false);
-        }
-    };
-
-    
-    const onMouseEnter_2 = () => {
-      if(window.innerWidth < 960) {
-        setDropdownSell(false);
-        } else {
-          setDropdownSell(true);
-        }
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdownBuy(false);
+    } else {
+      setDropdownBuy(false);
     }
+  };
 
-    const onMouseLeave_2 = () => {
-      if(window.innerWidth < 960) {
-        setDropdownSell(false);
-        } else {
-          setDropdownSell(false);
-        }
-    };
+  const onMouseEnter_2 = () => {
+    if (window.innerWidth < 960) {
+      setDropdownSell(false);
+    } else {
+      setDropdownSell(true);
+    }
+  };
 
+  const onMouseLeave_2 = () => {
+    if (window.innerWidth < 960) {
+      setDropdownSell(false);
+    } else {
+      setDropdownSell(false);
+    }
+  };
 
-
-
-
-   /*  const dispatch = useDispatch();
+  /*  const dispatch = useDispatch();
     
     const logoutOfDb = async() => { 
       try {
@@ -82,52 +73,66 @@ const Navigation = () => {
       dispatch(talkingToCustomerDbFailed)
     };
     }; */
-/*     
+  /*     
     const logout = (e) => {
       e.preventDefault()
       logoutOfDb()
     } */
-    
-//Noote: for onMouseLeave={onMouseLeave}; the first onMouseLeave is a pre-installed 'action', whereas the second is 
-//a function as defined above and instantiated below!
 
-    return (
-      
-<div>
+  //Noote: for onMouseLeave={onMouseLeave}; the first onMouseLeave is a pre-installed 'action', whereas the second is
+  //a function as defined above and instantiated below!
 
-  
-  <Navbar id="Navbar">
-    <Container>
-    <Nav className="justify-content-end flex-grow-1 pe-3" justify="true" >
-  
-    
-    
-    <NavDropdown class="nav-link" id="nav-links" title="Buy" id="collasible-nav-dropdown">
-        <NavDropdown.Item  id="nav-links" href="/Buy"> View research and consulting requests</NavDropdown.Item>
-        <NavDropdown.Item  id="nav-links" href="/CreateBuy">Create a request </NavDropdown.Item>
-       </NavDropdown>
-      
-       <NavDropdown class="nav-link" id="nav-links" title="Sell" id="collasible-nav-dropdown">
-        <NavDropdown.Item  id="nav-links" href="/Sell">View research and consulting offers</NavDropdown.Item>
-        <NavDropdown.Item  id="nav-links" href="/CreateSell">Create an offer</NavDropdown.Item>
-       </NavDropdown>
-     
-      <Nav.Link  id="nav-links" href="/About">About</Nav.Link>
+  return (
+    <div>
+      <Navbar id="Navbar">
+        <Container>
+          <Nav className="justify-content-end flex-grow-1 pe-3" justify="true">
+            <NavDropdown
+              class="nav-link"
+              id="nav-links"
+              title="Buy"
+              id="collasible-nav-dropdown"
+            >
+              <NavDropdown.Item id="nav-links" href="/Buy">
+                {" "}
+                View research and consulting requests
+              </NavDropdown.Item>
+              <NavDropdown.Item id="nav-links" href="/CreateBuy">
+                Create a request{" "}
+              </NavDropdown.Item>
+            </NavDropdown>
 
-      <Nav.Link  id="nav-links" href="/Profile">My Profile</Nav.Link>
+            <NavDropdown
+              class="nav-link"
+              id="nav-links"
+              title="Sell"
+              id="collasible-nav-dropdown"
+            >
+              <NavDropdown.Item id="nav-links" href="/Sell">
+                View research and consulting offers
+              </NavDropdown.Item>
+              <NavDropdown.Item id="nav-links" href="/CreateSell">
+                Create an offer
+              </NavDropdown.Item>
+            </NavDropdown>
 
-      <Nav.Link  class="nav-link" id="nav-links" href="/Blog">Blog</Nav.Link>
+            <Nav.Link id="nav-links" href="/About">
+              About
+            </Nav.Link>
 
-    </Nav>
-    </Container>
-  </Navbar>
+            <Nav.Link id="nav-links" href="/Profile">
+              My Profile
+            </Nav.Link>
 
-
-
-</div>
-
-    )
-}
+            <Nav.Link class="nav-link" id="nav-links" href="/Blog">
+              Blog
+            </Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+    </div>
+  );
+};
 
 export default Navigation;
 

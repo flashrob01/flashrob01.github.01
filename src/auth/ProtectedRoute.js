@@ -7,11 +7,10 @@ import React from "react";
 
 export const ProtectedRoute = ({ component }) => {
   const Component = withAuthenticationRequired(component, {
-  //  onRedirecting: () {=> <Loader />},
+    //  onRedirecting: () {=> <Loader />},
   });
 
   return <Component />;
-  
 };
 
-export default ProtectedRoute; 
+export default ProtectedRoute;
