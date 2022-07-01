@@ -1,6 +1,6 @@
-# This is the Central Repository for DDR Store
+# This is the Central Repository for DDR (Decentralized Data and Research) Store, 'An Amazon Store for Research and Consulting'
 
-Recipient of a NEO EcoBoost incubation Award and one of the Winners of the NEO Frontier Hackathon in 2021. Please do not fork this repository without my (Robert Liou) express consent. This repository is for informational purposes only and will revert to private shortly.
+Recipient of a NEO EcoBoost incubation Award and one of the Winners of the NEO Frontier Hackathon in 2021. Please do not fork this repository without my (Robert Liou) express consent. This repository is for informational purposes only and will revert to private shortly. I can be reached at: robliou01@gmail.com
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
