@@ -81,7 +81,7 @@ const App = () => {
         />
         <Route path="/about" element={<About />} />
 
-        <Route path="/buy" element={<Buy />} />
+        <Route path="/buy" element={<ProtectedRoute component={Buy} />} />
         <Route
           path="/buy/:buyOfferId"
           element={<ProtectedRoute component={BuyIndex} />}
@@ -91,7 +91,7 @@ const App = () => {
           element={<ProtectedRoute component={BuyDetail} />}
         />
 
-        <Route path="/sell" element={<Sell />} />
+        <Route path="/sell" element={<ProtectedRoute component={Sell} />} />
         <Route
           path="/sell/:sell_offer_id"
           element={<ProtectedRoute component={SellIndex} />}
