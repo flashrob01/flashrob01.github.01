@@ -1,54 +1,71 @@
-import { Link } from "react-router-dom";
+
+
+import {Link} from 'react-router-dom';
 
 import { useAuth0 } from "@auth0/auth0-react";
 
-import AuthNav from "./auth-nav";
+import AuthNav from './auth-nav';
+
+
 
 ////import './../styles/login.css';
 
 //import linkedin from 'react-linkedin-login-oauth2/assets/linkedin.png';
 
-require("dotenv").config();
+require('dotenv').config();
 const axios = require("axios");
 
+
 const Login = () => {
-  const { loginWithRedirect } = useAuth0();
 
-  const onClick1 = () => {
-    window.location.href = "http://localhost:3000/auth/google";
-  };
+      
+      
+  
+      const { loginWithRedirect } = useAuth0();
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Link to={"/auth/logout"}>
-          {" "}
-          <button> Logout </button>
-        </Link>
+  
+    
+       const onClick1 = () => {
+         window.location.href= 'http://localhost:3000/auth/google';
+       }
+       
 
-        <AuthNav />
+   
 
-        <button onClick={onClick1}>Google Login</button>
+    return (
+        <div className="App">
+        <header className="App-header">
+       <Link to={'/auth/logout'} > <button> Logout </button></Link>
 
-        <button onClick={loginWithRedirect}>Auth0 Login</button>
+       <AuthNav />
+           
+       <button onClick={onClick1}>Google Login</button>
 
-        <script
-          src="https://apis.google.com/js/platform.js"
-          async
-          defer
-        ></script>
+       <button onClick= {loginWithRedirect}>Auth0 Login</button>
 
-        <script type="text/javascript" src="src/purify.js"></script>
+   
 
-        <h1 className="App-title">Login using...</h1>
-        <p className="App-intro"></p>
-        <a class="google-btn" href="/google">
-          Google+
-        </a>
-      </header>
-      <div className="App-body">)</div>
-    </div>
-  );
+       <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+       <script type="text/javascript" src="src/purify.js"></script>
+
+          <h1 className="App-title">Login using...</h1>
+          <p className="App-intro"></p>
+          <a class="google-btn" href="/google">Google+</a>
+         
+        </header>
+        <div className="App-body">
+          
+          
+        
+          
+            )
+        </div>
+      </div>
+    )
 };
 
 export default Login;
+
+
+

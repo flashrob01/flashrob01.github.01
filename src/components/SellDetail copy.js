@@ -1,17 +1,18 @@
-import { useState } from "react";
+import {useState} from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 
-import styled from "@emotion/styled";
-import { Link, useParams } from "react-router-dom";
+import styled from '@emotion/styled';
+import {Link, useParams} from 'react-router-dom';
 
 import { useQuery } from "@apollo/client";
-import { gql } from "@apollo/client";
-import "./../styles/SellDetail.css";
+import { gql} from '@apollo/client';
+import './../styles/SellDetail.css';
 
-import Button from "react-bootstrap/Button";
-import InputForm from "./InputForm";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
+import Button from 'react-bootstrap/Button';
+import InputForm from './InputForm';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
+
 
 /* import {
   NeoLineAccount,
@@ -25,15 +26,18 @@ import Tooltip from "react-bootstrap/Tooltip";
   NeoLineWriteInvocationResult,
 } from './utils/neoline'; */
 
+
+
+
 /**
  * Track Detail component renders the main content of a given track:
  * author, length, number of views, modules list, among other things.
  * It provides access to the first module of the track.
  */
 const SellDetail = () => {
-  const { user } = useAuth0();
+  const { user} = useAuth0();
 
-  /* 
+/* 
     let neolineN3 = new window.NEOLineN3.Init();
 
     let hoho = function(){
@@ -70,75 +74,76 @@ const SellDetail = () => {
         }
     });
   }; */
+  
 
   const GET_SELL_OFFERS_QUERY = gql`
-    query GetSellOffers($sell_offer_id: Int!) {
-      sell_offers(where: { sell_offer_id: { _eq: $sell_offer_id } }) {
-        user_id
-        price
-        sell_offer_id
-        industry
-        offer_type
-        headline
-        offer_details
-        languages
-        rate_type
-        target_audience
-        region
-        qualifications
-      }
+  query GetSellOffers($sell_offer_id: Int!){
+    sell_offers(where: {sell_offer_id: {_eq: $sell_offer_id}}){
+      user_id
+      price
+      sell_offer_id
+      industry
+      offer_type
+      headline
+      offer_details
+      languages
+      rate_type
+      target_audience
+      region
+      qualifications
     }
-  `;
+  }
+`;
 
-  const GET_USERS = gql`
-    query GetUsers($userId: String) {
-      users(where: { user_id: { _eq: $userId } }) {
-        user_id
-        email
-        picture
-        first_name
-        last_name
-        linked_in
-        id
-      }
-    }
-  `;
 
-  const [visible, setVisible] = useState("false");
+const GET_USERS = gql`
+  query GetUsers($userId: String){
+    users(where: {user_id: {_eq: $userId}}){
+      user_id
+      email
+      picture
+      first_name
+      last_name
+      linked_in
+      id
+         }
+  }
+`;
 
-  const { sell_offer_id } = useParams();
+const [visible, setVisible] = useState('false');
 
-  var num = Number(sell_offer_id);
+const {sell_offer_id} = useParams();
 
-  const { loading, error, data } = useQuery(GET_SELL_OFFERS_QUERY, {
-    variables: { sell_offer_id: num },
-  });
 
-  const userId = user.sub;
+var num = Number(sell_offer_id);
 
-  /* useEffect(()=>{
+const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY, {
+  variables: {sell_offer_id: num},
+});
+
+const userId = user.sub;
+
+
+/* useEffect(()=>{
   initDapi();
 })
  */
 
-  /* 
+
+/* 
 const [key, setKey] = useState('home'); */
 
-  /* const [neoline, setNeoLine] = useState();
+/* const [neoline, setNeoLine] = useState();
   const [neolineN3, setNeoLineN3] = useState();
   const [account, setAccount] = useState("");
   const [error2, setError2] = useState(""); */
 
-  const {
-    loading: user_loading,
-    error: user_error,
-    data: user_data,
-  } = useQuery(GET_USERS, {
-    variables: { userId },
+  const {loading:user_loading, error:user_error, data:user_data } =  useQuery(GET_USERS, {
+    variables: {userId},
     onCompleted: () => {
-      setVisible("true");
-    },
-  }); /* 
+      setVisible('true');
+    }
+  });/* 
 useEffect(() => {
   window.addEventListener("NEOLine.NEO.EVENT.READY", () => {
     setNeoLine(new window.NEOLineN3.Init());
@@ -148,7 +153,7 @@ useEffect(() => {
   });
 }, []); */
 
-  /* const initNeolineAccount = async () => {
+/* const initNeolineAccount = async () => {
   try {
     const { address } = await neoline.getAccount();
     setAccount(address);
@@ -159,113 +164,127 @@ useEffect(() => {
 };
  */
 
-  if (loading) return "Loading...";
-  if (error) return `Error! ${error.message}`;
 
-  const values = Object.values(data);
+  if(loading) return 'Loading...';
+ if(error) return `Error! ${error.message}`;    
 
-  const filteredItems = values.filter((item) => {
-    return item.sell_offer_id === num;
-  });
+ const values = Object.values(data);
 
-  if (user_loading) return "Loading...";
-  if (user_error) return `Error! ${user_error.message}`;
+ const filteredItems = values.filter((item) => {
+  return (item.sell_offer_id === num); 
+}
+);
 
-  const users1 = Object.values(user_data);
 
-  const filteredUsers = users1.filter((item) => {
-    return item.user_id === "linkedin|uiWV-hd6Jm";
-  });
+if(user_loading) return 'Loading...';
+if(user_error) return `Error! ${user_error.message}`;  
 
-  const renderTooltip = (props) => (
-    <Tooltip id="button-tooltip" {...props}>
-      Pre-communication with the seller is very important prior to reserving a
-      request with him or her!
-    </Tooltip>
-  );
+const users1 = Object.values(user_data);
 
-  let linky = "https://" + user_data.users[0].linked_in;
-  console.log("here is link", linky);
+const filteredUsers = users1.filter((item) => {
+ return (item.user_id === 'linkedin|uiWV-hd6Jm'); 
+}
+);
 
-  let linky2 = "https://www.nekohit.com";
+const renderTooltip = (props) => (
+  <Tooltip id="button-tooltip" {...props}>
+    Pre-communication with the seller is very important prior to reserving a request with him or her!
+  </Tooltip>
+);
 
-  return visible === "true" && data ? (
-    <div className="grid">
-      <div id="banner_sellDetail">
-        <h1 className="h1">Complete your order</h1>
+
+let linky = ("https://"+ user_data.users[0].linked_in);
+console.log('here is link', linky);
+
+let linky2= ('https://www.nekohit.com');
+
+
+  return (
+    (visible ==="true" && data) ? (
+   <div className='grid'>
+          <div id="banner_sellDetail">
+        <h1 className='h1'>
+            Complete your order
+        </h1>
+    
+                </div>
+     <div id='section1_sellDetail'>
+      <TrackDetails id='trackDetails_sellDetail'>
+      
+ <h2>Order Summary  </h2>
+ You selected to purchase: <DetailRow id='DetailRow'><b class="bold">  {data.sell_offers[0].headline} </b></DetailRow>
+  
+      <DetailRow id='DetailRow'>
+      Offeror:  <b class="bold"> {user_data.users[0].first_name}  {user_data.users[0].last_name} </b> 
+      </DetailRow>
+      
+      <DetailRow id='DetailRow'>
+        Offer Type: <b class="bold"> {data.sell_offers[0].offer_type}  </b> 
+        </DetailRow> 
+
+        <DetailRow id='DetailRow'>
+        Industry:<b class="bold"> {data.sell_offers[0].industry} </b> 
+        </DetailRow> 
+        <DetailRow id='DetailRow'>            
+            Region: <b class="bold"> {data.sell_offers[0].region} </b> 
+            </DetailRow>
+
+            <DetailRow id='DetailRow'>           
+             
+                Price: $<b class="bold"> {data.sell_offers[0].price} </b> 
+              </DetailRow>
+              <DetailRow id='DetailRow'>           Rate type: <b class="bold">  {data.sell_offers[0].rate_type} </b>  
+
+              
+
+              </DetailRow>
+        
+            </TrackDetails>
+
+            </div>
+
+
+                                      <div id='picture_area_sellDetail'>
+                            <CoverImage id='coverImage_sellDetail' src={user_data.users[0].picture} alt="" />
+
+                                                        <StyledLink to={`/InputForm`}>
+
+                                                        <OverlayTrigger
+                                                        placement="right"
+                                                        delay={{ show: 250, hide: 400 }}
+                                                        overlay={renderTooltip}
+                                                        >
+                                                        <button
+
+                                                            color='pink'
+                                                            size="large"
+                                                        >
+                                                            Click to here to begin a conversation with {user_data.users[0].first_name} 
+                                                        </button>
+                                                        </OverlayTrigger>,
+
+                                                        </StyledLink>
+                                                    
+                          </div>
+     
+
+            <div id="section3_sellDetail">
+
+                             
+            <h2>Please set up your transaction using the Nekohit escrow system.</h2>
+    <p>  As DDRC is not responsible to enforce the quality or terms of the transaction, it is important that you confirm the terms with the seller before you into the transaction. For more information on how escrow works, please see our FAQ  <StyledLink id="linky" to={`/About`}> here. </StyledLink>
+    </p>
+   
+    
+  
       </div>
-      <div id="section1_sellDetail">
-        <TrackDetails id="trackDetails_sellDetail">
-          <h2>Order Summary </h2>
-          You selected to purchase:{" "}
-          <DetailRow id="DetailRow">
-            <b class="bold"> {data.sell_offers[0].headline} </b>
-          </DetailRow>
-          <DetailRow id="DetailRow">
-            Offeror:{" "}
-            <b class="bold">
-              {" "}
-              {user_data.users[0].first_name} {user_data.users[0].last_name}{" "}
-            </b>
-          </DetailRow>
-          <DetailRow id="DetailRow">
-            Offer Type: <b class="bold"> {data.sell_offers[0].offer_type} </b>
-          </DetailRow>
-          <DetailRow id="DetailRow">
-            Industry:<b class="bold"> {data.sell_offers[0].industry} </b>
-          </DetailRow>
-          <DetailRow id="DetailRow">
-            Region: <b class="bold"> {data.sell_offers[0].region} </b>
-          </DetailRow>
-          <DetailRow id="DetailRow">
-            Price: $<b class="bold"> {data.sell_offers[0].price} </b>
-          </DetailRow>
-          <DetailRow id="DetailRow">
-            {" "}
-            Rate type: <b class="bold"> {data.sell_offers[0].rate_type} </b>
-          </DetailRow>
-        </TrackDetails>
-      </div>
+ 
 
-      <div id="picture_area_sellDetail">
-        <CoverImage
-          id="coverImage_sellDetail"
-          src={user_data.users[0].picture}
-          alt=""
-        />
+          <div id='section4_sellDetail'> 
 
-        <StyledLink to={`/InputForm`}>
-          <OverlayTrigger
-            placement="right"
-            delay={{ show: 250, hide: 400 }}
-            overlay={renderTooltip}
-          >
-            <button color="pink" size="large">
-              Click to here to begin a conversation with{" "}
-              {user_data.users[0].first_name}
-            </button>
-          </OverlayTrigger>
-          ,
-        </StyledLink>
-      </div>
+           
 
-      <div id="section3_sellDetail">
-        <h2>Please set up your transaction using the Nekohit escrow system.</h2>
-        <p>
-          {" "}
-          As DDRC is not responsible to enforce the quality or terms of the
-          transaction, it is important that you confirm the terms with the
-          seller before you into the transaction. For more information on how
-          escrow works, please see our FAQ{" "}
-          <StyledLink id="linky" to={`/About`}>
-            {" "}
-            here.{" "}
-          </StyledLink>
-        </p>
-      </div>
-
-      <div id="section4_sellDetail">
-        {/* Note- the below Neoline initiation didn't work, likely cuz didn't use correct initiators?//
+{/* Note- the below Neoline initiation didn't work, likely cuz didn't use correct initiators?//
 
               <button
               onClick={NeolineConnect} 
@@ -274,9 +293,9 @@ useEffect(() => {
               >
                 Click to here to make a payment with your Neoline wallet
               </button>  */}
-        {/* Turned off Neoline button, because it's tacky and confusing and not going to be used anyway
-         */}{" "}
-        {/* <div className="App">
+
+{/* Turned off Neoline button, because it's tacky and confusing and not going to be used anyway
+ */}              {/* <div className="App">
       {neoline === undefined && <p>Loading neoline</p>}
       {neoline && (
         <button onClick={initNeolineAccount} color="pink" size="large">
@@ -284,24 +303,32 @@ useEffect(() => {
         </button>
       )}
     </div> */}
-        <a href={linky2} target="_blank" rel="noopener noreferrer">
-          <button color="pink" size="large">
-            Click to here to set up an escrow payment with Nekohit
-          </button>
-        </a>
-        <Link
-          to={{
-            pathname: `/`,
-          }}
-        >
-          <br></br>
 
-          <Button onClick={() => alert("Selecting: ")}> Go back</Button>
-        </Link>
+            <a href={linky2} target="_blank" rel="noopener noreferrer">
+              <button
+                color='pink'
+                size="large"
+              >
+                Click to here to set up an escrow payment with Nekohit
+                              </button>
+            </a>
+
+            <Link to= {{
+               pathname: `/`}}>
+
+                 <br></br>
+             
+              <Button onClick={() => alert("Selecting: " )}> Go back
+                </Button>
+           </Link>
+        </div>
+
+        
+
       </div>
-    </div>
-  ) : (
-    ""
+        ) :(
+          ('')
+         )
   );
 };
 
@@ -309,100 +336,100 @@ export default SellDetail;
 
 /** Track detail styled components */
 const CoverImage = styled.img({
-  objectFit: "cover",
+  objectFit: 'cover',
   maxHeight: 400,
   borderRadius: 4,
   marginBottom: 30,
 });
 
 const StyledLink = styled(Link)({
-  textDecoration: "none",
-  color: "white",
+  textDecoration: 'none',
+  color: 'white',
 });
 
 const TrackDetails = styled.div({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
 
   padding: 20,
   borderRadius: 4,
   marginBottom: 30,
-  border: "solid 1px silver",
-  backgroundColor: "silver",
+  border: 'solid 1px silver',
+  backgroundColor: 'silver',
   h1: {
-    width: "100%",
-    textAlign: "center",
+    width: '100%',
+    textAlign: 'center',
     marginBottom: 5,
   },
   h4: {
-    fontSize: "1.2em",
+    fontSize: '1.2em',
     marginBottom: 5,
-    color: "black",
+    color: 'black',
   },
 });
 
 const DetailRow = styled.div({
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "space-between",
-  alignItems: "center",
-  width: "100%",
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  width: '100%',
   paddingBottom: 20,
   marginBottom: 20,
-  borderBottom: "solid 1px lightgrey",
+  borderBottom: 'solid 1px lightgrey',
 });
 
 const DetailItem = styled.div({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "space-between",
-  color: "grey",
-  alignSelf: "center",
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  color: 'grey',
+  alignSelf: 'center',
 });
 
 const AuthorImage = styled.img({
   height: 30,
   width: 30,
   marginBottom: 8,
-  borderRadius: "50%",
-  objectFit: "cover",
+  borderRadius: '50%',
+  objectFit: 'cover',
 });
 
 const AuthorName = styled.div({
-  lineHeight: "1em",
-  fontSize: "3em",
+  lineHeight: '1em',
+  fontSize: '3em',
 });
 
 const IconAndLabel = styled.div({
-  display: "flex",
-  flex: "row",
-  alignItems: "center",
+  display: 'flex',
+  flex: 'row',
+  alignItems: 'center',
   maxHeight: 20,
-  width: "100%",
+  width: '100%',
   div: {
     marginLeft: 8,
   },
   svg: {
     maxHeight: 16,
   },
-  "#viewCount": {
-    color: "black",
+  '#viewCount': {
+    color: 'black',
   },
 });
 
 const ModuleListContainer = styled.div({
-  width: "100%",
+  width: '100%',
   ul: {
-    listStyle: "none",
+    listStyle: 'none',
     padding: 0,
     margin: 0,
     marginTop: 5,
     li: {
-      fontSize: "1em",
-      display: "flex",
-      justifyContent: "space-between",
+      fontSize: '1em',
+      display: 'flex',
+      justifyContent: 'space-between',
       paddingBottom: 2,
     },
   },
@@ -410,5 +437,5 @@ const ModuleListContainer = styled.div({
 
 const ModuleLength = styled.div({
   marginLeft: 30,
-  color: "grey",
+  color: 'grey',
 });
