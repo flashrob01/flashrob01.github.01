@@ -16,6 +16,7 @@
     "@auth0/auth0-react": "^1.8.0",
     "@auth0/auth0-spa-js": "^1.20.0",
     "@cityofzion/wallet-connect-sdk-react": "^1.4.1",
+    "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.8.1",
     "@graphql-codegen/cli": "^2.6.2",
     "apollo-link": "^1.2.14",
