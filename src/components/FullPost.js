@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import moment from "moment";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { useState } from "react";
+import { Button, Modal, ModalHeader, ModalFooter } from "reactstrap";
 
 const FullPost = ({ post }) => {
   const [modal, setModal] = useState(false);

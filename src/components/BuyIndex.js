@@ -3,11 +3,10 @@ import styled from "@emotion/styled";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import { useQuery } from "@apollo/client";
-import { InMemoryCache, ApolloClient, gql } from "@apollo/client";
+import { gql } from "@apollo/client";
 
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
-import InputForm from "./InputForm";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import { Link, NavLink, useParams } from "react-router-dom";

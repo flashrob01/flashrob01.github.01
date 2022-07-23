@@ -3,15 +3,12 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { gql } from "@apollo/client";
 /* import { Loader, ApolloTableQL  } from 'react-tableql'
  */ import "./../styles/Profile.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useLazyQuery } from "@apollo/client";
 import { Table } from "react-bootstrap";
 
 const Profile = () => {
-  const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
-  const [userMetadata, setUserMetadata] = useState(null);
-
-  let navigate = useNavigate();
+  const { user, isAuthenticated } = useAuth0();
 
   const [visible, setVisible] = useState("false");
 

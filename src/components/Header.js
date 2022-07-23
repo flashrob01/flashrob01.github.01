@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 
 //below from https://auth0.com/docs/libraries/auth0-single-page-app-sdk#create-the-client
 
-import createAuth0Client from "@auth0/auth0-spa-js";
 //
 
 const Header = () => {

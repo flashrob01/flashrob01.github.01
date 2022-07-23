@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
 
 import styled from "@emotion/styled";
 import { Link, useParams } from "react-router-dom";
@@ -9,13 +8,10 @@ import { gql } from "@apollo/client";
 import "./../styles/BuyDetail.css";
 
 import Button from "react-bootstrap/Button";
-import InputForm from "./InputForm";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 
 const BuyDetail = () => {
-  const { user } = useAuth0();
-
   const GET_BUY_OFFERS_QUERY = gql`
     query GetBuyOffers($buyOfferId: Int!) {
       buy_offers(where: { buyOfferId: { _eq: $buyOfferId } }) {

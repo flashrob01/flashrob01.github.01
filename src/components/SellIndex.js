@@ -1,6 +1,5 @@
-import { useEffect, useContext, useState } from "react";
+import { useState } from "react";
 import styled from "@emotion/styled";
-import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 
 import { useQuery } from "@apollo/client";
@@ -8,7 +7,6 @@ import { InMemoryCache, ApolloClient, gql } from "@apollo/client";
 
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
-import InputForm from "./InputForm";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import { Link, NavLink, useParams } from "react-router-dom";
@@ -16,8 +14,6 @@ import "./../styles/SellIndex.css";
 /* import {client} from './../AuthorizedApolloProvider';
  */
 import AuthorizedApolloProvider from "../AuthorizedApolloProvider";
-
-import { UNSAFE_NavigationContext } from "react-router-dom";
 
 //NOTE- FOR SOME STRANGE REASON, SELLINDEX.JS IS STILL PULLING SOME CSS PROPERTIES FROM ORDERINDEX.JS; DUNNO WHY???
 //REASON is because - never give a className "grid"... it confuses the JS!
@@ -32,8 +28,6 @@ export const mq = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
  * It provides access to the first module of the track.
  */
 const SellIndex = () => {
-  const { user } = useAuth0();
-
   const GET_SELL_OFFERS_QUERY = gql`
     query GetSellOffers($sell_offer_id: Int!) @cached {
       sell_offers(where: { sell_offer_id: { _eq: $sell_offer_id } }) {

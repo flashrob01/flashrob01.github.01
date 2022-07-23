@@ -1,5 +1,3 @@
-import React from "react";
-import { widths } from "../styles";
 import "./../styles/content-section.css";
 
 /**

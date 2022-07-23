@@ -3,11 +3,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 /* import {Provider} from 'react-redux';
- */ import {
-  ApolloClient,
-  ApolloProvider,
-  InMemoryCache,
-} from "@apollo/client";
+ */ import { InMemoryCache } from "@apollo/client";
 import AuthorizedApolloProvider from "./AuthorizedApolloProvider";
 import { Auth0Provider } from "@auth0/auth0-react";
 
