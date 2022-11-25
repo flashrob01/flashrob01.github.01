@@ -47,8 +47,8 @@
     "generate": "graphql-codegen --config codegen.yml",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "npm install react-scripts&& react-app-rewired start",
-    "build": "npm install react-scripts &&react-app-rewired build",
+    "start": "npm install react-scripts&& npm install && react-app-rewired start",
+    "build": "npm install react-scripts && npm install && react-app-rewired build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "introspection": "graphql-codegen --config codegen.yml"
