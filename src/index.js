@@ -39,7 +39,7 @@ ReactDOM.render(
     // redirectUri='http://localhost:3000'
 
     //Note- unfreeze above and freeze below when going from production to local testing!
-    redirectUri="https://ddr-store.herokuapp.com/"
+    redirectUri="https://www.store.robliou.com/"
     audience="hasura"
   >
     <AuthorizedApolloProvider graphQLClientConfig={{ cache }}>
