@@ -20,7 +20,7 @@ const client = new Client({
 
 client.connect();
 
-const allowedOrigins = ["https://ddrc-store.herokuapp.com"];
+const allowedOrigins = ["https://www.store.robliou.com"];
 buyOffersRouter.use(
   cors({
     credentials: true,
