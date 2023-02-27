@@ -18,3 +18,7 @@ tiingo==0.14.0
 
 scikit-learn==1.0.2
 pandas-datareader==0.10.0
+
+matplotlib==3.5.3
+plotly==5.11.0
+
