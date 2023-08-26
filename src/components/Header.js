@@ -1,6 +1,5 @@
 import "./../styles/header.css";
 import AuthNav from "./auth-nav";
-import { useAuth0 } from "@auth0/auth0-react";
 import { NavLink } from "react-router-dom";
 
 //below from https://auth0.com/docs/libraries/auth0-single-page-app-sdk#create-the-client
@@ -8,8 +7,6 @@ import { NavLink } from "react-router-dom";
 //
 
 const Header = () => {
-  const { loginWithRedirect } = useAuth0();
-
   return (
     <header>
       <NavLink to="/Home">

@@ -33,11 +33,7 @@ function Buy(props) {
   }
   //Redirecting to another page using react-router-dom is so much easier with useNavigate!
 
-  const onClick = (event) => {
-    return event.buyOfferId;
-  };
-
-  const { loading, error, data } = useQuery(BuyOffersQuery, {
+  const { loading, data } = useQuery(BuyOffersQuery, {
     fetchPolicy: "cache-and-network",
   });
 

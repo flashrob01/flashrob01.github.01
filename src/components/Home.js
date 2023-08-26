@@ -322,29 +322,6 @@ const CardFooter = styled.div({
   flexDirection: "Row",
 });
 
-const AuthorImage = styled.img({
-  height: 30,
-  width: 30,
-  marginRight: 8,
-  borderRadius: "50%",
-  objectFit: "cover",
-});
-
-const AuthorAndTrack = styled.div({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-between",
-});
-
-const AuthorName = styled.div({
-  lineHeight: "1em",
-  fontSize: "1.1em",
-});
-
-const TrackLength = styled.div({
-  fontSize: "0.8em",
-});
-
 const IconAndLabel = styled.div({
   display: "block",
   flex: "row",
@@ -371,13 +348,4 @@ const DetailRow = styled.div({
   paddingBottom: 20,
   marginBottom: 20,
   borderBottom: "solid 1px silver",
-});
-
-const DetailItem = styled.div({
-  display: "block",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "space-between",
-  color: "grey",
-  alignSelf: "center",
 });

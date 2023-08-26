@@ -82,8 +82,6 @@ const SellIndex = () => {
 
   const { sell_offer_id } = useParams();
 
-  const navigate = useNavigate();
-
   var num = Number(sell_offer_id);
 
   /* const useBackListener = (callback) => {
@@ -108,12 +106,6 @@ const SellIndex = () => {
     return unlisten;
   }, [callback, navigator]);
 }; */
-
-  const client = new ApolloClient({
-    uri: "https://bright-mullet-79.hasura.app/v1/graphql/",
-    cache: new InMemoryCache(),
-    connectToDevTools: true,
-  });
 
   /* const {loading, error, data } =  useQuery(GET_SELL_OFFERS_QUERY); */
 
@@ -389,11 +381,6 @@ const CardFooter = styled.div({
   flexDirection: "Row",
 });
 
-const StyledLink = styled(Link)({
-  textDecoration: "none",
-  color: "white",
-});
-
 const TrackDetails = styled.div({
   display: "flex",
   flexDirection: "column",
@@ -433,33 +420,4 @@ const DetailItem = styled.div({
   justifyContent: "space-between",
   color: "grey",
   alignSelf: "center",
-});
-
-const AuthorImage = styled.img({
-  height: 30,
-  width: 30,
-  marginBottom: 8,
-  borderRadius: "50%",
-  objectFit: "cover",
-});
-
-const ModuleListContainer = styled.div({
-  width: "100%",
-  ul: {
-    listStyle: "none",
-    padding: 0,
-    margin: 0,
-    marginTop: 5,
-    li: {
-      fontSize: "1em",
-      display: "flex",
-      justifyContent: "space-between",
-      paddingBottom: 2,
-    },
-  },
-});
-
-const ModuleLength = styled.div({
-  marginLeft: 30,
-  color: "grey",
 });

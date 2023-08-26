@@ -1,9 +1,4 @@
-import {
-  ApolloClient,
-  ApolloProvider,
-  createHttpLink,
-  InMemoryCache,
-} from "@apollo/client";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { ApolloLink } from "apollo-link";
 import { BatchHttpLink } from "apollo-link-batch-http";
@@ -16,7 +11,7 @@ import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 // IF you want to enable/disable dev tools in different enviroments
-const devTools = localStorage.getItem("apolloDevTools") || false;
+//const devTools = localStorage.getItem("apolloDevTools") || false;
 
 const AuthorizedApolloProvider = ({ children }) => {
   const { getAccessTokenSilently } = useAuth0();

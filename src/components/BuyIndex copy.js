@@ -7,7 +7,6 @@ import { InMemoryCache, ApolloClient, gql } from "@apollo/client";
 
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
-import InputForm from "./InputForm";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import { Link, NavLink, useParams } from "react-router-dom";

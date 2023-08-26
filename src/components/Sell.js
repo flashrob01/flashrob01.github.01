@@ -32,11 +32,7 @@ function Sell(props) {
     navigate(`/sell/${props}`);
   }
 
-  const onClick = (event) => {
-    return event.sell_offer_id;
-  };
-
-  const { loading, error, data } = useQuery(SellOffersQuery, {
+  const { loading } = useQuery(SellOffersQuery, {
     fetchPolicy: "cache-and-network",
   });
 

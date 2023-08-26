@@ -18,8 +18,8 @@ const Navigation = () => {
   /*     const customerInfo = useSelector(selectCustomer);
     const loggedIndicator = customerInfo.isLoggedin; */
 
-  const [click, setClick] = useState(false);
-  const [dropdownbuy, setDropdownBuy] = useState(false);
+  /*   const [click, setClick] = useState(false);
+   */ /*  const [dropdownbuy, setDropdownBuy] = useState(false);
   const [dropdownsell, setDropdownSell] = useState(false);
 
   const handleClick = () => setClick(!click);
@@ -55,7 +55,7 @@ const Navigation = () => {
     } else {
       setDropdownSell(false);
     }
-  };
+  }; */
 
   /*  const dispatch = useDispatch();
     

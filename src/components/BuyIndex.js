@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
-import { useAuth0 } from "@auth0/auth0-react";
 
 import { useQuery } from "@apollo/client";
 import { gql } from "@apollo/client";
@@ -9,7 +8,7 @@ import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-import { Link, NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import "./../styles/BuyIndex.css";
 
 //NOTE- FOR SOME STRANGE REASON, SELLINDEX.JS IS STILL PULLING SOME CSS PROPERTIES FROM ORDERINDEX.JS; DUNNO WHY???
@@ -25,7 +24,7 @@ export const mq = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
  * It provides access to the first module of the track.
  */
 const BuyIndex = () => {
-  const { user } = useAuth0();
+  //const { user } = useAuth0();
 
   const BUY_OFFERS_QUERY = gql`
     query GetBuyOffers($buyOfferId: Int!) @cached {
@@ -96,8 +95,6 @@ const BuyIndex = () => {
 if(user_error) return `Error! ${user_error.message}`;  
 
  */
-
-  const values = Object.values(data);
 
   //-----------------caching------------------
 
@@ -329,11 +326,6 @@ const CardFooter = styled.div({
   flexDirection: "Row",
 });
 
-const StyledLink = styled(Link)({
-  textDecoration: "none",
-  color: "white",
-});
-
 const TrackDetails = styled.div({
   display: "flex",
   flexDirection: "column",
@@ -375,33 +367,4 @@ const DetailItem = styled.div({
   color: "grey",
   alignSelf: "center",
   textalign: "center",
-});
-
-const AuthorImage = styled.img({
-  height: 30,
-  width: 30,
-  marginBottom: 8,
-  borderRadius: "50%",
-  objectFit: "cover",
-});
-
-const ModuleListContainer = styled.div({
-  width: "100%",
-  ul: {
-    listStyle: "none",
-    padding: 0,
-    margin: 0,
-    marginTop: 5,
-    li: {
-      fontSize: "1em",
-      display: "flex",
-      justifyContent: "space-between",
-      paddingBottom: 2,
-    },
-  },
-});
-
-const ModuleLength = styled.div({
-  marginLeft: 30,
-  color: "grey",
 });

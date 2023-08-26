@@ -1,7 +1,6 @@
 //import linkedin from 'react-linkedin-login-oauth2/assets/linkedin.png';
 
 require("dotenv").config();
-const axios = require("axios");
 
 const Logout = () => {
   return (

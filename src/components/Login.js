@@ -9,7 +9,6 @@ import AuthNav from "./auth-nav";
 //import linkedin from 'react-linkedin-login-oauth2/assets/linkedin.png';
 
 require("dotenv").config();
-const axios = require("axios");
 
 const Login = () => {
   const { loginWithRedirect } = useAuth0();

@@ -23,9 +23,6 @@ import Tooltip from "react-bootstrap/Tooltip";
   NeoLineWriteInvocationResult,
 } from './utils/neoline'; */
 
-let neoline;
-let neolineN3;
-
 /**
  * Track Detail component renders the main content of a given track:
  * author, length, number of views, modules list, among other things.
@@ -109,8 +106,6 @@ const TrackDetail = () => {
 })
  */
 
-  const [key, setKey] = useState("home");
-
   const [neoline, setNeoLine] = useState();
   const [neolineN3, setNeoLineN3] = useState();
   const [account, setAccount] = useState("");
@@ -144,20 +139,20 @@ const TrackDetail = () => {
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
 
-  const values = Object.values(data);
-
-  const filteredItems = values.filter((item) => {
+  /*   const values = Object.values(data);
+   */
+  /* const filteredItems = values.filter((item) => {
     return item.sell_offer_id === "10";
-  });
+  }); */
 
   if (user_loading) return "Loading...";
   if (user_error) return `Error! ${user_error.message}`;
 
-  const users1 = Object.values(user_data);
+  /*   const users1 = Object.values(user_data);
 
   const filteredUsers = users1.filter((item) => {
     return item.user_id === "linkedin|uiWV-hd6Jm";
-  });
+  }); */
 
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
@@ -339,62 +334,7 @@ const DetailRow = styled.div({
   borderBottom: "solid 1px silver",
 });
 
-const DetailItem = styled.div({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "space-between",
-  color: "grey",
-  alignSelf: "center",
-});
-
-const AuthorImage = styled.img({
-  height: 30,
-  width: 30,
-  marginBottom: 8,
-  borderRadius: "50%",
-  objectFit: "cover",
-});
-
 const AuthorName = styled.div({
   lineHeight: "1em",
   fontSize: "3em",
-});
-
-const IconAndLabel = styled.div({
-  display: "flex",
-  flex: "row",
-  alignItems: "center",
-  maxHeight: 20,
-  width: "100%",
-  div: {
-    marginLeft: 8,
-  },
-  svg: {
-    maxHeight: 16,
-  },
-  "#viewCount": {
-    color: "black",
-  },
-});
-
-const ModuleListContainer = styled.div({
-  width: "100%",
-  ul: {
-    listStyle: "none",
-    padding: 0,
-    margin: 0,
-    marginTop: 5,
-    li: {
-      fontSize: "1em",
-      display: "flex",
-      justifyContent: "space-between",
-      paddingBottom: 2,
-    },
-  },
-});
-
-const ModuleLength = styled.div({
-  marginLeft: 30,
-  color: "grey",
 });

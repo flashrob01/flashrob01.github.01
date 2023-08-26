@@ -104,13 +104,11 @@ const EditSellOffer = () => {
     variables: { sell_offer_id },
   });
 
-  const [value, setValue] = useState("");
   const handleSelect = (e) => {
     console.log(e);
     setOffer_type(e);
   };
 
-  const [value2, setValue2] = useState("");
   const handleSelect2 = (e) => {
     console.log(e);
     setRate_type(e);
@@ -172,13 +170,13 @@ const EditSellOffer = () => {
     redirectTo("Profile");
   };
 
-  const handleRate = (event) => {
+  /* const handleRate = (event) => {
     setRate_type(event.target.value);
   };
 
   const handleOffer = (event) => {
     setOffer_type(event.target.value);
-  };
+  }; */
 
   /*    addBuy({variables:{industry: input.value, offer_type: input.value, 
       offer_details: input.value, price: input.value, qualifications: input.value, 

@@ -32,7 +32,7 @@ import Navigation from "./components/Navigation";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
 import Footer from "./components/Footer";
-import FourOhFour from "./components/FourOhFour";
+//import FourOhFour from "./components/FourOhFour";
 import About from "./components/About";
 import Buy from "./components/Buy";
 import BuyIndex from "./components/BuyIndex";
@@ -154,10 +154,9 @@ export default App;
 //note: Child elements uses < / Outlay> and requires rendering on same page as parent; if don't want this, don't use child!
 
 // Below protected route for BuyIndex works...
-{
-  /* <Route path="/buy" element = {<Buy />} > </Route>
+
+/* <Route path="/buy" element = {<Buy />} > </Route>
 <Route path="/buy/:buy_offer_id" element = {<ProtectedRoute component = {BuyIndex} />} />
 <Route path="/buy/escrow/:buy_offer_id" element = {<ProtectedRoute><BuyEscrow /></ProtectedRoute>} /> */
-}
 
 //<Route path="/CreateSell" element = {<ProtectedRoute><CreateSell /> </ProtectedRoute>}/>     */}

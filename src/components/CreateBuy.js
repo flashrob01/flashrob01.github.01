@@ -32,7 +32,7 @@ const CreateBuy = () => {
   //const [values, handleChange] = UseForm({industry:"", offer_type:"", offer_details:"", price:"10", qualifications:"", user_id:"", buy_offer_id:""});
   //const values = {industry, offer_type, offzer_details, price, qualifications, user_id, buy_offer_id};
 
-  const GET_SELL_OFFERS_QUERY = gql`
+  /* const GET_SELL_OFFERS_QUERY = gql`
     query GetSellOffers {
       sell_offers(where: { sell_offer_id: { _eq: "10" } }) {
         user_id
@@ -47,7 +47,7 @@ const CreateBuy = () => {
         rate_type
       }
     }
-  `;
+  `; */
 
   const ADD_BUY_OFFER = gql`
     mutation buy_offers($object: buy_offers_insert_input!) {
@@ -67,36 +67,31 @@ const CreateBuy = () => {
     }
   `;
 
-  const [value, setValue] = useState("");
   const handleSelect = (e) => {
     console.log(e);
     setOffer_type(e);
   };
 
-  const [value2, setValue2] = useState("");
   const handleSelect2 = (e) => {
     console.log(e);
     setRate_type(e);
   };
 
-  const [create_buy_offers, { data, loading, error }] = useMutation(
-    ADD_BUY_OFFER,
-    {
-      variables: {
-        object: {
-          industry: industry,
-          offer_type: offer_type,
-          offer_details: offer_details,
-          price: price,
-          qualifications: qualifications,
-          headline: headline,
-          rate_type: rate_type,
-          languages: languages,
-          user_id: user_id,
-        },
+  const [create_buy_offers, { loading, error }] = useMutation(ADD_BUY_OFFER, {
+    variables: {
+      object: {
+        industry: industry,
+        offer_type: offer_type,
+        offer_details: offer_details,
+        price: price,
+        qualifications: qualifications,
+        headline: headline,
+        rate_type: rate_type,
+        languages: languages,
+        user_id: user_id,
       },
-    }
-  );
+    },
+  });
 
   if (loading) return "Submitting...";
   if (error) {
