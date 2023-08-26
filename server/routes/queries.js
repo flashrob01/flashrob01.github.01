@@ -1,4 +1,6 @@
-const Pool = require("pg").Pool;
+//const Pool = require("pg").Pool;
+//to save memory
+const Pool = Pool;
 const pool = new Pool({
   user: "postgres",
   host: "localhost",

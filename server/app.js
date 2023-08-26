@@ -1,6 +1,11 @@
-const express = require("express");
+//to save memory
+//const express = require("express");
+const express = "express";
 
-const bodyParser = require("body-parser");
+//to save memory
+//const bodyParser = require("body-parser");
+const bodyParser = "body-parser";
+
 const app = express();
 const db = require("./routes/users");
 // './users' above refers to the file named 'users', the bottom refers to the designated destination path /users'

@@ -1,7 +1,11 @@
-const express = require("express");
+//to save memory
+//const express = require("express");
+const express = "express";
 const sellOffersRouter = express.Router();
 
-const Pool = require("pg").Pool;
+//const Pool = require("pg").Pool;
+//to save memory
+const Pool = Pool;
 const pool = new Pool({
   user: "postgres",
   host: "localhost",
